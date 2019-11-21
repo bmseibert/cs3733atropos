@@ -6,10 +6,8 @@ import java.util.List;
 
 import model.Segment;
 /**
- * Note that CAPITALIZATION matters regarding the table name. If you create with 
- * a capital "Constants" then it must be "Constants" in the SQL queries.
  * 
- * @author heineman
+ * @author Tidd
  *
  */
 public class SegmentsDAO {
@@ -24,21 +22,21 @@ public class SegmentsDAO {
     	}
     }
 
-    public Constant getConstant(String name) throws Exception {
+    public Segment getSegment(String name) throws Exception {
         
         try {
-            Constant constant = null;
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM constants WHERE name=?;");
+        	Segment segment = null;
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment WHERE name=?;");
             ps.setString(1,  name);
             ResultSet resultSet = ps.executeQuery();
             
             while (resultSet.next()) {
-                constant = generateConstant(resultSet);
+                segment = generateSegment(resultSet);
             }
             resultSet.close();
             ps.close();
             
-            return constant;
+            return segment;
 
         } catch (Exception e) {
         	e.printStackTrace();
@@ -46,12 +44,12 @@ public class SegmentsDAO {
         }
     }
     
-    public boolean updateConstant(Constant constant) throws Exception {
+    public boolean updateSegmentMark(Segment segment) throws Exception {
         try {
-        	String query = "UPDATE constants SET value=? WHERE name=?;";
+        	String query = "UPDATE VideoSegment SET isMarked=? WHERE name=?;";
         	PreparedStatement ps = conn.prepareStatement(query);
-            ps.setDouble(1, constant.value);
-            ps.setString(2, constant.name);
+            ps.setBoolean(1, segment.isMarked);
+            ps.setString(2, segment.name);
             int numAffected = ps.executeUpdate();
             ps.close();
             
@@ -61,10 +59,10 @@ public class SegmentsDAO {
         }
     }
     
-    public boolean deleteConstant(Constant constant) throws Exception {
+    public boolean deleteSegment(Segment segment) throws Exception {
         try {
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM constants WHERE name = ?;");
-            ps.setString(1, constant.name);
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM VideoSegment WHERE name = ?;");
+            ps.setString(1, segment.name);
             int numAffected = ps.executeUpdate();
             ps.close();
             
@@ -76,22 +74,24 @@ public class SegmentsDAO {
     }
 
 
-    public boolean addConstant(Constant constant) throws Exception {
+    public boolean addSegment(Segment segment) throws Exception {
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM constants WHERE name = ?;");
-            ps.setString(1, constant.name);
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment WHERE name = ?;");
+            ps.setString(1, segment.name);
             ResultSet resultSet = ps.executeQuery();
             
             // already present?
             while (resultSet.next()) {
-                Constant c = generateConstant(resultSet);
+            	Segment s = generateSegment(resultSet);
                 resultSet.close();
                 return false;
             }
 
-            ps = conn.prepareStatement("INSERT INTO constants (name,value) values(?,?);");
-            ps.setString(1,  constant.name);
-            ps.setDouble(2,  constant.value);
+            ps = conn.prepareStatement("INSERT INTO Segment (name,character,url,isMarked) values(?,?,?,?);");
+            ps.setString(1,  segment.name);
+            ps.setString(2,  segment.character);
+            ps.setString(1,  segment.url);
+            ps.setBoolean(2,  segment.isMarked);
             ps.execute();
             return true;
 
@@ -100,31 +100,33 @@ public class SegmentsDAO {
         }
     }
 
-    public List<Constant> getAllConstants() throws Exception {
+    public List<Segment> getAllSegments() throws Exception {
         
-        List<Constant> allConstants = new ArrayList<>();
+        List<Segment> allSegments = new ArrayList<>();
         try {
             Statement statement = conn.createStatement();
-            String query = "SELECT * FROM constants";
+            String query = "SELECT * FROM VideoSegment";
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
-                Constant c = generateConstant(resultSet);
-                allConstants.add(c);
+            	Segment s = generateSegment(resultSet);
+                allSegments.add(s);
             }
             resultSet.close();
             statement.close();
-            return allConstants;
+            return allSegments;
 
         } catch (Exception e) {
             throw new Exception("Failed in getting books: " + e.getMessage());
         }
     }
     
-    private Constant generateConstant(ResultSet resultSet) throws Exception {
+    private Segment generateSegment(ResultSet resultSet) throws Exception {
         String name  = resultSet.getString("name");
-        Double value = resultSet.getDouble("value");
-        return new Constant (name, value);
+        String character = resultSet.getString("character");
+        String url  = resultSet.getString("url");
+        Boolean isMarked = resultSet.getBoolean("isMarked");
+        return new Segment (name, character, url, isMarked);
     }
 
 }
