@@ -11,10 +11,10 @@ public class CreatePlaylistResponse {
 		this.error = "";
 	}
 	
-	public CreatePlaylistResponse(String name, int statusCode, String errorMessage) {
+	public CreatePlaylistResponse(int statusCode, String errorMessage) {
 		this.statusCode = statusCode;
 		this.error = errorMessage;
-		this.name = name;
+		this.name = "";
 	}
 	
 	public String toString() {
