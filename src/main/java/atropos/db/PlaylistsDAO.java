@@ -9,7 +9,9 @@ import java.util.List;
 import model.Playlist;
 import model.Segment;
 
-
+/*
+ * @author Tidd
+ */
 public class PlaylistsDAO {
 	java.sql.Connection conn;
 	SegmentsDAO segDAO;
@@ -22,6 +24,42 @@ public class PlaylistsDAO {
     	}
     }
 
+    
+    
+    public boolean createNewPlaylist(Playlist playlist) throws Exception{
+    	try {
+    			PreparedStatement ps = conn.prepareStatement("INSERT INTO Playlist VALUES(?);");
+	            ps.setString(1,  playlist.getName());
+	            ResultSet resultSet = ps.executeQuery();
+	            resultSet.close();
+	            ps.close();
+	            return true;
+    	}
+    	
+    	 catch (Exception e) {
+         	e.printStackTrace();
+             throw new Exception("Failed in creating a Playlist in the DB: " + e.getMessage());
+         } 
+    	
+    }
+    
+    public boolean deletePlaylist(Playlist playlist) throws Exception{
+    	try {
+
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM Playlist WHERE name=?;");
+            ps.setString(1,  playlist.getName());
+            ResultSet resultSet = ps.executeQuery();
+            resultSet.close();
+            ps.close();
+            return true;
+    			
+    	}
+    	catch (Exception e) {
+         	e.printStackTrace();
+             throw new Exception("Failed in deleting Playlist from DB: " + e.getMessage());
+         }
+    }
+    
     public Playlist getPlaylist(String name) throws Exception {
         
         try {
@@ -43,49 +81,17 @@ public class PlaylistsDAO {
 
         } catch (Exception e) {
         	e.printStackTrace();
-            throw new Exception("Failed in getting constant: " + e.getMessage());
+            throw new Exception("Failed in getting Playlist from DB: " + e.getMessage());
         }
     }
     
     
     
-    //TODO replace this as add segment to playlist and remove segment from playlist
-    public boolean updatePlaylistMark(Playlist playlist) throws Exception {
+    public boolean addSegmentToPlaylist(Playlist playlist) throws Exception {
         try {
-        	String query = "UPDATE Playlist SET isMarked=? WHERE name=?;";
-        	PreparedStatement ps = conn.prepareStatement(query);
-            ps.setBoolean(1, Playlist.isMarked);
-            ps.setString(2, Playlist.name);
-            int numAffected = ps.executeUpdate();
-            ps.close();
-            
-            return (numAffected == 1);
-        } catch (Exception e) {
-            throw new Exception("Failed to update report: " + e.getMessage());
-        }
-    }
-    
-    public boolean deletePlaylist(Playlist playlist) throws Exception {
-        try {
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM Playlist WHERE name = ?;");
-            ps.setString(1, Playlist.name);
-            int numAffected = ps.executeUpdate();
-            ps.close();
-            
-            return (numAffected == 1);
-
-        } catch (Exception e) {
-            throw new Exception("Failed to insert constant: " + e.getMessage());
-        }
-    }
-
-
-    public boolean addPlaylist(Playlist playlist) throws Exception {
-        try {
-        	for(int i=0; i < playlist.segments.size(); i++) {
-	            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Playlist WHERE name = ? and segmentName = ?;");
-	            ps.setString(1, playlist.name);
-	            ps.setString(2, playlist.segmemts[i]);
+	            PreparedStatement ps = conn.prepareStatement("SELECT * FROM PlaylistSegment WHERE playlistName = ? AND segmentName = ?;");
+	            ps.setString(1, playlist.getName());
+	            ps.setString(2, playlist.getLastSegmentName());
 	            ResultSet resultSet = ps.executeQuery();
 	            
 	            // already present?
@@ -95,38 +101,86 @@ public class PlaylistsDAO {
 	                return false;
 	            }
 	
-	            ps = conn.prepareStatement("INSERT INTO Playlist (name,segmentName) values(?,?);");
-	            ps.setString(1,  playlist.name);
-	            ps.setString(2,  playlist.segments[i]);
+	            ps = conn.prepareStatement("INSERT INTO PlaylistSegment values(?,?);");
+	            ps.setString(1,  playlist.getName());
+	            ps.setString(2,  playlist.getLastSegmentName());
 	            ps.execute();
-	        	}
             return true;
 
         } catch (Exception e) {
-            throw new Exception("Failed to insert constant: " + e.getMessage());
+            throw new Exception("Failed to add Segment to Playlist in DB: " + e.getMessage());
+        }
+    }
+    
+    
+    public boolean deleteSegmentFromPlaylist(Playlist playlist) throws Exception {
+        try {
+	
+        		PreparedStatement ps = conn.prepareStatement("DELETE FROM PlaylistSegment WHERE playlistName=? AND segmentName=?;");
+	            ps.setString(1,  playlist.getName());
+	            ps.setString(2,  playlist.getLastSegmentName());
+	            ps.execute();
+            return true;
+
+        } catch (Exception e) {
+            throw new Exception("Failed to delete Segment from Playlist in DB " + e.getMessage());
         }
     }
 
     
-    //TODO finish this 
+	public List<String> getAllPlaylistsNames() throws Exception {
+	        
+	        List<String> allPlaylists = new ArrayList<>();
+	        try {
+	        
+	            Statement statement = conn.createStatement();
+	            String query = "SELECT * FROM Playlist;";
+	            ResultSet resultSet = statement.executeQuery(query);
+	            while (resultSet.next()) {
+	            	allPlaylists.add(resultSet.getString("name"));
+	            }
+				
+	            resultSet.close();
+	            statement.close();
+	            return allPlaylists;
+
+	        } catch (Exception e) {
+	            throw new Exception("Failed in getting list of Playlist names from DB: " + e.getMessage());
+	        }
+	    }
+
+    
+    
+
     public List<Playlist> getAllPlaylists() throws Exception {
         
         List<Playlist> allPlaylists = new ArrayList<>();
         try {
+        	SegmentsDAO segDAO = new SegmentsDAO();
             Statement statement = conn.createStatement();
-            String query = "SELECT * FROM VideoPlaylist";
+            String query = "SELECT * FROM PlaylistSegment ORDER BY (playlistName);";
             ResultSet resultSet = statement.executeQuery(query);
-
+            String currentPlaylist = "";
+            String pastPlaylist = "";
+            Playlist s = new Playlist("");
             while (resultSet.next()) {
-            	Playlist s = generatePlaylist(resultSet);
-                allPlaylists.add(s);
+            	currentPlaylist = resultSet.getString("playlistName");
+            	if (currentPlaylist != pastPlaylist){
+            		if(pastPlaylist != "") {
+            			allPlaylists.add(s);
+            		}
+            		pastPlaylist = currentPlaylist;
+            		s = generatePlaylist(resultSet);
+            	}
+            	s.appendVideoSegment(segDAO.getSegment(resultSet.getString("segmentName")));
             }
+			allPlaylists.add(s);
             resultSet.close();
             statement.close();
             return allPlaylists;
 
         } catch (Exception e) {
-            throw new Exception("Failed in getting books: " + e.getMessage());
+            throw new Exception("Failed in getting list of Playlists from DB: " + e.getMessage());
         }
     }
     

@@ -48,8 +48,8 @@ public class SegmentsDAO {
         try {
         	String query = "UPDATE VideoSegment SET isMarked=? WHERE name=?;";
         	PreparedStatement ps = conn.prepareStatement(query);
-            ps.setBoolean(1, segment.isMarked);
-            ps.setString(2, segment.name);
+            ps.setBoolean(1, segment.getIsMarked());
+            ps.setString(2, segment.getName());
             int numAffected = ps.executeUpdate();
             ps.close();
             
@@ -62,7 +62,7 @@ public class SegmentsDAO {
     public boolean deleteSegment(Segment segment) throws Exception {
         try {
             PreparedStatement ps = conn.prepareStatement("DELETE FROM VideoSegment WHERE name = ?;");
-            ps.setString(1, segment.name);
+            ps.setString(1, segment.getName());
             int numAffected = ps.executeUpdate();
             ps.close();
             
@@ -77,7 +77,7 @@ public class SegmentsDAO {
     public boolean addSegment(Segment segment) throws Exception {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment WHERE name = ?;");
-            ps.setString(1, segment.name);
+            ps.setString(1, segment.getName());
             ResultSet resultSet = ps.executeQuery();
             
             // already present?
@@ -87,11 +87,12 @@ public class SegmentsDAO {
                 return false;
             }
 
-            ps = conn.prepareStatement("INSERT INTO Segment (name,character,url,isMarked) values(?,?,?,?);");
-            ps.setString(1,  segment.name);
-            ps.setString(2,  segment.character);
-            ps.setString(1,  segment.url);
-            ps.setBoolean(2,  segment.isMarked);
+            ps = conn.prepareStatement("INSERT INTO Segment (name,character,url,isMarked) values(?,?,?,?,?);");
+            ps.setString(1,  segment.getName());
+            ps.setString(2,  segment.getCharacter());
+            ps.setString(3,  segment.getUrl());
+            ps.setBoolean(4,  segment.getIsMarked());
+            ps.setString(5, segment.getSite());
             ps.execute();
             return true;
 
@@ -126,7 +127,8 @@ public class SegmentsDAO {
         String character = resultSet.getString("character");
         String url  = resultSet.getString("url");
         Boolean isMarked = resultSet.getBoolean("isMarked");
-        return new Segment (name, character, url, isMarked);
+        String site = resultSet.getString("site");
+        return new Segment (name, character, url, isMarked, site);
     }
 
 }

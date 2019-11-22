@@ -1,16 +1,17 @@
 package model;
 
 public class Segment {
-	public final String name;
-	public final String character;
-	public final String url;
-	public Boolean isMarked;
-	
-	public Segment(String name, String character, String url, Boolean isMarked) {
+	final String name;
+	final String character;
+    final String url;
+	Boolean isMarked;
+	final String site;
+	public Segment(String name, String character, String url, Boolean isMarked, String site) {
 		this.name = name;
 		this.character = character;
 		this.url = url;
 		this.isMarked = isMarked;
+		this.site = site;
 	}
 	
 	public String getName() {
@@ -29,11 +30,15 @@ public class Segment {
 		return this.isMarked;
 	}
 	
+	public String getSite() {
+		return this.getSite();
+	}
+	
 	public void setIsMarked(Boolean b) {
 		this.isMarked = b;
 	}
 	
-	public void changeMarkedStatus() {
+	public void toggleIsMarked() {
 		this.isMarked = !this.isMarked;
 	}
 	
@@ -42,9 +47,9 @@ public class Segment {
 		
 		if (o instanceof Segment) {
 			Segment other = (Segment) o;
-			return name.equals(other.name);
+			return this.name.equals(other.name);
 		}
 		
-		return false;  // not a Constant
+		return false;  // not a Segment
 	}
 }
