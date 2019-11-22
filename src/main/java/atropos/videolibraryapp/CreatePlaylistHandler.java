@@ -39,6 +39,7 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 		logger.log(req.toString());
 		
 		boolean fail = false;
+		boolean didWork = false;
 		
 		String playlistName = "";
 		String failMessage = "";
@@ -54,7 +55,7 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 		
 		// playlist is created
 		try {
-			CreatePlaylist(playlistName);
+			didWork = CreatePlaylist(playlistName);
 		} catch(Exception e) {
 			failMessage = "Playlist already exists";
 			fail = true;

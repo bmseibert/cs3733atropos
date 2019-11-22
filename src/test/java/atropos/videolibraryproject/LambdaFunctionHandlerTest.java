@@ -1,4 +1,4 @@
-package com.amazonaws.lambda.demo;
+package atropos.videolibraryproject;
 
 import static org.mockito.Mockito.when;
 
