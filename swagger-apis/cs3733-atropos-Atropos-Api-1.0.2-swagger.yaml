@@ -1,0 +1,396 @@
+swagger: '2.0'
+info:
+  description: 'This is the API for the cs3733 Atropos group project'
+  version: 1.0.2
+  title: Atropos API
+  contact:
+    email: bmseibert@wpi.edu
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: virtserver.swaggerhub.com
+basePath: /cs3733-atropos/Atropos-Api/1.0.0
+tags:
+- name: administrator
+  description: Secured Admin-only calls
+- name: participant
+  description: Operations available to regular consumers
+schemes:
+ - https
+ 
+paths:
+  /segment:
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: requests the upload of a video segment
+      description: requests the upload of a video segment to the library
+      operationId: requestUploadSegment
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: UploadVideoRequest
+        description: upload a video segment
+        required: true
+        schema:
+          $ref: '#/definitions/UploadVideoRequest'
+      responses:
+        200:
+          description: Video uploaded
+        400:
+          description: Video upload failed
+  /segment/delete:
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: requests the deletion a video segment from the library
+      description: requests the deletion a video segment from the library
+      operationId: requestDeleteSegment
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: DeleteSegmentRequest
+        description: delete a video segment
+        required: true
+        schema:
+          $ref: '#/definitions/DeleteVideoRequest'
+      responses:
+        200:
+          description: video deleted
+        400:
+          description: invalid video segment
+        409:
+          description: video deletion failed
+  /segments:
+    get:
+      tags:
+        - participant
+        - administrator
+      summary: request a list of all video segments
+      description: returns a list of all video segments
+      operationId: requestListSegments
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: list of video segments returned
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: requests to search video segments in the library
+      description: requests to search for a character or phrase in the library
+      operationId: requestSearchSegments
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: SearchVideoRequest
+        description: search through video segments
+        required: true
+        schema:
+          $ref: '#/definitions/SearchVideoRequest'
+      responses:
+        200:
+          description: Search is valid
+        400:
+          description: Search is invalid
+  /playlist:  
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: adds a playlist
+      description: adds a playlist to the library
+      operationId: requestCreatePlaylist
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: CreatePlaylistRequest
+        description: adds a playlist to the library
+        required: true
+        schema:
+          $ref: '#/definitions/CreatePlaylistRequest'
+      responses:
+        200:
+          description: Playlist created
+        400:
+          description: invalid input
+  /playlist/delete:
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: deletes a playlist from the library
+      description: deletes a playlist from the library
+      operationId: requestDeletePlaylist
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: DeletePlaylistRequest
+        description: delete a playlist
+        required: true
+        schema:
+          $ref: '#/definitions/DeletePlaylistRequest'
+      responses:
+        200:
+          description: playlist deleted
+        400:
+          description: invalid playlist
+        409:
+          description: playlist deletion failed
+  /playlist/removeSegment:
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: removes the last segment from the playlist
+      description: removes the last segment from the playlist
+      operationId: requestRemoveSegment
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: segment removed
+        400:
+          description: segment could not be removed
+  /playlist/appendSegment:
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: appends a video segment to the end of the playlist
+      description: appends a video segment to the end of the playlist
+      operationId: requestAppendSegment
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: AppendSegmentRequest
+        description: append a segment to the playlist
+        required: true
+        schema:
+          $ref: '#/definitions/AppendSegmentRequest'
+      responses:
+        200:
+          description: video segment appended 
+        400:
+          description: invalid input
+        409:
+          description: video segment could not be appended
+  /playlists:
+    get:
+      tags:
+        - participant
+        - administrator
+      summary: returns a list of playlists
+      description: returns a list of all the playlists in the library
+      operationId: requestListPlaylist
+      produces:
+        - application/json
+      parameters: []     
+      responses:
+        200: 
+          description: list of playlsits successfully returned
+        400: 
+          description: failed to return list of playlists
+  /segment/unmark:
+    post:
+      tags:
+        - administrator
+      summary: requests to unmark a video segment
+      description: requests to unmark a local video segment to make it remotely available
+      operationId: requestUnmarkSegments
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: unmarkVideoRequest
+        description: unmark video segments as remotely available
+        required: true
+        schema:
+          $ref: '#/definitions/ChangeMarkVideoRequest'
+      responses:
+        200:
+          description: Segment has been unmarked
+        400:
+          description: Segment cannot be unmarked
+  /segment/mark: 
+    post:
+      tags:
+        - administrator
+      summary: requests to mark a video segment
+      description: requests to mark a local video segment to make it not remotely available
+      operationId: requestMarkSegments
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: MarkVideoRequest
+        description: mark video segments as not remotely available
+        required: true
+        schema:
+          $ref: '#/definitions/ChangeMarkVideoRequest'
+      responses:
+        200:
+          description: Segment has been marked
+        400:
+          description: Segment cannot be marked
+  /remote/registerSite:
+    post:
+      tags:
+        - administrator
+      summary: requests to register a third party site to get video segments from
+      description: requests to register a third party site to get video segments from
+      operationId: requestRegisterSite
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: RegisterSiteRequest
+        description: requests to register a third party site
+        required: true
+        schema:
+          $ref: '#/definitions/ChangeRegisterSiteRequest'
+      responses:
+        200:
+          description: website has been registered
+        400:
+          description: invalid website
+        409:
+          description: website could not be registered
+  /remote/unregisterSite:
+    post:
+      tags:
+        - administrator
+      summary: requests to unregister a third party site 
+      description: requests to unregister a third party site
+      operationId: requestUnregisterSite
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: UnregisterSiteRequest
+        description: requests to unregister a third party site
+        required: true
+        schema:
+          $ref: '#/definitions/ChangeRegisterSiteRequest'
+      responses:
+        200:
+          description: website has been unregistered
+        400:
+          description: invalid registered website
+        409:
+          description: website could not be unregistered
+  /remote/listSites:
+    get:
+      tags:
+        - participant
+        - administrator
+      summary: request a list of all registered third party websites
+      description: returns a list of all registered third party websites
+      operationId: requestListSites
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: list of registered third party websites returned
+definitions: 
+  ChangeMarkVideoRequest:
+    type: object
+    required:
+    - isMarking
+    - segmentname
+    properties:
+      isMarking:
+        type: boolean
+      segmentname:
+        type: string
+  UploadVideoRequest:
+    type: object
+    required:
+    - name
+    - character
+    properties:
+      name:
+        type: string
+      character:
+        type: string
+  DeleteVideoRequest:
+    type: object
+    required:
+    - name
+    properties:
+      name:
+        type: string
+  SearchVideoRequest:
+    type: object
+    required:
+    - searchCharacter
+    - searchPhrase
+    - isRemote
+    properties: 
+      searchCharacter:
+        type: string
+      searchPhrase:
+        type: string
+      isRemote:
+        type: boolean
+  CreatePlaylistRequest:
+    type: object
+    required: 
+    - name
+    properties:
+      name:
+        type: string
+  AppendSegmentRequest:
+    type: object
+    required:
+    - segmentName
+    - playlistName
+    properties:
+      segmentName:
+        type: string
+      playlistName:
+        type: string
+  DeletePlaylistRequest:
+    type: object
+    required:
+    - name
+    properties:
+      name:
+        type: string
+  ChangeRegisterSiteRequest:
+    type: object
+    required: 
+    - website
+    properties:
+      website:
+        type: string
