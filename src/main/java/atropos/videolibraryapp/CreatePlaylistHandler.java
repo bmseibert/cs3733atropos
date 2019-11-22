@@ -26,7 +26,7 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 		Playlist play = new Playlist(name);
 		
 		if (exist == null) {
-			return dao.addPlaylist(play);
+			return dao.createNewPlaylist(play);
 		} else {
 			return false;
 		}
