@@ -57,14 +57,4 @@ public class LambdaFunctionHandlerTest {
         return ctx;
     }
 
-    @Test
-    public void testLambdaFunctionHandler() {
-        LambdaFunctionHandler handler = new LambdaFunctionHandler(s3Client);
-        Context ctx = createContext();
-
-        String output = handler.handleRequest(event, ctx);
-
-        // TODO: validate output here if needed.
-        Assert.assertEquals(CONTENT_TYPE, output);
-    }
 }
