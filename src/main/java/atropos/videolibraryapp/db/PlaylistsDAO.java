@@ -16,9 +16,10 @@ public class PlaylistsDAO {
 	java.sql.Connection conn;
 	SegmentsDAO segDAO;
 
-    public PlaylistsDAO() {
+    public PlaylistsDAO(String rdsMySqlDatabaseUrl, String dbUsername, String dbPassword) {
     	try  {
-    		conn = DatabaseUtil.connect();
+    		conn = DatabaseUtil.connect(rdsMySqlDatabaseUrl, dbUsername, dbPassword );
+    		segDAO = new SegmentsDAO(rdsMySqlDatabaseUrl, dbUsername, dbPassword);
     	} catch (Exception e) {
     		conn = null;
     	}
@@ -67,14 +68,19 @@ public class PlaylistsDAO {
             ResultSet resultSet = ps.executeQuery();
             String playlistName = null;
             while (resultSet.next()) {
-            	if (playlistName != resultSet.getString("name")) {
             		playlist = generatePlaylist(resultSet);			//If a new playlist name create a new playlist object
-            	}
-            	playlist.appendVideoSegment(segDAO.getSegment(resultSet.getString("segmentName"))); //Get and append the segment object with the specific name
-            }
+            	}  	
             resultSet.close();
             ps.close();
             
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM PlaylistSegment WHERE palylistName=?;");
+            ps2.setString(1,  name);
+            ResultSet resultSet2 = ps2.executeQuery();
+            while (resultSet2.next()) {
+            		playlist.appendVideoSegment(segDAO.getSegment(resultSet2.getString("segmentName")));
+            	}  	
+            resultSet2.close();
+            ps2.close();
             return playlist;
 
         } catch (Exception e) {
@@ -82,7 +88,6 @@ public class PlaylistsDAO {
             throw new Exception("Failed in getting Playlist from DB: " + e.getMessage());
         }
     }
-    
     
     
     public boolean addSegmentToPlaylist(Playlist playlist) throws Exception {
@@ -154,7 +159,6 @@ public class PlaylistsDAO {
         
         List<Playlist> allPlaylists = new ArrayList<>();
         try {
-        	SegmentsDAO segDAO = new SegmentsDAO();
             Statement statement = conn.createStatement();
             String query = "SELECT * FROM PlaylistSegment ORDER BY (playlistName);";
             ResultSet resultSet = statement.executeQuery(query);

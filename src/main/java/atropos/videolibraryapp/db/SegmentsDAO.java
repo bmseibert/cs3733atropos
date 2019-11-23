@@ -14,9 +14,9 @@ public class SegmentsDAO {
 
 	java.sql.Connection conn;
 
-    public SegmentsDAO() {
+    public SegmentsDAO(String rdsMySqlDatabaseUrl, String dbUsername, String dbPassword) {
     	try  {
-    		conn = DatabaseUtil.connect();
+    		conn = DatabaseUtil.connect(rdsMySqlDatabaseUrl, dbUsername, dbPassword);
     	} catch (Exception e) {
     		conn = null;
     	}
@@ -127,8 +127,8 @@ public class SegmentsDAO {
         String character = resultSet.getString("character");
         String url  = resultSet.getString("url");
         Boolean isMarked = resultSet.getBoolean("isMarked");
-        String site = resultSet.getString("site");
-        return new Segment (name, character, url, isMarked, site);
+        Boolean remote = resultSet.getBoolean("isRemote");
+        return new Segment (name, character, url, isMarked, remote);
     }
 
 }

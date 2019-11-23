@@ -16,9 +16,6 @@ public class DatabaseUtil {
 	// https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html
 	//
 	// The above link shows how to do that.
-	public final static String rdsMySqlDatabaseUrl = "db-atropos-cs3733.c6scutjtaxku.us-east-1.rds.amazonaws.com";
-	public final static String dbUsername = "admin";
-	public final static String dbPassword = "MpNUf9EuccECSu8RdVyM";
 		
 	public final static String jdbcTag = "jdbc:mysql://";
 	public final static String rdsMySqlDatabasePort = "3306";
@@ -32,7 +29,7 @@ public class DatabaseUtil {
 	/**
 	 * Singleton access to DB connection to share resources effectively across multiple accesses.
 	 */
-	protected static Connection connect() throws Exception {
+	protected static Connection connect(String rdsMySqlDatabaseUrl, String dbUsername, String dbPassword) throws Exception {
 		if (conn != null) { return conn; }
 		
 		try {
