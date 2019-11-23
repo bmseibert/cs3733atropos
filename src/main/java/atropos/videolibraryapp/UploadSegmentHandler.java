@@ -27,13 +27,13 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 		}
 	}
 	
-	void uploadSegment(String name, String character) throws Exception{
+	void uploadSegment(String name, String character, String url) throws Exception{
 		if (logger != null) { 
 			logger.log("in createPlaylist"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO();
-		Segment seg = new Segment(name, character);
-		
+		Segment seg = new Segment(name, character, url);
+		dao.addSegment(seg);
 		
 	}
 	
@@ -51,13 +51,16 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 		
 		//logic
 		String segmentName = uvsr.getName();
+		String charName = uvsr.getCharacter();
+		String url = uvsr.getURL();
 		try {
 			isDup = IsDuplicate(segmentName);
 			try {
 				if(!isDup) {
-					
+					uploadSegment(segmentName, charName, url);
+					successResponse = "Segment Created";
 				}else {
-					
+					successResponse = "Already Exists";
 				}
 			}catch(Exception e) {
 				fail = true;

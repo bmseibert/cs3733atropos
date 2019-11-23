@@ -5,22 +5,22 @@ public class Segment {
 	final String character;
     final String url;
 	Boolean isMarked;
-	final Boolean site;
+	final Boolean isRemote;
 	
 	public Segment(String name, String character, String url, Boolean isMarked, Boolean site) {
 		this.name = name;
 		this.character = character;
 		this.url = url;
 		this.isMarked = isMarked;
-		this.site = site;
+		this.isRemote = site;
 	}
 	
-	public Segment(String name, String character) {
+	public Segment(String name, String character, String url) {
 		this.name = name;
 		this.character = character;
 		this.isMarked = false;
-		this.url = "";
-		this.site = false;
+		this.url = url;
+		this.isRemote = false;
 	}
 	
 	public String getName() {
