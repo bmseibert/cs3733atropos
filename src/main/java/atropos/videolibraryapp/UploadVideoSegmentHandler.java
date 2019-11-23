@@ -9,7 +9,7 @@ import atropos.videolibraryapp.http.UploadVideoSegmentRequest;
 import atropos.videolibraryapp.http.UploadVideoSegmentResponse;
 import atropos.videolibraryapp.model.Segment;
 
-public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRequest, UploadVideoSegmentResponse>{
+public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegmentRequest, UploadVideoSegmentResponse>{
 	
 	LambdaLogger logger;
 	
@@ -18,7 +18,7 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 		if (logger != null) { 
 			logger.log("in createPlaylist"); 
 		}
-		SegmentsDAO dao = new SegmentsDAO();
+		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
 		Segment exists = dao.getSegment(name);
 		if(exists == null) {
 			return false;
@@ -31,7 +31,7 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 		if (logger != null) { 
 			logger.log("in createPlaylist"); 
 		}
-		SegmentsDAO dao = new SegmentsDAO();
+		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
 		Segment seg = new Segment(name, character, url);
 		dao.addSegment(seg);
 		

@@ -18,7 +18,7 @@ public class DeletePlaylistHandler implements RequestHandler<DeletePlaylistReque
 		if (logger != null) { 
 			logger.log("in check for db name"); 
 		}
-		PlaylistsDAO dao = new PlaylistsDAO();
+		PlaylistsDAO dao = new PlaylistsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
 		Playlist exist = dao.getPlaylist(name);
 		
 		if(exist == null) {
@@ -32,7 +32,7 @@ public class DeletePlaylistHandler implements RequestHandler<DeletePlaylistReque
 		if (logger != null) { 
 			logger.log("in check for db name"); 
 		}
-		PlaylistsDAO dao = new PlaylistsDAO();
+		PlaylistsDAO dao = new PlaylistsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
 		Playlist play = new Playlist(name);
 		dao.deletePlaylist(play);
 		
