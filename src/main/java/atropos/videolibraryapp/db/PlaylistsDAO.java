@@ -47,8 +47,7 @@ public class PlaylistsDAO {
 
 			PreparedStatement ps = conn.prepareStatement("DELETE FROM Playlist WHERE name=?;");
             ps.setString(1,  playlist.getName());
-            ResultSet resultSet = ps.executeQuery();
-            resultSet.close();
+            ps.executeUpdate();
             ps.close();
             return true;
     			
@@ -103,7 +102,7 @@ public class PlaylistsDAO {
 	            ps = conn.prepareStatement("INSERT INTO PlaylistSegment values(?,?);");
 	            ps.setString(1,  playlist.getName());
 	            ps.setString(2,  playlist.getLastSegmentName());
-	            ps.execute();
+	            ps.executeUpdate();
             return true;
 
         } catch (Exception e) {
@@ -118,7 +117,7 @@ public class PlaylistsDAO {
         		PreparedStatement ps = conn.prepareStatement("DELETE FROM PlaylistSegment WHERE playlistName=? AND segmentName=?;");
 	            ps.setString(1,  playlist.getName());
 	            ps.setString(2,  playlist.getLastSegmentName());
-	            ps.execute();
+	            ps.executeUpdate();
             return true;
 
         } catch (Exception e) {

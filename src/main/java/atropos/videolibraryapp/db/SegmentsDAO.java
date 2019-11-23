@@ -93,7 +93,7 @@ public class SegmentsDAO {
             ps.setString(3,  segment.getUrl());
             ps.setBoolean(4,  segment.getIsMarked());
             ps.setString(5, segment.getSite());
-            ps.execute();
+            ps.executeUpdate();
             return true;
 
         } catch (Exception e) {
