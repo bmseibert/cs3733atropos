@@ -56,6 +56,7 @@ public class DeletePlaylistHandler implements RequestHandler<DeletePlaylistReque
 			if(exists) {
 				try {
 					deleteFromDB(playlistName);
+					successMessage = "Success";
 				}catch(Exception e){
 					fail = true;
 					failMessage = "Could not delete Playlist";
