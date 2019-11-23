@@ -30,8 +30,7 @@ public class PlaylistsDAO {
     	try {
     			PreparedStatement ps = conn.prepareStatement("INSERT INTO Playlist VALUES(?);");
 	            ps.setString(1,  playlist.getName());
-	            ResultSet resultSet = ps.executeQuery();
-	            resultSet.close();
+	            ps.executeUpdate();
 	            ps.close();
 	            return true;
     	}
