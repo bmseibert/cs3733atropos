@@ -1,0 +1,91 @@
+<html>
+<body>
+
+<!-- relative path-name to access js -->
+<script type='text/javascript' src='../js/api.js'></script>
+
+<h1>Videos</h1>
+
+This was produced using an free tool that uses a watermark (Filmora):<p>
+
+
+<h1>Below are the raw OGG files</h1>
+
+
+<video id="num0" width="320" height="240" controls>
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num1" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num2" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num3" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num4" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num5" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num6" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num7" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num8" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video id="num9" width="320" height="240" >
+  <source src="" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<script>
+
+var num0 = document.getElementById("num0");
+num0.addEventListener("ended", function() {num1.play(); });
+var num1 = document.getElementById("num1");
+num1.addEventListener("ended", function() {num2.play(); });
+var num2 = document.getElementById("num2");
+num2.addEventListener("ended", function() {num3.play(); });
+var num3 = document.getElementById("num3");
+num3.addEventListener("ended", function() {num4.play(); });
+var num4 = document.getElementById("num4");
+num4.addEventListener("ended", function() {num5.play(); });
+var num5 = document.getElementById("num5");
+num5.addEventListener("ended", function() {num6.play(); });
+var num6 = document.getElementById("num6");
+num6.addEventListener("ended", function() {num7.play(); });
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
