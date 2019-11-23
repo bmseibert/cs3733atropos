@@ -5,13 +5,22 @@ public class Segment {
 	final String character;
     final String url;
 	Boolean isMarked;
-	final String site;
-	public Segment(String name, String character, String url, Boolean isMarked, String site) {
+	final Boolean site;
+	
+	public Segment(String name, String character, String url, Boolean isMarked, Boolean site) {
 		this.name = name;
 		this.character = character;
 		this.url = url;
 		this.isMarked = isMarked;
 		this.site = site;
+	}
+	
+	public Segment(String name, String character) {
+		this.name = name;
+		this.character = character;
+		this.isMarked = false;
+		this.url = "";
+		this.site = false;
 	}
 	
 	public String getName() {
