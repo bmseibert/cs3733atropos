@@ -26,7 +26,7 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 		Playlist play = new Playlist(name);
 		
 		if (exist == null) {
-			return dao.createNewPlaylist(play);
+			return dao.createNewPlaylist(play); 
 		} else {
 			return false;
 		}
@@ -56,8 +56,13 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 		// playlist is created
 		try {
 			didWork = CreatePlaylist(playlistName);
+			if(didWork) {
+				successResponse = "Success";
+			}else {
+				successResponse = "Playlist already exists";
+			}
 		} catch(Exception e) {
-			failMessage = "Playlist already exists";
+			failMessage = "Unable to Create Playlist";
 			fail = true;
 		}
 		
