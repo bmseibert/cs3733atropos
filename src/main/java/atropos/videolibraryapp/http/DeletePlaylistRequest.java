@@ -3,16 +3,16 @@ package atropos.videolibraryapp.http;
 /** To work with AWS must not have final attributes, must have no-arg constructor, and all get/set methods. */
 public class DeletePlaylistRequest {
 	
-	String playlist;
+	String playlistName;
 	
 	public DeletePlaylistRequest() {}
 	
 	public DeletePlaylistRequest(String playlist)
 	{
-		this.playlist = playlist;
+		this.playlistName = playlist;
 	}
 	
-	public void setPlaylist(String newPlaylist) {this.playlist = newPlaylist;}
+	public void setPlaylistName(String newPlaylist) {this.playlistName = newPlaylist;}
 	
-	public String getPlaylist() {return playlist;}
+	public String getPlaylistName() {return playlistName;}
 }

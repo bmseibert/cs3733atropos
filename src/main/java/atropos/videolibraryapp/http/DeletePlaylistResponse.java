@@ -11,8 +11,8 @@ public class DeletePlaylistResponse {
 		this.error = "";
 	}
 	
-	public DeletePlaylistResponse(String name, int code, String errorMessage) {
-		this.name = name;
+	public DeletePlaylistResponse(int code, String errorMessage) {
+		this.name = "";
 		this.statusCode = code;
 		this.error = errorMessage;
 	}
