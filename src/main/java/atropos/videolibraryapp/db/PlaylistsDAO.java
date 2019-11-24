@@ -18,7 +18,7 @@ public class PlaylistsDAO {
 
     public PlaylistsDAO(String rdsMySqlDatabaseUrl, String dbUsername, String dbPassword) {
     	try  {
-    		conn = DatabaseUtil.connect(rdsMySqlDatabaseUrl, dbUsername, dbPassword );
+    		conn = DatabaseUtil.connect(rdsMySqlDatabaseUrl, dbUsername, dbPassword);
     		segDAO = new SegmentsDAO(rdsMySqlDatabaseUrl, dbUsername, dbPassword);
     	} catch (Exception e) {
     		conn = null;

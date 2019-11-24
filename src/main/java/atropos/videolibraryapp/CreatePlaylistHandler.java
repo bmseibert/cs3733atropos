@@ -21,6 +21,7 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 			logger.log("in createPlaylist"); 
 		}
 		logger.log((String)System.getenv("DB_url"));
+
 		PlaylistsDAO dao = new PlaylistsDAO((String)System.getenv("DB_url"),(String)System.getenv("DB_name"),(String)System.getenv("DB_password"));
 		
 		Playlist exist = dao.getPlaylist(name);
