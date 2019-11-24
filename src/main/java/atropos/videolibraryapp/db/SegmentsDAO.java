@@ -92,7 +92,7 @@ public class SegmentsDAO {
             ps.setString(2,  segment.getCharacter());
             ps.setString(3,  segment.getUrl());
             ps.setBoolean(4,  segment.getIsMarked());
-            ps.setString(5, segment.getSite());
+            ps.setBoolean(5, segment.getIsRemote());
             ps.executeUpdate();
             return true;
 
