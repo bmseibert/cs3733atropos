@@ -21,13 +21,29 @@ public class ListSegmentsHandler implements RequestHandler<ListVideoSegmentsRequ
 			logger.log("in createPlaylist"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO((String)System.getenv("DB_url"),(String)System.getenv("DB_name"),(String)System.getenv("DB_password"));
-		
+		ArrayList<Segment> segs = dao.getAllSegments();
+		ArrayList<Segment> remoteSegs = new ArrayList<Segment>();
+		for(int i=0; i<segs.size(); i++) {
+			if(segs.get(i).getIsRemote() == true) {
+				remoteSegs.add(segs.get(i));
+			}
+		}
+		return remoteSegs;
 	}
 	
 	ArrayList<Segment> getLocalSegments() throws Exception{
 		if (logger != null) { 
 			logger.log("in createPlaylist"); 
 		}
+		SegmentsDAO dao = new SegmentsDAO((String)System.getenv("DB_url"),(String)System.getenv("DB_name"),(String)System.getenv("DB_password"));
+		ArrayList<Segment> segs = dao.getAllSegments();
+		ArrayList<Segment> localSegs = new ArrayList<Segment>();
+		for(int i=0; i<segs.size(); i++) {
+			if(segs.get(i).getIsRemote() == false) {
+				localSegs.add(segs.get(i));
+			}
+		}
+		return localSegs;
 	}
 	
 	@Override 
@@ -38,15 +54,14 @@ public class ListSegmentsHandler implements RequestHandler<ListVideoSegmentsRequ
 		
 		Boolean fail = false;
 		String failMessage = "";
-		String successResponse = "";
-		ArrayList<Segment> segs;
+		ArrayList<Segment> segs = null;
 		
 		//logic
 		try {	
 			if(lvsr.getIsRemote()) {
-				getRemoteSegments();
+				segs = getRemoteSegments();
 			}else {
-				getLocalSegments();
+				segs = getLocalSegments();
 			}
 		}catch(Exception e) {
 			fail = true;

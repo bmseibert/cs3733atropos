@@ -39,8 +39,8 @@ public class Segment {
 		return this.isMarked;
 	}
 	
-	public String getSite() {
-		return this.getSite();
+	public Boolean getIsRemote() {
+		return this.isRemote;
 	}
 	
 	public void setIsMarked(Boolean b) {
