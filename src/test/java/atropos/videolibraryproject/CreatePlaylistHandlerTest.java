@@ -8,6 +8,7 @@ import org.junit.Test;
 import com.google.gson.Gson;
 
 import atropos.videolibraryapp.CreatePlaylistHandler;
+import atropos.videolibraryapp.DeletePlaylistHandler;
 import atropos.videolibraryapp.http.CreatePlaylistRequest;
 import atropos.videolibraryapp.http.CreatePlaylistResponse;
 
@@ -36,6 +37,7 @@ public class CreatePlaylistHandlerTest extends LambdaTest {
     public void testCreatePlaylist() {
     	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist\"}";
     	String RESULT = "Success";
+    	DeletePlaylistHandler handler = new DeletePlaylistHandler();
     	
     	try {
         	testSuccessInput(SAMPLE_INPUT_STRING, RESULT);
