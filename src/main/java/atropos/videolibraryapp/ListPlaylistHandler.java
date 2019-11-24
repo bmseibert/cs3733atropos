@@ -18,7 +18,7 @@ import atropos.videolibraryapp.model.Playlist;
 public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPlaylistsResponse>{
 	LambdaLogger logger;
 	//Helpers
-	public ArrayList<Playlist> getPlaylists(){
+	public ArrayList<Playlist> getPlaylists() throws Exception{
 		PlaylistsDAO playDAO = new PlaylistsDAO((String)System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_pasword"));
 		ArrayList<Playlist> listPlaylist = new ArrayList();
 		listPlaylist = playDAO.getAllPlaylists();
@@ -32,39 +32,29 @@ public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPla
 		logger.log("Loading Java Lambda handler of RequestHandler");
 		logger.log(req.toString());
 		
+		ArrayList<Playlist> list = new ArrayList();
+		
 		boolean fail = false;
-		boolean didWork = false;
+		boolean didWork = true;
 		
 		String playlistName = "";
 		String failMessage = "";
-		String successResponse = "";
+		ArrayList<Playlist> successResponse = new ArrayList();
 		
-		// Get the playlist name
+		// Get List of Playlists
 		try {
-			playlistName = req.getPlaylistName();
+			successResponse = getPlaylists();
 		} catch (Exception ex) {
-			failMessage = "Playlist name does not exist";
+			failMessage = "Could not grab list of playlists";
 			fail = true;
 		}
 		
-		// playlist is created
-		try {
-			didWork = CreatePlaylist(playlistName);
-			if(didWork) {
-				successResponse = "Success";
-			}else {
-				successResponse = "Playlist already exists";
-			}
-		} catch(Exception e) {
-			failMessage = "Unable to Create Playlist";
-			fail = true;
-		}
 		
-		CreatePlaylistResponse response;
+		ListPlaylistsResponse response;
 		if (fail) {
-			response = new CreatePlaylistResponse(400, failMessage);
+			response = new ListPlaylistsResponse(400, failMessage);
 		} else {
-			response = new CreatePlaylistResponse(successResponse, 200);  // success
+			response = new ListPlaylistsResponse(successResponse, 200);  // success
 		}
 
 		return response; 
@@ -72,6 +62,3 @@ public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPla
 	
 }
 
-	//Response
-	
-}
