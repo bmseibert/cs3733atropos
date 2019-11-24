@@ -92,7 +92,7 @@ public class SegmentsDAO {
             ps.setString(2,  segment.getCharacter());
             ps.setString(3,  segment.getUrl());
             ps.setBoolean(4,  segment.getIsMarked());
-            ps.setString(5, segment.getSite());
+            ps.setBoolean(5, segment.getIsRemote());
             ps.executeUpdate();
             return true;
 
@@ -101,9 +101,9 @@ public class SegmentsDAO {
         }
     }
 
-    public List<Segment> getAllSegments() throws Exception {
+    public ArrayList<Segment> getAllSegments() throws Exception {
         
-        List<Segment> allSegments = new ArrayList<>();
+        ArrayList<Segment> allSegments = new ArrayList<>();
         try {
             Statement statement = conn.createStatement();
             String query = "SELECT * FROM VideoSegment";
