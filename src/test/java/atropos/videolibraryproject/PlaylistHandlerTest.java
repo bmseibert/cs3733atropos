@@ -22,7 +22,17 @@ public class PlaylistHandlerTest extends LambdaTest {
        
     	CreatePlaylistResponse resp = handler.handleRequest(req, createContext("create"));
     	
-    	// Assert.assertEquals(outgoing, resp.name);
+    	Assert.assertEquals(outgoing, resp.name);
+        Assert.assertEquals(200, resp.statusCode);
+    }
+    
+    void testSuccessCreateDupilcateInput(String incoming, String outgoing) {
+    	CreatePlaylistHandler handler = new CreatePlaylistHandler();
+    	CreatePlaylistRequest req = new Gson().fromJson(incoming, CreatePlaylistRequest.class);
+       
+    	CreatePlaylistResponse resp = handler.handleRequest(req, createContext("create"));
+    	
+    	Assert.assertEquals(outgoing, resp.name);
         Assert.assertEquals(200, resp.statusCode);
     }
 	
@@ -41,7 +51,7 @@ public class PlaylistHandlerTest extends LambdaTest {
        
     	DeletePlaylistResponse resp = handler.handleRequest(req, createContext("create"));
     	
-    	// Assert.assertEquals(outgoing, resp.name);
+    	Assert.assertEquals(outgoing, resp.name);
         Assert.assertEquals(200, resp.statusCode);
     }
 	
@@ -71,10 +81,11 @@ public class PlaylistHandlerTest extends LambdaTest {
     public void testCreateDuplicatePlaylist() {
     	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist1\"}";
     	String RESULT = "Success";
+    	String RESULT2 = "Playlist already exists";
     	
     	try {
         	testSuccessCreateInput(SAMPLE_INPUT_STRING, RESULT);
-        	testFailCreateInput(SAMPLE_INPUT_STRING, RESULT);
+        	testSuccessCreateDupilcateInput(SAMPLE_INPUT_STRING, RESULT2);
         	testSuccessDeleteInput(SAMPLE_INPUT_STRING, RESULT);
         } catch (IOException ioe) {
         	Assert.fail("Invalid:" + ioe.getMessage());
