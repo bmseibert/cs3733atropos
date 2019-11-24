@@ -101,18 +101,17 @@ public class SegmentsDAO {
 
     public ArrayList<Segment> getAllSegments() throws Exception {
         
-        ArrayList<Segment> allSegments = new ArrayList<>();
+        ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
-            Statement statement = conn.createStatement();
-            String query = "SELECT * FROM VideoSegment";
-            ResultSet resultSet = statement.executeQuery(query);
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment;");
+            ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
             	Segment s = generateSegment(resultSet);
                 allSegments.add(s);
             }
             resultSet.close();
-            statement.close();
+            ps.close();
             return allSegments;
 
         } catch (Exception e) {
