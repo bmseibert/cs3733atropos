@@ -54,14 +54,17 @@ public class ListSegmentsHandler implements RequestHandler<ListVideoSegmentsRequ
 		
 		Boolean fail = false;
 		String failMessage = "";
+		String passMessage = "";
 		ArrayList<Segment> segs = null;
 		
 		//logic
 		try {	
 			if(lvsr.getIsRemote()) {
 				segs = getRemoteSegments();
+				passMessage = "Success";
 			}else {
 				segs = getLocalSegments();
+				passMessage = "Success";
 			}
 		}catch(Exception e) {
 			fail = true;
@@ -72,7 +75,7 @@ public class ListSegmentsHandler implements RequestHandler<ListVideoSegmentsRequ
 		if(fail) {
 			lvsresp = new ListVideoSegmentsResponse(400, failMessage);
 		}else {
-			lvsresp = new ListVideoSegmentsResponse(200, segs);
+			lvsresp = new ListVideoSegmentsResponse(200, segs, passMessage);
 		}
 		return lvsresp;
 	}
