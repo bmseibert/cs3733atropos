@@ -154,9 +154,9 @@ public class PlaylistsDAO {
     
     
 
-    public List<Playlist> getAllPlaylists() throws Exception {
+    public ArrayList<Playlist> getAllPlaylists() throws Exception {
         
-        List<Playlist> allPlaylists = new ArrayList<>();
+        ArrayList<Playlist> allPlaylists = new ArrayList<>();
         try {
             Statement statement = conn.createStatement();
             String query = "SELECT * FROM PlaylistSegment ORDER BY (playlistName);";

@@ -101,9 +101,9 @@ public class SegmentsDAO {
         }
     }
 
-    public List<Segment> getAllSegments() throws Exception {
+    public ArrayList<Segment> getAllSegments() throws Exception {
         
-        List<Segment> allSegments = new ArrayList<>();
+        ArrayList<Segment> allSegments = new ArrayList<>();
         try {
             Statement statement = conn.createStatement();
             String query = "SELECT * FROM VideoSegment";
