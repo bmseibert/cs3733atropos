@@ -66,14 +66,13 @@ public class PlaylistsDAO {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Playlist WHERE name=?;");
             ps.setString(1,  name);
             ResultSet resultSet = ps.executeQuery();
-            String playlistName = null;
             while (resultSet.next()) {
             		playlist = generatePlaylist(resultSet);			//If a new playlist name create a new playlist object
             	}  	
             resultSet.close();
             ps.close();
             
-            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM PlaylistSegment WHERE palylistName=?;");
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM PlaylistSegment WHERE playlistName=?;");
             ps2.setString(1,  name);
             ResultSet resultSet2 = ps2.executeQuery();
             while (resultSet2.next()) {
