@@ -23,6 +23,14 @@ public class Segment {
 		this.isRemote = false;
 	}
 	
+	public Segment(String name) {
+		this.name = name;
+		this.character = null;
+		this.url = null;
+		this.isMarked = false;
+		this.isRemote = false;
+	}
+	
 	public String getName() {
 		return this.name;
 	}

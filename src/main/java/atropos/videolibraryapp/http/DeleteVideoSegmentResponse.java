@@ -10,8 +10,8 @@ public class DeleteVideoSegmentResponse {
 		this.statusCode = code;
 	}
 	
-	public DeleteVideoSegmentResponse(String name, int code, String errorMessage) {
-		this.name = name;
+	public DeleteVideoSegmentResponse(int code, String errorMessage) {
+		this.name = "";
 		this.statusCode = code;
 		this.error = errorMessage;
 	}
