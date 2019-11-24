@@ -16,11 +16,16 @@ import atropos.videolibraryapp.http.ListPlaylistsResponse;
 import atropos.videolibraryapp.model.Playlist;
 
 public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPlaylistsResponse>{
+	
 	LambdaLogger logger;
+	
 	//Helpers
 	public ArrayList<Playlist> getPlaylists() throws Exception{
+		if (logger != null) { 
+			logger.log("in createPlaylist"); 
+		}
 		PlaylistsDAO playDAO = new PlaylistsDAO((String)System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_pasword"));
-		ArrayList<Playlist> listPlaylist = new ArrayList();
+		ArrayList<Playlist> listPlaylist = new ArrayList<Playlist>();
 		listPlaylist = playDAO.getAllPlaylists();
 		return listPlaylist;
 	}
@@ -31,15 +36,11 @@ public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPla
 		logger = context.getLogger();
 		logger.log("Loading Java Lambda handler of RequestHandler");
 		logger.log(req.toString());
-		
-		ArrayList<Playlist> list = new ArrayList();
-		
+			
 		boolean fail = false;
-		boolean didWork = true;
 		
-		String playlistName = "";
 		String failMessage = "";
-		ArrayList<Playlist> successResponse = new ArrayList();
+		ArrayList<Playlist> successResponse = new ArrayList<Playlist>();
 		
 		// Get List of Playlists
 		try {
