@@ -18,7 +18,7 @@ public class ListSegmentsHandler implements RequestHandler<ListVideoSegmentsRequ
 	//helpers
 	ArrayList<Segment> getRemoteSegments() throws Exception{
 		if (logger != null) { 
-			logger.log("in createPlaylist"); 
+			logger.log("in getRemoteSegments"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO((String)System.getenv("DB_url"),(String)System.getenv("DB_name"),(String)System.getenv("DB_password"));
 		ArrayList<Segment> segs = dao.getAllSegments();
@@ -33,7 +33,7 @@ public class ListSegmentsHandler implements RequestHandler<ListVideoSegmentsRequ
 	
 	ArrayList<Segment> getLocalSegments() throws Exception{
 		if (logger != null) { 
-			logger.log("in createPlaylist"); 
+			logger.log("in getLocalSegments"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO((String)System.getenv("DB_url"),(String)System.getenv("DB_name"),(String)System.getenv("DB_password"));
 		ArrayList<Segment> segs = dao.getAllSegments();

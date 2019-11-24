@@ -115,7 +115,7 @@ public class SegmentsDAO {
             return allSegments;
 
         } catch (Exception e) {
-            throw new Exception("Failed in getting books: " + e.getMessage());
+            throw new Exception("Failed in getting segments: " + e.getMessage());
         }
     }
     
