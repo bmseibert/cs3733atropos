@@ -43,12 +43,16 @@ public class AppendSegmentHandler implements RequestHandler<AppendSegmentRequest
 		String successMessage = "";
 		String playlistName = asr.getPlaylist();
 		String segmentName = asr.getSegment();
+		logger.log(segmentName);
 		Segment segment;
 		Playlist play = new Playlist(playlistName);
 		
 		//logic
 		try {
+			
 			segment = getSegment(segmentName);
+			play.appendVideoSegment(segment);
+
 		}catch(Exception e) {
 			fail = true;
 			failMessage = "Unable to connect to Segment database";
@@ -56,6 +60,7 @@ public class AppendSegmentHandler implements RequestHandler<AppendSegmentRequest
 		
 		try {
 			AppendSegment(play);
+			successMessage = "Success";
 		}catch(Exception e) {
 			fail = true;
 			failMessage = "Unable to connect to Playlist database";

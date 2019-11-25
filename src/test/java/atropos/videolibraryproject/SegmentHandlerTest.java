@@ -8,14 +8,9 @@ import org.junit.Test;
 import com.google.gson.Gson;
 
 import atropos.videolibraryapp.AppendSegmentHandler;
-import atropos.videolibraryapp.CreatePlaylistHandler;
-import atropos.videolibraryapp.DeletePlaylistHandler;
-import atropos.videolibraryapp.http.AppendSegmentResponse;
 import atropos.videolibraryapp.http.AppendSegmentRequest;
-import atropos.videolibraryapp.http.CreatePlaylistRequest;
-import atropos.videolibraryapp.http.CreatePlaylistResponse;
-import atropos.videolibraryapp.http.DeletePlaylistRequest;
-import atropos.videolibraryapp.http.DeletePlaylistResponse;
+import atropos.videolibraryapp.http.AppendSegmentResponse;
+
 
 
 public class SegmentHandlerTest extends LambdaTest{
@@ -39,6 +34,19 @@ public class SegmentHandlerTest extends LambdaTest{
         Assert.assertEquals(400, resp.statusCode);
     }
     
+    @Test
+    public void testAppendSegment() {
+    	
+    	String input = "{\"playlist\": \"testPlaylist\", \"segment\": \"We move together\"}";
+    	String RESULT = "Success";
+    	
+    	try {
+        	testSuccessAppendInput(input, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    	
+    }
     
 
 }
