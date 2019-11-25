@@ -7,10 +7,21 @@ function processListSegmentsResponse(result){
 	var js = JSON.parse(result);
 	var segments = js["segment"];
 	var status = js["statusCode"];
+	var output = "";
+
 	
 	if (status == 200) {
 	    // Update computation result
-	    document.showSegmentsForm.result.value = segments
+	    for (var i = 0; i < segments.length; i++) {
+	        var constantJson = segments[i];	        
+	        var name = constantJson["name"];
+	        var charname = constantJson["character"];
+	        var url = constantJson["url"];
+	        
+	        output = output + "Quote: " + name + "  Character Name: " + charname + "  URL: " + url + "\n";
+	      }
+	    document.showSegmentsForm.result.value = output
+
 	  } else {
 	    var msg = "error";
 	    document.showSegmentsForm.result.value = "error:" + msg
