@@ -68,19 +68,28 @@ paths:
         409:
           description: video deletion failed
   /segments:
-    get:
+    post:
       tags:
         - participant
         - administrator
       summary: request a list of all video segments
       description: returns a list of all video segments
       operationId: requestListSegments
+      consumes:
+      - application/json
       produces:
       - application/json
-      parameters: []
+      parameters: 
+      - in: body
+        name: ListSegmentsRequest
+        description: List all the local or remote video segments
+        required: true
+        schema:
+          $ref: '#/definitions/ListSegmentsRequest'
       responses:
         200:
           description: list of video segments returned
+  /segments/search:
     post:
       tags:
         - participant
@@ -350,6 +359,13 @@ definitions:
     properties:
       name:
         type: string
+  ListSegmentsRequest:
+    type: object
+    required:
+    - isRemote
+    properties:
+      isRemote:
+        type: boolean
   SearchVideoRequest:
     type: object
     required:
