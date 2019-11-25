@@ -36,12 +36,12 @@ function handleShowPlaylistsClick(e){
 	xhr.onloadend = function () {
 		console.log(xhr);
 	    console.log(xhr.request);
-	    playlistList.innerHTML = "<div> TESTTTT </div>"; 
-	   // if (xhr.readyState == XMLHttpRequest.DONE) {
-	    //    console.log ("XHR:" + xhr.responseText);
-	    //    processListPlaylistsResponse(xhr.responseText);
-	     // } else {
-	    //	processListPlaylistsResponse("N/A");
-		 //     } 
-	//	}
+//	    playlistList.innerHTML = "<div> TESTTTT </div>"; 
+	    if (xhr.readyState == XMLHttpRequest.DONE) {
+	        console.log ("XHR:" + xhr.responseText);
+	        processListPlaylistsResponse(xhr.responseText);
+	      } else {
+	    	processListPlaylistsResponse("N/A");
+		      } 
+		}
 	}

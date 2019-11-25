@@ -9,10 +9,13 @@ function processListSegmentsResponse(result){
 	var status = js["statusCode"];
 	var output = "";
 	var output2 = "";
+	
+	console.log("processing list segments response");
 
 	
 	if (status == 200) {
 	    // Update computation result
+		//bottom.innerHTML = "";
 	    for (var i = 0; i < segments.length; i++) {
 	        var constantJson = segments[i];	        
 	        var name = constantJson["name"];
@@ -29,7 +32,8 @@ function processListSegmentsResponse(result){
 
 	        var bottom = document.getElementById('bottom');
 	        bottom.appendChild(iframe);
-
+	        console.log("Creating iFrames");
+	        
 	      }
 	    segmentList.innerHTML = output2;
 
@@ -37,13 +41,6 @@ function processListSegmentsResponse(result){
 	    var msg = "error";
 	  }
 }
-
-function add_source(element, src, type) {
-    var source = document.createElement("source");
-    source.src = src;
-    source.type = type;
-    element.appendChild(source);
-    }
 
 function handleShowSegmentsClick(e){
 	var data = {};
