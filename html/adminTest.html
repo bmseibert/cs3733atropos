@@ -1,0 +1,32 @@
+<html><head>
+<script type='text/javascript' src='../js/api.js'></script>
+<script type='text/javascript' src='../js/showSegments.js'></script>
+<script type="text/javascript">
+function initialize() {
+  
+	// This is our initialization for the Main
+	
+   // get all constants
+   // refreshConstantsList();
+}
+
+</script></head><body onload="initialize()">
+
+<h1>Request to Show Segments <!--Text--></h1>
+<input type="button" value="Show Segments" onClick="JavaScript:handleShowSegmentsClick(this)"><form name="showSegmentsForm" method="post" style="width: 984px; height: 257px">
+<input type="text" name="result" style="width: 486px; height: 232px; ">
+
+</form>
+
+<div id="segmentList"></div>
+
+<h3>Register a Remote Website</h3>
+<form action="registerSite" method="post">
+Site URL: <input type="text" name="url"><br>
+<button type="button" value="Submit">Register</button>
+<button type="button" value="Submit">Unregister</button>
+</form>
+
+</body>
+</head>
+</html>
