@@ -45,7 +45,7 @@ public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPla
 		try {
 			successResponse = getPlaylists();
 		} catch (Exception ex) {
-			failMessage = "Could not grab list of playlists";
+			failMessage = "Could not grab list of playlists:: " + ex;
 			fail = true;
 		}
 		
