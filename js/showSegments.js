@@ -8,6 +8,7 @@ function processListSegmentsResponse(result){
 	var segments = js["segment"];
 	var status = js["statusCode"];
 	var output = "";
+	var output2 = ";"
 
 	
 	if (status == 200) {
@@ -19,8 +20,11 @@ function processListSegmentsResponse(result){
 	        var url = constantJson["url"];
 	        
 	        output = output + "Quote: " + name + "  Character Name: " + charname + "  URL: " + url + "\n";
+	        output2 = output2 + "<div id=\"segment" + name + "\"><b>" + name + ":</b> = " + url + "<br></div>";
+	        
 	      }
 	    document.showSegmentsForm.result.value = output
+	    segmentList.innerHTML = output2
 
 	  } else {
 	    var msg = "error";
