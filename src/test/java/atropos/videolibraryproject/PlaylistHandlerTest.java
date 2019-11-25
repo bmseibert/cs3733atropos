@@ -9,10 +9,13 @@ import com.google.gson.Gson;
 
 import atropos.videolibraryapp.CreatePlaylistHandler;
 import atropos.videolibraryapp.DeletePlaylistHandler;
+import atropos.videolibraryapp.ListPlaylistHandler;
 import atropos.videolibraryapp.http.CreatePlaylistRequest;
 import atropos.videolibraryapp.http.CreatePlaylistResponse;
 import atropos.videolibraryapp.http.DeletePlaylistRequest;
 import atropos.videolibraryapp.http.DeletePlaylistResponse;
+import atropos.videolibraryapp.http.EmptyRequest;
+import atropos.videolibraryapp.http.ListPlaylistsResponse;
 
 public class PlaylistHandlerTest extends LambdaTest {
 	
@@ -64,6 +67,15 @@ public class PlaylistHandlerTest extends LambdaTest {
         Assert.assertEquals(400, resp.statusCode);
     }
     
+    void testSuccessListPlaylistInput(String incoming, String outgoing) {
+    	ListPlaylistHandler handler = new ListPlaylistHandler();
+    	EmptyRequest req = new Gson().fromJson(incoming, EmptyRequest.class);
+       
+    	ListPlaylistsResponse resp = handler.handleRequest(req, createContext("create"));
+    	
+        Assert.assertEquals(200, resp.statusCode);
+    }
+    
     @Test
     public void testCreateandDeletePlaylist() {
     	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist1\"}";
@@ -90,6 +102,14 @@ public class PlaylistHandlerTest extends LambdaTest {
         } catch (IOException ioe) {
         	Assert.fail("Invalid:" + ioe.getMessage());
         }
+    }
+    
+    @Test
+    public void testListPlaylists() {
+    	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist1\"}";
+    	String RESULT = "Success";
+    	
+    	testSuccessListPlaylistInput(SAMPLE_INPUT_STRING, RESULT);
     }
 
 }
