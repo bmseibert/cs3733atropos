@@ -37,7 +37,7 @@ public class SegmentHandlerTest extends LambdaTest{
     @Test
     public void testAppendSegment() {
     	
-    	String input = "{\"playlist\": \"testPlaylist\", \"segment\": \"We move together\"}";
+    	String input = "{\"playlist\": \"new\", \"segment\": \"We move together\"}";
     	String RESULT = "Success";
     	
     	try {
