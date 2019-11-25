@@ -8,7 +8,7 @@
 <script type='text/javascript' src='../js/delete.js'></script> -->
 <script type='text/javascript' src='../js/api.js'></script>
 <script type='text/javascript' src='../js/showSegments.js'></script>
-
+<script type='text/javascript' src='../js/showPlaylists.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -21,8 +21,15 @@ function initialize() {
 
 </script></head><body onload="initialize()">
 
+<h1>Request to show Playlists<!--Text--></h1>
+<form name="showPlaylistsForm" method="get" style="width: 10px; height: 10px"> 
+<input type="button" value="Show Playlists" onClick="JavaScript:handleShowSegmentsClick(this)">
+</form>
 
-<h1>Request to Show Segments <!--Text--></h1> 
+<div id="playlistList"></div>
+
+
+<h2>Request to Show Segments <!--Text--></h2> 
 
 <form name="showSegmentsForm" method="post" style="width: 10px; height: 10px">
   <!-- Button For Show Segments -->
