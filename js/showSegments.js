@@ -15,7 +15,7 @@ function processListSegmentsResponse(result){
 	
 	if (status == 200) {
 	    // Update computation result
-		//bottom.innerHTML = "";
+		removeOldVideos();
 	    for (var i = 0; i < segments.length; i++) {
 	        var constantJson = segments[i];	        
 	        var name = constantJson["name"];
@@ -40,6 +40,13 @@ function processListSegmentsResponse(result){
 	  } else {
 	    var msg = "error";
 	  }
+}
+
+function removeOldVideos(){
+	const myNode = document.getElementById("bottom");
+	while (myNode.firstChild) {
+		myNode.removeChild(myNode.firstChild);
+	}
 }
 
 function handleShowSegmentsClick(e){
