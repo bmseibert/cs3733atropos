@@ -1,11 +1,12 @@
 <html><head>
 <!-- Paths (Insert Paths to JavaScript Files) -->
 
-<!-- <script type='text/javascript' src='../js/api.js'></script>
+<!-- 
 <script type='text/javascript' src='../js/get_constantList.js'></script>
 <script type='text/javascript' src='../js/add.js'></script>
 <script type='text/javascript' src='../js/create.js'></script>
 <script type='text/javascript' src='../js/delete.js'></script> -->
+<script type='text/javascript' src='../js/api.js'></script>
 <script type='text/javascript' src='../js/showSegment.js'></script>
 
 
@@ -23,9 +24,9 @@ function initialize() {
 
 <h1>Request to Show Segments <!--Text--></h1> 
 
-<form name="showSegmentsForm" method="get">
+<form name="showSegmentsForm" method="post">
   <!-- Button For Show Segments -->
-  <input type="button" value="Show Segments"  onClick="JavaScript:handleAddClick(this)">
+  <input type="button" value="Show Segments"  onClick="JavaScript:handleShowSegmentsClick(this)">
   <input name="result" readonly/>
 </form>
 

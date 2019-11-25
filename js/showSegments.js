@@ -10,10 +10,10 @@ function processListSegmentsResponse(result){
 	
 	if (status == 200) {
 	    // Update computation result
-	    document.addForm.result.value = segments
+	    document.showSegmentsForm.result.value = status
 	  } else {
 	    var msg = js["error"];
-	    document.addForm.result.value = "error:" + msg
+	    document.showSegmentsForm.result.value = "error:" + msg
 	  }
 }
 
@@ -34,9 +34,9 @@ function handleShowSegmentsClick(e){
 	    
 	    if (xhr.readyState == XMLHttpRequest.DONE) {
 	        console.log ("XHR:" + xhr.responseText);
-	        processAddResponse(xhr.responseText);
+	        processListSegmentsResponse(xhr.responseText);
 	      } else {
-	        processAddResponse("N/A");
+	    	processListSegmentsResponse("N/A");
 	      }
 	}
 }
