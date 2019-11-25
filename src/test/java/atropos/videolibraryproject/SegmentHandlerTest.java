@@ -11,7 +11,7 @@ import atropos.videolibraryapp.AppendSegmentHandler;
 import atropos.videolibraryapp.CreatePlaylistHandler;
 import atropos.videolibraryapp.DeletePlaylistHandler;
 import atropos.videolibraryapp.http.AppendSegmentResponse;
-import atropos.videolibraryapp.http.AppendVideoSegmentRequest;
+import atropos.videolibraryapp.http.AppendSegmentRequest;
 import atropos.videolibraryapp.http.CreatePlaylistRequest;
 import atropos.videolibraryapp.http.CreatePlaylistResponse;
 import atropos.videolibraryapp.http.DeletePlaylistRequest;
@@ -22,21 +22,23 @@ public class SegmentHandlerTest extends LambdaTest{
 	
     void testSuccessAppendInput(String incoming, String outgoing) throws IOException {
     	AppendSegmentHandler handler = new AppendSegmentHandler();
-    	AppendVideoSegmentRequest req = new Gson().fromJson(incoming, AppendVideoSegmentRequest.class);
+    	AppendSegmentRequest req = new Gson().fromJson(incoming, AppendSegmentRequest.class);
        
-//    	AppendSegmentResponse resp = handler.handleRequest(req, createContext("create"));
-//    	
-//    	Assert.assertEquals(outgoing, resp.name);
-//        Assert.assertEquals(200, resp.statusCode);
+    	AppendSegmentResponse resp = handler.handleRequest(req, createContext("create"));
+    	
+    	Assert.assertEquals(outgoing, resp.name);
+        Assert.assertEquals(200, resp.statusCode);
     }
 	
     void testFailAppendInput(String incoming, String outgoing) throws IOException {
     	AppendSegmentHandler handler = new AppendSegmentHandler();
-    	AppendVideoSegmentRequest req = new Gson().fromJson(incoming, AppendVideoSegmentRequest.class);
+    	AppendSegmentRequest req = new Gson().fromJson(incoming, AppendSegmentRequest.class);
 
-//    	AppendSegmentResponse resp = handler.handleRequest(req, createContext("create"));
-//    	
-//        Assert.assertEquals(400, resp.statusCode);
+    	AppendSegmentResponse resp = handler.handleRequest(req, createContext("create"));
+    	
+        Assert.assertEquals(400, resp.statusCode);
     }
+    
+    
 
 }

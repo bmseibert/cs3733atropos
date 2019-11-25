@@ -1,13 +1,13 @@
 package atropos.videolibraryapp.http;
 
 /** To work with AWS must not have final attributes, must have no-arg constructor, and all get/set methods. */
-public class AppendVideoSegmentRequest {
+public class AppendSegmentRequest {
 	String playlist;
 	String segment;
 	
-	public AppendVideoSegmentRequest() {}
+	public AppendSegmentRequest() {}
 	
-	public AppendVideoSegmentRequest(String playlist, String segment) 
+	public AppendSegmentRequest(String playlist, String segment) 
 	{
 		this.playlist = playlist;
 		this.segment = segment;

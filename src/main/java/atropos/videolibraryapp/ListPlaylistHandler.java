@@ -9,13 +9,11 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 import atropos.videolibraryapp.db.PlaylistsDAO;
-import atropos.videolibraryapp.http.CreatePlaylistRequest;
-import atropos.videolibraryapp.http.CreatePlaylistResponse;
 import atropos.videolibraryapp.http.EmptyRequest;
 import atropos.videolibraryapp.http.ListPlaylistsResponse;
 import atropos.videolibraryapp.model.Playlist;
 
-public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPlaylistsResponse>{
+public class ListPlaylistHandler implements RequestHandler<EmptyRequest,ListPlaylistsResponse>{
 	
 	LambdaLogger logger;
 	
