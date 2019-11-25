@@ -10,7 +10,7 @@ function processListSegmentsResponse(result){
 	
 	if (status == 200) {
 	    // Update computation result
-	    document.showSegmentsForm.result.value = status
+	    document.showSegmentsForm.result.value = segments
 	  } else {
 	    var msg = "error";
 	    document.showSegmentsForm.result.value = "error:" + msg
@@ -37,6 +37,6 @@ function handleShowSegmentsClick(e){
 	        processListSegmentsResponse(xhr.responseText);
 	      } else {
 	    	processListSegmentsResponse("N/A");
-	      }
+		      }
+		}
 	}
-}
