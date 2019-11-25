@@ -27,6 +27,19 @@ function initialize() {
 </form>
 
 <div id="playlistList"></div>
+</script></head><body onload="initialize()">
+<h3>Search for Video Segments</h3>
+<div class="topnav">
+  <input type="text" placeholder="Search Video Segments..">
+</div>
+
+<h3>Create/Delete a Playlist</h3>
+
+<form action="createPlaylist" method="post">
+Enter Playlist Name: <input type="text" name="playlist"><br>
+<button type="button" value="Submit">Create Playlist</button>
+<button type="button" value="Submit">Delete Playlist</button>
+</form>
 
 
 <h2>Request to Show Segments <!--Text--></h2> 
