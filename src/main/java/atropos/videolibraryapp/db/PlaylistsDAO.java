@@ -67,7 +67,7 @@ public class PlaylistsDAO {
             ps.setString(1,  name);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
-            		playlist = generatePlaylist(resultSet);			//If a new playlist name create a new playlist object
+            		playlist = generatePlaylist2(resultSet);			//If a new playlist name create a new playlist object
             	}  	
             resultSet.close();
             ps.close();
@@ -168,7 +168,7 @@ public class PlaylistsDAO {
             Playlist s = new Playlist("");
             while (resultSet.next()) {
             	currentPlaylist = resultSet.getString("playlistName");
-            	if (currentPlaylist != pastPlaylist){
+            	if (currentPlaylist.compareTo(pastPlaylist) != 0){
             		if(pastPlaylist != "") {
             			allPlaylists.add(s);
             		}
@@ -188,6 +188,11 @@ public class PlaylistsDAO {
     }
     
     private Playlist generatePlaylist(ResultSet resultSet) throws Exception {
+        String name  = resultSet.getString("playlistName");
+        return new Playlist (name);
+    }
+    
+    private Playlist generatePlaylist2(ResultSet resultSet) throws Exception {
         String name  = resultSet.getString("name");
         return new Playlist (name);
     }

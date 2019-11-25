@@ -78,7 +78,7 @@ public class PlaylistHandlerTest extends LambdaTest {
     
     @Test
     public void testCreateandDeletePlaylist() {
-    	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist1\"}";
+    	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist14\"}";
     	String RESULT = "Success";
     	
     	try {
@@ -91,7 +91,7 @@ public class PlaylistHandlerTest extends LambdaTest {
     
     @Test
     public void testCreateDuplicatePlaylist() {
-    	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist1\"}";
+    	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist13\"}";
     	String RESULT = "Success";
     	String RESULT2 = "Playlist already exists";
     	
