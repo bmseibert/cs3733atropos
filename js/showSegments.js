@@ -8,7 +8,7 @@ function processListSegmentsResponse(result){
 	var segments = js["segment"];
 	var status = js["statusCode"];
 	var output = "";
-	var output2 = ""
+	var output2 = "";
 
 	
 	if (status == 200) {
@@ -20,20 +20,30 @@ function processListSegmentsResponse(result){
 	        var url = constantJson["url"];
 	        
 	        output = output + "Quote: " + name + "  Character Name: " + charname + "  URL: " + url + "\n";
-	        output2 = output2 + "<div id=\"segment" + name + "\"><b>" + name + ":</b> = " + "<video id=\"name" + name + "width="320" height="240" controls><source src=\"" + url + type="video/ogg">" + "<br></div>";
+	        output2 = output2 + "<div id=\"segment" + name + "\"><b>" + name + ":</b> = " + url + "<br></div>";
 	        
-	        
-	        //<video id="num0" width="320" height="240" controls>
-//	        <source src="" type="video/ogg">
-//	        Your browser does not support the video tag.
-//	        </video>
+	        var iframe = document.createElement('iframe');
+	        iframe.src = url;
+	        iframe.width = '320';
+	        iframe.height = '240';
+
+	        var bottom = document.getElementById('bottom');
+	        bottom.appendChild(iframe);
+
 	      }
-	    segmentList.innerHTML = output2
+	    segmentList.innerHTML = output2;
 
 	  } else {
 	    var msg = "error";
 	  }
 }
+
+function add_source(element, src, type) {
+    var source = document.createElement("source");
+    source.src = src;
+    source.type = type;
+    element.appendChild(source);
+    }
 
 function handleShowSegmentsClick(e){
 	var data = {};
