@@ -130,9 +130,9 @@ public class PlaylistsDAO {
     }
 
     
-	public List<String> getAllPlaylistsNames() throws Exception {
+	public ArrayList<String> getAllPlaylistsNames() throws Exception {
 	        
-	        List<String> allPlaylists = new ArrayList<>();
+	        ArrayList<String> allPlaylists = new ArrayList<>();
 	        try {
 	        
 	            Statement statement = conn.createStatement();
@@ -156,11 +156,13 @@ public class PlaylistsDAO {
 
     public ArrayList<Playlist> getAllPlaylists() throws Exception {
         
-        ArrayList<Playlist> allPlaylists = new ArrayList<>();
+        ArrayList<Playlist> allPlaylists = new ArrayList<Playlist>();
         try {
-            Statement statement = conn.createStatement();
-            String query = "SELECT * FROM PlaylistSegment ORDER BY (playlistName);";
-            ResultSet resultSet = statement.executeQuery(query);
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM PlaylistSegment ORDER BY (playlistName);");
+            ResultSet resultSet = ps.executeQuery();
+//            Statement statement = conn.createStatement();
+//            String query = "SELECT * FROM PlaylistSegment ORDER BY (playlistName);";
+//            ResultSet resultSet = statement.executeQuery(query);
             String currentPlaylist = "";
             String pastPlaylist = "";
             Playlist s = new Playlist("");
@@ -177,7 +179,7 @@ public class PlaylistsDAO {
             }
 			allPlaylists.add(s);
             resultSet.close();
-            statement.close();
+            ps.close();
             return allPlaylists;
 
         } catch (Exception e) {

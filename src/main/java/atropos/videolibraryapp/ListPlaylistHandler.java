@@ -24,9 +24,9 @@ public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPla
 		if (logger != null) { 
 			logger.log("in createPlaylist"); 
 		}
-		PlaylistsDAO playDAO = new PlaylistsDAO((String)System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_pasword"));
+		PlaylistsDAO dao = new PlaylistsDAO((String)System.getenv("DB_url"),(String)System.getenv("DB_name"),(String)System.getenv("DB_password"));
 		ArrayList<Playlist> listPlaylist = new ArrayList<Playlist>();
-		listPlaylist = playDAO.getAllPlaylists();
+		listPlaylist = dao.getAllPlaylists();
 		return listPlaylist;
 	}
 	//Logic
@@ -35,7 +35,6 @@ public class ListPlaylistHandler implements RequestHandler< EmptyRequest,ListPla
 	public ListPlaylistsResponse handleRequest(EmptyRequest req, Context context) {
 		logger = context.getLogger();
 		logger.log("Loading Java Lambda handler of RequestHandler");
-		logger.log(req.toString());
 			
 		boolean fail = false;
 		
