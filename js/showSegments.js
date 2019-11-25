@@ -12,7 +12,7 @@ function processListSegmentsResponse(result){
 	    // Update computation result
 	    document.showSegmentsForm.result.value = status
 	  } else {
-	    var msg = js["error"];
+	    var msg = "error";
 	    document.showSegmentsForm.result.value = "error:" + msg
 	  }
 }
