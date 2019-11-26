@@ -38,7 +38,7 @@ public class ListSegmentsHandlerTest extends LambdaTest{
     @Test
     public void testListSegments() {
     	
-    	String input = "{\"playlist\": \"testPlaylist\",\"segment\": \"We move together\"}";
+    	String input = "{\"isRemote\": \"false\"}";
     	String RESULT = "Success";
     	
     	try {
