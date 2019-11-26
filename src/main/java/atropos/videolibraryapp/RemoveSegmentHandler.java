@@ -13,6 +13,14 @@ public class RemoveSegmentHandler implements RequestHandler<RemoveSegmentRequest
 	
 	LambdaLogger logger;
 	
+	Playlist getPlaylist(String name) throws Exception{
+		if (logger != null) { 
+			logger.log("in getPlaylist"); 
+		}
+		PlaylistsDAO dao = new PlaylistsDAO((String)System.getenv("DB_url"),(String)System.getenv("DB_name"),(String)System.getenv("DB_password"));
+		return dao.getPlaylist(name);
+	}
+	
 	//helpers
 	void RemoveSegment(Playlist playlist) throws Exception{
 		if (logger != null) { 
@@ -34,20 +42,26 @@ public class RemoveSegmentHandler implements RequestHandler<RemoveSegmentRequest
 		String playlistName = rsr.getPlaylist();
 		Playlist play = new Playlist(playlistName);
 		
+		try {
+			play = getPlaylist(playlistName);
+		}catch(Exception e) {
+			fail = true;
+			failMessage = "Unable to connect to database";
+		}
 		//logic
 		try {
 			RemoveSegment(play);
 			successMessage = "Success";
 		}catch (Exception e) {
 			fail = true;
-			failMessage = "";
+			failMessage = "Unable to connect to database";
 		}
 		
 		RemoveSegmentResponse rsresp;
 		if(fail) {
-			rsresp = new RemoveSegmentResponse(failMessage, 400);
+			rsresp = new RemoveSegmentResponse(400, failMessage);
 		}else {
-			rsresp = new RemoveSegmentResponse(200, successMessage);
+			rsresp = new RemoveSegmentResponse(successMessage, 200);
 		}
 		
 		return rsresp;
