@@ -84,14 +84,17 @@ public class SegmentsDAO {
                 resultSet.close();
                 return false;
             }
+            ps.close();
 
-            ps = conn.prepareStatement("INSERT INTO Segment (name,character,url,isMarked) values(?,?,?,?,?);");
+            ps = conn.prepareStatement("INSERT INTO VideoSegment (name, character, url, isMarked, isRemote) VALUES(?,?,?,?,?);"); 
             ps.setString(1,  segment.getName());
             ps.setString(2,  segment.getCharacter());
             ps.setString(3,  segment.getUrl());
             ps.setBoolean(4,  segment.getIsMarked());
             ps.setBoolean(5, segment.getIsRemote());
-            ps.executeUpdate();
+            ps.executeUpdate();    
+            //TODO FIX THIS EXECUTE UPDATE, UPLOAD SEGMENT BREAKS HERE
+            ps.close();
             return true;
 
         } catch (Exception e) {
@@ -118,6 +121,50 @@ public class SegmentsDAO {
             throw new Exception("Failed in getting segments: " + e.getMessage());
         }
     }
+    
+    
+    public ArrayList<Segment> searchSegmentsCharacter(String search) throws Exception{
+    	ArrayList<Segment> allSegments = new ArrayList<Segment>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where character LIKE ?;");
+            ps.setString(1, "%"+search+"%");
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+            	Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            ps.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting search segments by character: " + e.getMessage());
+        }
+    }
+    	
+    
+    public ArrayList<Segment> searchSegmentsQoute(String search) throws Exception{
+    	ArrayList<Segment> allSegments = new ArrayList<Segment>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ?;");
+            ps.setString(1, "%"+search+"%");
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+            	Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            ps.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting search segments by qoute: " + e.getMessage());
+        }
+    }
+        
+    
     
     private Segment generateSegment(ResultSet resultSet) throws Exception {
         String name  = resultSet.getString("name");
