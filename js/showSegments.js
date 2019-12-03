@@ -8,7 +8,6 @@ function processListSegmentsResponse(result){
 	var segments = js["segment"];
 	var status = js["statusCode"];
 	var output = "";
-	var output2 = "";
 	
 	console.log("processing list segments response");
 
@@ -22,8 +21,7 @@ function processListSegmentsResponse(result){
 	        var charname = constantJson["character"];
 	        var url = constantJson["url"];
 	        
-	        output = output + "Quote: " + name + "  Character Name: " + charname + "  URL: " + url + "\n";
-	        output2 = output2 + "<div id=\"segment" + name + "\"><b>" + name + ":</b> = " + url + "<br></div>";
+	        //output = output + "<div id=\"segment" + name + "\"><b>" + name + ":</b> = " + url + "<br></div>";
 	        
 	        var iframe = document.createElement('iframe');
 	        iframe.src = url;
@@ -35,7 +33,7 @@ function processListSegmentsResponse(result){
 	        console.log("Creating iFrames");
 	        
 	      }
-	    segmentList.innerHTML = output2;
+	    //segmentList.innerHTML = output;
 
 	  } else {
 	    var msg = "error";

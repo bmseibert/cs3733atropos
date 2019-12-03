@@ -171,9 +171,17 @@ paths:
       summary: removes the last segment from the playlist
       description: removes the last segment from the playlist
       operationId: requestRemoveSegment
+      consumes:
+      - application/json
       produces:
       - application/json
-      parameters: []
+      parameters: 
+      - in: body
+        name: RemoveSegmentRequest
+        description: removes a segment from the input playlist
+        required: true
+        schema:
+          $ref: '#/definitions/RemoveSegmentRequest'
       responses:
         200:
           description: segment removed
@@ -394,6 +402,13 @@ definitions:
     properties:
       segmentName:
         type: string
+      playlistName:
+        type: string
+  RemoveSegmentRequest:
+    type: object
+    required: 
+    - playlistName
+    properties:
       playlistName:
         type: string
   DeletePlaylistRequest:
