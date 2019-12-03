@@ -85,7 +85,6 @@ public class SegmentsDAO {
                 return false;
             }
             ps.close();
-
             ps = conn.prepareStatement("INSERT INTO VideoSegment (name,character,url,isMarked,isRemote) values(?,?,?,?,?);");
             ps.setString(1,  segment.getName());
             ps.setString(2,  segment.getCharacter());
