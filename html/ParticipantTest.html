@@ -33,13 +33,18 @@ Enter Playlist Name: <input type="text" name="playlist"><br>
 </form>
 
 <div id="playlistList"></div>
-<h4>Upload Video Segment</h4>
+<h3>Upload Video Segment</h3>
 <form name="uploadForm" method="post">
    <input name="segmentName" value="segmentName" />
    <input name="base64Encoding" hidden value=""/>
-   Select a segment in file: <input type="file" id="segmentName" name="segmentName">
+   Select a segment in file: <input type="file" id="segmentFile" name="segmentFile">
    <input type="button" id="uploadButton" value="Upload Segment" disabled onClick="JavaScript:handleCreateClick(this)">
 </form>
+<h3>Add/Remove Segments from Playlist</h3>
+<form>
+  Playlist Name:<br>
+  <input type="text" name="playlistName">
+  <input type="">
 <h3>Search for Video Segments</h3>
 <div class="topnav">
   <input type="text" placeholder="Search Video Segments..">
