@@ -20,25 +20,30 @@ function initialize() {
 }
 
 </script></head><body onload="initialize()">
+<h1>Participant Page</h1>
+<h3>Create Playlist</h3>
+<form action="createPlaylist" method="post">
+Enter Playlist Name: <input type="text" name="playlist"><br>
+<button type="button" value="Submit">Create Playlist</button>
+</form>
 
-<h1>Request to show Playlists<!--Text--></h1>
+<h3>List Playlists<!--Text--></h3>
 <form name="showPlaylistsForm" method="get" style="width: 10px; height: 10px"> 
 	<input type="button" value="Show Playlists" onClick="JavaScript:handleShowPlaylistsClick(this)">
 </form>
 
 <div id="playlistList"></div>
+<h4>Upload Video Segment</h4>
+<form name="uploadForm" method="post">
+   <input name="segmentName" value="segmentName" />
+   <input name="base64Encoding" hidden value=""/>
+   Select a segment in file: <input type="file" id="segmentName" name="segmentName">
+   <input type="button" id="uploadButton" value="Upload Segment" disabled onClick="JavaScript:handleCreateClick(this)">
+</form>
 <h3>Search for Video Segments</h3>
 <div class="topnav">
   <input type="text" placeholder="Search Video Segments..">
 </div>
-
-<h3>Create/Delete a Playlist</h3>
-
-<form action="createPlaylist" method="post">
-Enter Playlist Name: <input type="text" name="playlist"><br>
-<button type="button" value="Submit">Create Playlist</button>
-<button type="button" value="Submit">Delete Playlist</button>
-</form>
 
 
 <h2>Request to Show Segments <!--Text--></h2> 
