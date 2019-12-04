@@ -23,7 +23,7 @@ public class SiteRegistrationHandlersTest extends LambdaTest{
        
     	RegisterSiteResponse resp = handler.handleRequest(req, createContext("create"));
     	
-    	Assert.assertEquals(outgoing, resp.error);
+    	Assert.assertEquals(outgoing, resp.name);
         Assert.assertEquals(200, resp.statusCode);
     }
 	
@@ -75,7 +75,7 @@ public class SiteRegistrationHandlersTest extends LambdaTest{
     	String RESULT = "Success";
     	
     	try {
-        	testSuccessRegisterInput(input, RESULT);
+        	testSuccessUnRegisterInput(input, RESULT);
         } catch (IOException ioe) {
         	Assert.fail("Invalid:" + ioe.getMessage());
         }
