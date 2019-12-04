@@ -38,6 +38,7 @@ public class MarkSegmentHandler implements RequestHandler<ChangeMarkVideoRequest
 		//logic
 		try {
 			unmarkVideoSegment(newSeg);
+			successMessage = "Success";
 		}catch (Exception e){
 			fail = true;
 			failMessage = "Failed to update marked status";
