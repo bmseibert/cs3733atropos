@@ -16,7 +16,7 @@ function processListPlaylistsResponse(result){
 	        var playlistJson = playlists[i];	        
 	        var name = playlistJson["name"];
 	        
-	        output = output + "<div id=\"segment" + name + "\"><b>" + name + ":</b><br></div>";
+	        output = output + "<div id=\"segment" + name + "\">" + name + ":<br></div>";
 	        
 	      }
 	    playlistList.innerHTML = output;
