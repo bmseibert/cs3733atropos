@@ -123,11 +123,38 @@ public class SegmentsDAO {
     }
     
     
-    public ArrayList<Segment> searchSegmentsCharacter(String search) throws Exception{
+
+    public ArrayList<Segment> searchSegmentsCharacterQoute(String qoute, String character, Boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where character LIKE ?;");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ? and character LIKE ? and isRemote=? ;");
+            ps.setString(1, "%"+qoute+"%");
+            ps.setString(2, "%"+character+"%");
+            ps.setBoolean(3, isRemote);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+            	Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            ps.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting search segments by character: " + e.getMessage());
+        }
+    }
+
+    
+    
+    
+    public ArrayList<Segment> searchSegmentsCharacter(String search, Boolean isRemote) throws Exception{
+    	ArrayList<Segment> allSegments = new ArrayList<Segment>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where character LIKE ? and isRemote=?;");
             ps.setString(1, "%"+search+"%");
+            ps.setBoolean(2, isRemote);
             ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
@@ -144,11 +171,12 @@ public class SegmentsDAO {
     }
     	
     
-    public ArrayList<Segment> searchSegmentsQoute(String search) throws Exception{
+    public ArrayList<Segment> searchSegmentsQoute(String search, Boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ?;");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ? and isRemote=?;");
             ps.setString(1, "%"+search+"%");
+            ps.setBoolean(2, isRemote);
             ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
