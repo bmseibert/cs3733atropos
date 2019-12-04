@@ -2,28 +2,26 @@ function processCreateResponse(result) {
   // Can grab any DIV or SPAN HTML element and can then manipulate its
   // contents dynamically via javascript
   console.log("result:" + result);
-
-  refreshConstantsList();
+  
+  // refreshSegmentsList();
+  //TODO: will need to update the segments list after upload
 }
 
 function handleCreateClick(e) {
-  var form = document.createForm;
+  var form = document.uploadForm;
  
   var data = {};
-  data["name"]               = form.segmentName.value;
-  
-  if (form.system.checked) {  // be sure to flag system constant requests...
-     data["system"] = true;
-  }
+  data["characterName"] = form.characterName.value;
+  data["characterQuote"] = form.characterQuote.value;
   
   // base64EncodedValue":"data:text/plain;base64,My4xND....."
-  var segments = document.createForm.base64Encoding.value.split(',');
+  var segments = document.uploadForm.base64Encoding.value.split(',');
   data["base64EncodedValue"] = segments[1];  // skip first one 
 
   var js = JSON.stringify(data);
   console.log("JS:" + js);
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", create_url, true);
+  xhr.open("POST", upload_segment_url, true);
 
   // send the collected data as JSON
   xhr.send(js);
