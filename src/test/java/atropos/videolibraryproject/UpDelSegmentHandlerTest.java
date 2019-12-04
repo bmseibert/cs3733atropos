@@ -57,10 +57,11 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
     
     
     
+    
     @Test
     public void testUploadSegment() {
     	
-    	String input = "{\"segment\": \"We move together more\"}";
+    	String input = "{\"name\": \"We move together more\", \"character\": \"stew\", \"url\": \"NA\"}";
     	String RESULT = "Success";
     	
     	try {
