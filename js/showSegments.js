@@ -21,7 +21,7 @@ function processListSegmentsResponse(result){
 	        var charname = constantJson["character"];
 	        var url = constantJson["url"];
 	        
-	        //output = output + "<div id=\"segment" + name + "\"><b>" + name + ":</b> = " + url + "<br></div>";
+	        output = output + "<div id=\"segment" + name + "\"><b>" + name + "-</b>  " + charname + "<br></div>";
 	        
 	        var iframe = document.createElement('iframe');
 	        iframe.src = url;
@@ -33,7 +33,7 @@ function processListSegmentsResponse(result){
 	        console.log("Creating iFrames");
 	        
 	      }
-	    //segmentList.innerHTML = output;
+	    segmentList.innerHTML = output;
 
 	  } else {
 	    var msg = "error";

@@ -122,6 +122,50 @@ public class SegmentsDAO {
         }
     }
     
+    
+    public ArrayList<Segment> searchSegmentsCharacter(String search) throws Exception{
+    	ArrayList<Segment> allSegments = new ArrayList<Segment>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where character LIKE ?;");
+            ps.setString(1, "%"+search+"%");
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+            	Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            ps.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting search segments by character: " + e.getMessage());
+        }
+    }
+    	
+    
+    public ArrayList<Segment> searchSegmentsQoute(String search) throws Exception{
+    	ArrayList<Segment> allSegments = new ArrayList<Segment>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ?;");
+            ps.setString(1, "%"+search+"%");
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+            	Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            ps.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting search segments by qoute: " + e.getMessage());
+        }
+    }
+        
+    
+    
     private Segment generateSegment(ResultSet resultSet) throws Exception {
         String name  = resultSet.getString("name");
         String character = resultSet.getString("character");
