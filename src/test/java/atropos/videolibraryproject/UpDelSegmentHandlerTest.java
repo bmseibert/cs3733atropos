@@ -61,7 +61,7 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
     @Test
     public void testUploadSegment() {
     	
-    	String input = "{\"name\": \"We move together more\", \"character\": \"stew\", \"url\": \"NA\"}";
+    	String input = "{\"name\": \"Where is Sebs\", \"character\": \"Ben\", \"url\": \"www.whereissebs.com\"}";
     	String RESULT = "Success";
     	
     	try {
@@ -75,7 +75,7 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
     @Test
     public void testDeleteSegment() {
     	
-    	String input = "{\"segment\": \"We move together more\"}";
+    	String input = "{\"segment\": \"Where is Sebs\"}";
     	String RESULT = "Success";
     	
     	try {
