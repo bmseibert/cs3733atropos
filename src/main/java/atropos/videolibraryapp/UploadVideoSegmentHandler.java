@@ -1,6 +1,7 @@
 package atropos.videolibraryapp;
 
 import java.io.ByteArrayInputStream;
+import java.net.URL;
 
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.lambda.runtime.Context;
@@ -43,7 +44,7 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		}
 	}
 	
-	boolean uploadToBucket(String character, String quote, byte[] data) {
+	String uploadToBucket(String character, String quote, byte[] data) {
 		
 		if (s3 == null) {
 			logger.log("attach to S3 request");
@@ -58,7 +59,7 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		PutObjectResult res = s3.putObject(new PutObjectRequest("cs3733atropos", BUCKET + quote, bais, omd)
 				.withCannedAcl(CannedAccessControlList.PublicRead));
 		
-		return true;
+		return s3.getUrl("cs3733atropos", quote).toExternalForm();
 	}
 	
 	void uploadSegment(String name, String character, String url) throws Exception{
@@ -93,15 +94,9 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 			isDup = IsDuplicate(segmentName);
 			try {
 				if(!isDup) {
-					boolean inBucket = uploadToBucket(charName, segmentName, encoded);
-						if(inBucket) {
-							uploadSegment(segmentName, charName, url);
-							successResponse = "Segment Created";
-						}
-						else {
-							fail = true;
-							failMessage = "Unable to to put segment in s3 bucket";
-						}
+					String inBucket = uploadToBucket(charName, segmentName, encoded);
+					uploadSegment(segmentName, charName, url);
+					successResponse = "Segment Created";
 				}else {
 					successResponse = "Already Exists";
 				}
