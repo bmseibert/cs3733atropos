@@ -75,7 +75,7 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		if (fail) {
 			uvsresp = new UploadVideoSegmentResponse(400, failMessage); // fail
 		} else {
-			uvsresp = new UploadVideoSegmentResponse(successResponse, 200);  // success
+			uvsresp = new UploadVideoSegmentResponse(successResponse, 200, url);  // success
 		}
 		return uvsresp; 
 	}

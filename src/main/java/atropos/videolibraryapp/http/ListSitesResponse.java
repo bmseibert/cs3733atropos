@@ -11,10 +11,10 @@ public class ListSitesResponse {
 	public int statusCode;
 	public String error;
 	
-	public ListSitesResponse(ArrayList<Site> site, int code){
+	public ListSitesResponse(ArrayList<Site> site, String error, int code){
 		this.site = site;
 		this.statusCode = code;
-		this.error = "";
+		this.error = error;
 	}
 	
 	public ListSitesResponse(int code, String errorMessage) {

@@ -56,33 +56,21 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
     }
     
     
-    
     @Test
     public void testUploadSegment() {
     	
-    	String input = "{\"segment\": \"We move together more\"}";
+    	String input = "{\"name\": \"Where is Sebs\", \"character\": \"Ben\", \"url\": \"www.whereissebs.com\"}";
     	String RESULT = "Success";
+    	String input1 = "{\"segment\": \"Where is Sebs\"}";
     	
     	try {
         	testSuccessUploadInput(input, RESULT);
+        	testSuccessDeleteInput(input1, RESULT);
         } catch (IOException ioe) {
         	Assert.fail("Invalid:" + ioe.getMessage());
         }
     	
     }
     
-    @Test
-    public void testDeleteSegment() {
-    	
-    	String input = "{\"segment\": \"We move together more\"}";
-    	String RESULT = "Success";
-    	
-    	try {
-        	testSuccessDeleteInput(input, RESULT);
-        } catch (IOException ioe) {
-        	Assert.fail("Invalid:" + ioe.getMessage());
-        }
-    	
-    }
 	
 }
