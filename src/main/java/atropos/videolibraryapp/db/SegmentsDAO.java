@@ -127,7 +127,7 @@ public class SegmentsDAO {
     public ArrayList<Segment> searchSegmentsCharacterQoute(String qoute, String character, Boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ? and character LIKE ? and isRemote=? ;");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ? AND `character` LIKE ? AND isRemote=?;");
             ps.setString(1, "%"+qoute+"%");
             ps.setString(2, "%"+character+"%");
             ps.setBoolean(3, isRemote);
@@ -152,7 +152,7 @@ public class SegmentsDAO {
     public ArrayList<Segment> searchSegmentsCharacter(String search, Boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where character LIKE ? and isRemote=?;");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where 'character' LIKE ? and isRemote=?;");
             ps.setString(1, "%"+search+"%");
             ps.setBoolean(2, isRemote);
             ResultSet resultSet = ps.executeQuery();

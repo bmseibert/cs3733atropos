@@ -7,8 +7,6 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 import atropos.videolibraryapp.db.SegmentsDAO;
-import atropos.videolibraryapp.http.CreatePlaylistRequest;
-import atropos.videolibraryapp.http.CreatePlaylistResponse;
 import atropos.videolibraryapp.http.SearchVideoSegmentRequest;
 import atropos.videolibraryapp.http.SearchVideoSegmentsResponse;
 import atropos.videolibraryapp.model.Segment;
@@ -29,17 +27,19 @@ public class SearchSegmentsHandler implements RequestHandler<SearchVideoSegmentR
 		Boolean fail = false;
 		String successResponse = "";
 		String failMessage = "";
+		int phraseLength = req.getPhrase().length();
+		int characterLength = req.getCharacter().length();
+		int segsSize = 0;
 		
 		
-		
-		if(req.getPhrase() == null && req.getCharacter() == null) {
-			successResponse = "Nothing was inputed as a search";
+		if(phraseLength < 1 && characterLength < 1) {
+			successResponse = "Success, but no input for search";
 		}
 		
-		else if (req.getPhrase() == null) {
+		else if (phraseLength < 1 && characterLength >=1) {
 			try {
 				segments = segDAO.searchSegmentsCharacter(req.getCharacter(), req.getIsRemote());
-				successResponse = "Successfully searched by character name";
+				successResponse = "Successfully searched by character";
 				
 			}
 			catch(Exception e) {
@@ -48,7 +48,7 @@ public class SearchSegmentsHandler implements RequestHandler<SearchVideoSegmentR
 			}
 		}
 		
-		else if (req.getCharacter() == null) {
+		else if (phraseLength >=1 && characterLength <1) {
 			try {
 				segments = segDAO.searchSegmentsQoute(req.getPhrase(), req.getIsRemote());
 			    successResponse = "Successfully searched by phrase";
