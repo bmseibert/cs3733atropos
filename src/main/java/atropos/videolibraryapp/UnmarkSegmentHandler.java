@@ -9,7 +9,7 @@ import atropos.videolibraryapp.http.ChangeMarkVideoRequest;
 import atropos.videolibraryapp.http.UnmarkSegmentResponse;
 import atropos.videolibraryapp.model.Segment;
 
-public class UnmarkSegementHandler implements RequestHandler<ChangeMarkVideoRequest, UnmarkSegmentResponse>{
+public class UnmarkSegmentHandler implements RequestHandler<ChangeMarkVideoRequest, UnmarkSegmentResponse>{
 	
 	LambdaLogger logger;
 	
