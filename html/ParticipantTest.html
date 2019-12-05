@@ -6,6 +6,7 @@
 <script type='text/javascript' src='../js/showPlaylists.js'></script>
 <script type='text/javascript' src='../js/upload.js'></script>
 <script type='text/javascript' src='../js/createPlaylist.js'></script>
+<script type='text/javascript' src='../js/search.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -54,14 +55,18 @@ Enter Playlist Name: <input type="text" value="" name="playlist"><br>
   <input type="button" id="removeSegmentButton" value="Remove Segment"/>
 </form>
 <h3>Search for Video Segments</h3>
-<div class="topnav">
-  <input type="text" placeholder="Search Video Segments..">
-  Local
-  <input type="checkbox" name="Local" value="Local">
-  Remote
-  <input type="checkbox" name="Remote" value="Remote">
-</div>
 
+<form name="searchSegmentsForm" method="post">
+  <input type="text" name="phrase" placeholder="Search Segments by Phrase.." value="">
+  <input type="text" name="character" placeholder="Search Segments by Character.." value="">
+  <input type="button" id="submit" value="Search" onClick="JavaScript:handleSearchSegments(this)"/>
+  
+  Remote
+  <input type="checkbox" name="remote">
+  
+</form>
+
+<div id="searchResults"></div>
 
 <h3>List Video Segments <!--Text--></h3> 
    
