@@ -10,6 +10,7 @@
 <script type='text/javascript' src='../js/deletePlaylist.js'></script>
 <script type='text/javascript' src='../js/appendToPlaylist.js'></script>
 <script type='text/javascript' src='../js/removeFromPlaylist.js'></script>
+<script type='text/javascript' src='../js/deleteSegment.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -48,7 +49,6 @@ Enter Playlist Name: <input type="text" value="" name="playlist"><br>
    Select a segment in file: <input type="file" id="segmentFile" name="segmentFile">
    <input type="button" id="uploadButton" value="Upload Segment" disabled onClick="JavaScript:handleCreateClick(this)">
 </form>
-
 <script>
 function getBase64(file) {
 	var reader = new FileReader();
@@ -74,7 +74,11 @@ function handleFileSelect(evt) {
 // register
 document.getElementById('segmentFile').addEventListener('change', handleFileSelect, false);
 </script>
-
+<h3>Remove Video Segment from Library</h3>
+<form name="deleteSegmentForm" method="post">
+   <input name="characterQuote" value="Segment name (Quote)" />
+   <input type="button" id="deleteButton" value="Delete Segment" onClick="JavaScript:requestDelete(this)">
+</form>
 
 <h3>Add/Remove Segments from Playlist</h3>
 <form name="addSegmentForm" method="post">

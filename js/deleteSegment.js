@@ -2,8 +2,10 @@ function processDeleteResponse(result) {
   // Can grab any DIV or SPAN HTML element and can then manipulate its
   // contents dynamically via javascript
   console.log("deleted :" + result);
-  
-  refreshConstantsList();
+  var js = JSON.parse(result);
+  var name = js["name"];
+  alert(name);
+  //refreshConstantsList();
 }
 
 function requestDelete(val) {
@@ -14,12 +16,12 @@ function requestDelete(val) {
 
 function processDelete(val) {
   var data = {};
-  data["name"] = val;
+  data["segment"] = deleteSegmentForm.characterQuote.value;
 
   var js = JSON.stringify(data);
   console.log("JS:" + js);
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", delete_url, true);  // Can't be DELETE since then no data sent via JSON
+  xhr.open("POST", delete_segment_url, true);  // Can't be DELETE since then no data sent via JSON
 
   // send the collected data as JSON
   xhr.send(js);

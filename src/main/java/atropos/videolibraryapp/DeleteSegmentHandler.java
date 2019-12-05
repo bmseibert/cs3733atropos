@@ -68,9 +68,8 @@ public class DeleteSegmentHandler implements RequestHandler< DeleteVideoSegmentR
 		}
 		
 		if(!seg.getIsRemote()) {
-			s3.deleteObject(new DeleteObjectRequest("cs3733atropos", BUCKET + name));
+			s3.deleteObject(new DeleteObjectRequest("cs3733atropos", BUCKET + name + ".ogg"));
 		}
-		
 	}
 	
 	//Logic
