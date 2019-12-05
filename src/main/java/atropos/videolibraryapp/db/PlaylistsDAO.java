@@ -160,9 +160,6 @@ public class PlaylistsDAO {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM PlaylistSegment ORDER BY (playlistName);");
             ResultSet resultSet = ps.executeQuery();
-//            Statement statement = conn.createStatement();
-//            String query = "SELECT * FROM PlaylistSegment ORDER BY (playlistName);";
-//            ResultSet resultSet = statement.executeQuery(query);
             String currentPlaylist = "";
             String pastPlaylist = "";
             Playlist s = new Playlist("");
@@ -178,8 +175,18 @@ public class PlaylistsDAO {
             	s.appendVideoSegment(segDAO.getSegment(resultSet.getString("segmentName")));
             }
 			allPlaylists.add(s);
-            resultSet.close();
+			resultSet.close();
             ps.close();
+            
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM Playlist where Playlist.name NOT IN (select playlistName from PlaylistSegment) ORDER BY (name);");
+            ResultSet resultSet2 = ps2.executeQuery();
+            while (resultSet2.next()) {
+            		s = generatePlaylist2(resultSet2);
+            		allPlaylists.add(s);
+            	}
+            
+            resultSet2.close();
+            ps2.close();
             return allPlaylists;
 
         } catch (Exception e) {
