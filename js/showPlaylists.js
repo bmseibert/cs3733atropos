@@ -32,7 +32,7 @@ function handleShowPlaylistsClick(e){
 	xhr.open("GET", list_playlist_url, true);
 	
 	// send the collected data as JSON
-	xhr.send(null);
+	xhr.send();
 	
 	xhr.onloadend = function () {
 		console.log(xhr);

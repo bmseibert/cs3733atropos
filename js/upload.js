@@ -15,12 +15,8 @@ function handleCreateClick(e) {
   data["characterQuote"] = form.characterQuote.value;
   
   // base64EncodedValue":"data:text/plain;base64,My4xND....."
-  const reader = new FileReader();
-  var binaryString = reader.readAsBinaryString(document.uploadForm.base64EncodedValue);
-  var encodedData = document.uploadForm.bota(binaryString);
-  //var segments = document.uploadForm.base64EncodedValue.value.split(',');
-  //data["base64EncodedValue"] = segments[1];  // skip first one 
-  data["base64EncodedValue"] = encodedData;
+  var segments = document.uploadForm.base64EncodedValue.value.split(',');
+  data["base64EncodedValue"] = segments[1];  // skip first one 
 
   var js = JSON.stringify(data);
   console.log("JS:" + js);
