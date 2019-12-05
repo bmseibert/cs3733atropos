@@ -122,7 +122,29 @@ public class SegmentsDAO {
         }
     }
     
+    public ArrayList<Segment> getAllSegmentsByMarkRemote(Boolean isMarked, Boolean isRemote) throws Exception {
+        
+        ArrayList<Segment> allSegments = new ArrayList<Segment>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where isMarked=? and isRemote=?;");
+            ps.setBoolean(1, isMarked);
+            ps.setBoolean(2, isRemote);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+            	Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            ps.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting segments: " + e.getMessage());
+        }
+    }
     
+
 
     public ArrayList<Segment> searchSegmentsCharacterQoute(String qoute, String character, Boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
