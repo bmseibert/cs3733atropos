@@ -8,6 +8,7 @@
 <script type='text/javascript' src='../js/createPlaylist.js'></script>
 <script type='text/javascript' src='../js/search.js'></script>
 <script type='text/javascript' src='../js/deletePlaylist.js'></script>
+<script type='text/javascript' src='../js/appendToPlaylist.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -80,7 +81,7 @@ document.getElementById('segmentFile').addEventListener('change', handleFileSele
   <input type="text" name="playlistName" value="playlistName" />
   Segment Name:
   <input type="text" name="segmentName" value="segmentName"/>
-  <input type="button" id="addSegmentButton" value="Add Segment"/>
+  <input type="button" id="addSegmentButton" value="Add Segment" onClick="JavaScript:handleAppendToPlaylistClick(this)"/>
   <input type="button" id="removeSegmentButton" value="Remove Segment"/>
 </form>
 <h3>Search for Video Segments</h3>
