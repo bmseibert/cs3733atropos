@@ -4,6 +4,8 @@ public class RemoveSegmentRequest {
 	
 	String playlist;
 	
+	public RemoveSegmentRequest() {}
+	
 	public RemoveSegmentRequest(String playlist) {
 		this.playlist = playlist;
 	}
