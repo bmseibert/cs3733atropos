@@ -20,7 +20,10 @@ public class Playlist {
 	}
 	
 	public String getLastSegmentName() {
-		return this.segments.get(this.segments.size() - 1).getName();
+		if(this.segments.size() > 0) {
+			return this.segments.get(this.segments.size() - 1).getName();
+		}
+		return null;
 	}
 	
 	public void appendVideoSegment(Segment seg) {
