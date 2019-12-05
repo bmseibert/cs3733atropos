@@ -50,7 +50,7 @@ public class SearchSegmentsHandler implements RequestHandler<SearchVideoSegmentR
 		
 		else if (phraseLength >=1 && characterLength <1) {
 			try {
-				segments = segDAO.searchSegmentsQoute(req.getPhrase(), req.getIsRemote());
+				segments = segDAO.searchSegmentsQuote(req.getPhrase(), req.getIsRemote());
 			    successResponse = "Successfully searched by phrase";
 			}
 			catch(Exception e) {
