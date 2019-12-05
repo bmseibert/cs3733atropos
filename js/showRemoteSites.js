@@ -8,6 +8,7 @@ function refreshRemoteSiteList{
 	
 	var xhr = new XMLHttpRequest();
 	  xhr.open("GET", list_sites_url, true);
+	  xhr.setRequestHeader("x-api-key", apikey);
 	// send the collected data as JSON
 	  xhr.send(js);
 	   
