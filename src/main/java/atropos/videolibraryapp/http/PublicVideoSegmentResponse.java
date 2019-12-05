@@ -3,21 +3,21 @@ package atropos.videolibraryapp.http;
 import java.util.ArrayList;
 import java.util.List;
 
-import atropos.videolibraryapp.model.Segment;
+import atropos.videolibraryapp.model.Segments;
 
 public class PublicVideoSegmentResponse {
-	public final List<Segment> segments;
+	public final List<Segments> segments;
 	public final int statusCode;
 	public final String error;
 	
-	public PublicVideoSegmentResponse (List<Segment> list, int code) {
+	public PublicVideoSegmentResponse (List<Segments> list, int code) {
 		this.segments = list;
 		this.statusCode = code;
 		this.error = "";
 	}
 	
 	public PublicVideoSegmentResponse (int code, String errorMessage) {
-		this.segments = new ArrayList<Segment>();
+		this.segments = new ArrayList<Segments>();
 		this.statusCode = code;
 		this.error = errorMessage;
 	}
