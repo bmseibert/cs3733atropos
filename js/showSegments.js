@@ -48,8 +48,14 @@ function removeOldVideos(){
 }
 
 function handleShowSegmentsClick(e){
+	var form = document.showSegmentsForm
+	
 	var data = {};
-	data["isRemote"] = "false";
+	if (form.remote.checked) {  // be sure to flag system constant requests...
+	     data["isRemote"] = true;
+	  }else{
+		data["isRemote"] = false;
+	}
 	
 	var js = JSON.stringify(data);
 	var xhr = new XMLHttpRequest();
