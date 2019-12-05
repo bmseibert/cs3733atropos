@@ -1,8 +1,12 @@
 package atropos.videolibraryapp;
 
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.DeleteObjectRequest;
 
 import atropos.videolibraryapp.db.SegmentsDAO;
 import atropos.videolibraryapp.http.DeleteVideoSegmentRequest;
@@ -12,6 +16,13 @@ import atropos.videolibraryapp.model.Segment;
 public class DeleteSegmentHandler implements RequestHandler< DeleteVideoSegmentRequest, DeleteVideoSegmentResponse>{
 		
 	LambdaLogger logger;
+	
+	private AmazonS3 s3 = null;
+	
+	// Note: this works, but it would be better to move this to environment/configuration mechanisms
+	// which you don't have to do for this project.
+	public static final String BUCKET = "Star Trek Videos/";
+	
 	//Helpers
 	public boolean isInDB(String name) throws Exception{
 		if (logger != null) { 
@@ -29,13 +40,39 @@ public class DeleteSegmentHandler implements RequestHandler< DeleteVideoSegmentR
 	
 	public void deleteFromDB(String name) throws Exception {
 		if (logger != null) { 
-			logger.log("in check for delete from db"); 
+			logger.log("In check for delete from db"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
 		Segment seg = new Segment(name);
 		dao.deleteSegment(seg);
 		
 	}
+	
+	public void deleteFromBucket(String name) {
+		if (logger != null) { 
+			logger.log("Deleting from s3 Bucket"); 
+		}
+		
+		if (s3 == null) {
+			logger.log("attach to S3 request");
+			s3 = AmazonS3ClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
+			logger.log("attach to S3 succeed");
+		}
+		
+		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
+		Segment seg = new Segment(name);  
+		try {
+			seg = dao.getSegment(name);
+		} catch (Exception e) {
+			logger.log("Can't Connect to Database");
+		}
+		
+		if(!seg.getIsRemote()) {
+			s3.deleteObject(new DeleteObjectRequest("cs3733atropos", BUCKET + name));
+		}
+		
+	}
+	
 	//Logic
 
 	@Override
@@ -55,6 +92,7 @@ public class DeleteSegmentHandler implements RequestHandler< DeleteVideoSegmentR
 		try {	
 			exists = isInDB(segmentName);
 			if(exists) {
+				deleteFromBucket(segmentName);
 				try {
 					deleteFromDB(segmentName);
 					successMessage = "Success";

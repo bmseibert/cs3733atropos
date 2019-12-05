@@ -59,7 +59,7 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		PutObjectResult res = s3.putObject(new PutObjectRequest("cs3733atropos", BUCKET + quote, bais, omd)
 				.withCannedAcl(CannedAccessControlList.PublicRead));
 		
-		return s3.getUrl("cs3733atropos", quote).toExternalForm();
+		return s3.getUrl("cs3733atropos", BUCKET + quote).toExternalForm();
 	}
 	
 	void uploadSegment(String name, String character, String url) throws Exception{
@@ -88,15 +88,23 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		//logic
 		String segmentName = uvsr.getName();
 		String charName = uvsr.getCharacter();
-		String url = "https://cs3733atropos.s3.amazonaws.com/Star+Trek+Videos/" + segmentName + ".ogg";
 		byte[] encoded = java.util.Base64.getDecoder().decode(uvsr.getValue());
+		String url = "";
 		try {
 			isDup = IsDuplicate(segmentName);
 			try {
 				if(!isDup) {
-					String inBucket = uploadToBucket(charName, segmentName, encoded);
-					uploadSegment(segmentName, charName, url);
-					successResponse = "Segment Created";
+					try {
+					url = uploadToBucket(charName, segmentName, encoded);
+					if(url != null) {
+						uploadSegment(segmentName, charName, url);
+						successResponse = "Segment Created";
+					}
+					}catch(Exception e) {
+						fail = true;
+						failMessage = "Unable to Upload Video Segment to bucket";
+					}
+					
 				}else {
 					successResponse = "Already Exists";
 				}
