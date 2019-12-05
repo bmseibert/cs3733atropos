@@ -14,7 +14,7 @@ function processListPlaylistsResponse(result){
 	    for (var i = 0; i < playlists.length; i++) {
 	    	console.log(playlists.length);
 	        var playlistJson = playlists[i];	        
-	        var name = playlistJson["playlist"];
+	        var name = playlistJson["name"];
 	        
 	        output = output + "<div id=\"segment" + name + "\"> - " + name + "<br></div>";
 	        
