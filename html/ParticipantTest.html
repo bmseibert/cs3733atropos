@@ -9,6 +9,7 @@
 <script type='text/javascript' src='../js/api.js'></script>
 <script type='text/javascript' src='../js/showSegments.js'></script>
 <script type='text/javascript' src='../js/showPlaylists.js'></script>
+<script type='text/javascript' src='../js/upload.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -37,9 +38,9 @@ Enter Playlist Name: <input type="text" name="playlist"><br>
 <form name="uploadForm" method="post">
    <input name="characterName" value="characterName" />
    <input name="characterQuote" value="characterQuote" />
-   <input name="base64Encoding" hidden value=""/>
+   <input name="base64EncodedValue" hidden value=""/>
    Select a segment in file: <input type="file" id="segmentFile" name="segmentFile">
-   <input type="button" id="uploadButton" value="Upload Segment" disabled onClick="JavaScript:handleCreateClick(this)">
+   <input type="button" id="uploadButton" value="Upload Segment" onClick="JavaScript:handleCreateClick(this)">
 </form>
 <h3>Add/Remove Segments from Playlist</h3>
 <form name="addSegmentForm" method="post">
