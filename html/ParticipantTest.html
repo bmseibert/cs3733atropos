@@ -43,8 +43,8 @@ Enter Playlist Name: <input type="text" value="" name="playlist"><br>
 <div id="playlistList"></div>
 <h3>Upload Video Segment</h3>
 <form name="uploadForm" method="post">
-   <input name="characterName" value="characterName" />
-   <input name="characterQuote" value="characterQuote" />
+   <input name="characterName" value="Character Name" />
+   <input name="characterQuote" value="Character Quote" />
    <input name="base64EncodedValue" hidden value=""/>
    Select a segment in file: <input type="file" id="segmentFile" name="segmentFile">
    <input type="button" id="uploadButton" value="Upload Segment" disabled onClick="JavaScript:handleCreateClick(this)">
@@ -92,8 +92,8 @@ document.getElementById('segmentFile').addEventListener('change', handleFileSele
 <h3>Search for Video Segments</h3>
 
 <form name="searchSegmentsForm" method="post">
-  <input type="text" name="phrase" placeholder="Search Segments by Phrase.." value="">
-  <input type="text" name="character" placeholder="Search Segments by Character.." value="">
+  <input type="text" name="phrase" placeholder="Search Phrase" value="">
+  <input type="text" name="character" placeholder="Search Character" value="">
   <input type="button" id="submit" value="Search" onClick="JavaScript:handleSearchSegments(this)"/>
   
   Remote
