@@ -44,7 +44,7 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		}
 	}
 	
-	String uploadToBucket(String character, String quote, byte[] data) {
+	String uploadToBucket(String quote, String character, byte[] data) {
 		
 		if (s3 == null) {
 			logger.log("attach to S3 request");
@@ -56,10 +56,10 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		ObjectMetadata omd = new ObjectMetadata();
 		omd.setContentLength(data.length);
 		
-		PutObjectResult res = s3.putObject(new PutObjectRequest("cs3733atropos", BUCKET + quote, bais, omd)
+		PutObjectResult res = s3.putObject(new PutObjectRequest("cs3733atropos", BUCKET + quote + ".ogg", bais, omd)
 				.withCannedAcl(CannedAccessControlList.PublicRead));
 		
-		return s3.getUrl("cs3733atropos", BUCKET + quote).toExternalForm();
+		return s3.getUrl("cs3733atropos", BUCKET + quote + ".ogg").toExternalForm();
 	}
 	
 	void uploadSegment(String name, String character, String url) throws Exception{
@@ -86,16 +86,16 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		String successResponse = "";
 		
 		//logic
-		String segmentName = uvsr.getName();
-		String charName = uvsr.getCharacter();
-		byte[] encoded = java.util.Base64.getDecoder().decode(uvsr.getValue());
+		String segmentName = uvsr.name;
+		String charName = uvsr.character;
+		byte[] encoded = java.util.Base64.getDecoder().decode(uvsr.base64EncodedValue);
 		String url = "";
 		try {
 			isDup = IsDuplicate(segmentName);
 			try {
 				if(!isDup) {
 					try {
-					url = uploadToBucket(charName, segmentName, encoded);
+					url = uploadToBucket(segmentName, charName, encoded);
 					if(url != null) {
 						uploadSegment(segmentName, charName, url);
 						successResponse = "Segment Created";

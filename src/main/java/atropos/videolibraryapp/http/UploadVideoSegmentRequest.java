@@ -3,9 +3,9 @@ package atropos.videolibraryapp.http;
 /** To work with AWS must not have final attributes, must have no-arg constructor, and all get/set methods. */
 public class UploadVideoSegmentRequest {
 	
-	String character;
-	String name; // The name of the segment is the phrase the character is saying
-	String base64EncodedValue;
+	public String character;
+	public String name; // The name of the segment is the phrase the character is saying
+	public String base64EncodedValue;
 	
 	public UploadVideoSegmentRequest() {}
 	
