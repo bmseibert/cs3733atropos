@@ -7,6 +7,7 @@
 <script type='text/javascript' src='../js/upload.js'></script>
 <script type='text/javascript' src='../js/createPlaylist.js'></script>
 <script type='text/javascript' src='../js/search.js'></script>
+<script type='text/javascript' src='../js/deletePlaylist.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -28,7 +29,7 @@ Enter Playlist Name: <input type="text" value="" name="playlist"><br>
 <h3>Delete Playlist</h3>
 <form name="deletePlaylist" method="post">
 Enter Playlist Name: <input type="text" value="" name="playlist"><br>
-<button type="button" value="Submit">Delete Playlist</button>
+<button type="button" value="submit" onClick="JavaScript:handleDeletePlaylistClick(this)">Delete Playlist</button>
 </form>
 
 <h3>List Playlists<!--Text--></h3>

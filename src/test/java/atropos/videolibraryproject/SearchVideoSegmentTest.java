@@ -33,18 +33,18 @@ public class SearchVideoSegmentTest extends LambdaTest {
         Assert.assertEquals(400, resp.statusCode);
     }
     
-//    @Test
-//    public void testSearchByPhrase() {
-//    	
-//    	String input = "{\"character\": \"\", \"phrase\": \"Captain\", \"isRemote\" : \"false\"}";
-//    	String RESULT = "Successfully searched by phrase";
-//    	
-//    	try {
-//        	testSuccessInput(input, RESULT);
-//        } catch (IOException ioe) {
-//        	Assert.fail("Invalid:" + ioe.getMessage());
-//        }
-//    }
+    @Test
+    public void testSearchByPhrase() {
+    	
+    	String input = "{\"character\": \"\", \"phrase\": \"Captain\", \"isRemote\" : \"false\"}";
+    	String RESULT = "Successfully searched by phrase";
+    	
+    	try {
+        	testSuccessInput(input, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    }
     
     @Test
     public void testSearchByCharacter() {
@@ -59,32 +59,32 @@ public class SearchVideoSegmentTest extends LambdaTest {
         }
     }
      
-//    @Test
-//    public void testSearchByPhraseCharacter() {
-//    	
-//     	String input = "{\"character\": \"McCoy\", \"phrase\": \"Capt\", \"isRemote\" : \"false\"}";
-//        String RESULT = "Successfully searched by both phrase and character";
-//
-//    	
-//    	try {
-//        	testSuccessInput(input, RESULT);
-//        } catch (IOException ioe) {
-//        	Assert.fail("Invalid:" + ioe.getMessage());
-//        }
-//    }
-//
-//    @Test
-//    public void testSearchEmpty() {
-//    	
-//     	String input = "{\"character\": \"\", \"phrase\": \"\", \"isRemote\" : \"false\"}";
-//        String RESULT = "Success, but no input for search";
-//
-//    	
-//    	try {
-//        	testSuccessInput(input, RESULT);
-//        } catch (IOException ioe) {
-//        	Assert.fail("Invalid:" + ioe.getMessage());
-//        }
-//    }
+    @Test
+    public void testSearchByPhraseCharacter() {
+    	
+     	String input = "{\"character\": \"McCoy\", \"phrase\": \"Capt\", \"isRemote\" : \"false\"}";
+        String RESULT = "Successfully searched by both phrase and character";
+
+    	
+    	try {
+        	testSuccessInput(input, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    }
+
+    @Test
+    public void testSearchEmpty() {
+    	
+     	String input = "{\"character\": \"\", \"phrase\": \"\", \"isRemote\" : \"false\"}";
+        String RESULT = "Success, but no input for search";
+
+    	
+    	try {
+        	testSuccessInput(input, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    }
 
 }
