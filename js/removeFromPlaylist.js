@@ -15,7 +15,7 @@ function handleRemoveFromPlaylistClick(e){
 	var js = JSON.stringify(data);
 	console.log("JS:" + js);
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", append_segment_url, true);
+	xhr.open("POST", remove_segment_url, true);
 	
 	// send the collected data as JSON
 	xhr.send(js);
