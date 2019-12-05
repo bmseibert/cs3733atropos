@@ -3,7 +3,7 @@ package atropos.videolibraryapp.http;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.wpi.cs.heineman.calculator.model.Segment;
+import atropos.videolibraryapp.model.Segment;
 
 public class PublicVideoSegmentResponse {
 	public final List<Segment> segments;
