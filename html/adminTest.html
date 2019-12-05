@@ -2,6 +2,7 @@
 <script type='text/javascript' src='../js/api.js'></script>
 <script type='text/javascript' src='../js/showPlaylists.js'></script>
 <script type='text/javascript' src='../js/showSegments.js'></script>
+<script type='text/javascript' src='../js/showRemoteSites.js'></script>
 <script type="text/javascript">
 function initialize() {
   
@@ -44,8 +45,8 @@ Site URL: <input type="text" name="url"><br>
 </form>
 
 <h3>List Remote Websites</h3>
-<form name="showSitesForm" method="get" style="width: 10px; height: 10px"> 
-	<input type="button" value="Show Website">
+<form name="showSitesForm" method="get"> 
+	<input type="button" value="Show Website" onClick="JavaScript:handleShowRemoteSites(this)">
 </form>
 <div id="siteList"></div>
 <div id="bottom"></div>

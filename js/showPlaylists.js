@@ -3,7 +3,6 @@
  */
 
 function processListPlaylistsResponse(result){
-	console.log("result:" + result);
 	var js = JSON.parse(result);
 	var playlists = js["playlist"];
 	var status = js["statusCode"];
@@ -15,7 +14,7 @@ function processListPlaylistsResponse(result){
 	    for (var i = 0; i < playlists.length; i++) {
 	    	console.log(playlists.length);
 	        var playlistJson = playlists[i];	        
-	        var name = playlistJson["name"];
+	        var name = playlistJson["website"];
 	        
 	        output = output + "<div id=\"segment" + name + "\"> - " + name + "<br></div>";
 	        
