@@ -1,14 +1,10 @@
 <html><head>
 <!-- Paths (Insert Paths to JavaScript Files) -->
 
-<!-- 
-<script type='text/javascript' src='../js/get_constantList.js'></script>
-<script type='text/javascript' src='../js/add.js'></script>
-<script type='text/javascript' src='../js/create.js'></script>
-<script type='text/javascript' src='../js/delete.js'></script> -->
 <script type='text/javascript' src='../js/api.js'></script>
 <script type='text/javascript' src='../js/showSegments.js'></script>
 <script type='text/javascript' src='../js/showPlaylists.js'></script>
+<script type='text/javascript' src='../js/createPlaylist.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -22,9 +18,9 @@ function initialize() {
 </script></head><body onload="initialize()">
 <h1>Participant Page</h1>
 <h3>Create Playlist</h3>
-<form action="createPlaylist" method="post">
-Enter Playlist Name: <input type="text" name="playlist"><br>
-<button type="button" value="Submit">Create Playlist</button>
+<form name="createPlaylist" method="post">
+Enter Playlist Name: <input type="text" value="" name="playlist"><br>
+<button type="button" value="Submit" onClick="JavaScript:handleCreatePlaylistClick(this)">Create Playlist</button>
 </form>
 
 <h3>List Playlists<!--Text--></h3>

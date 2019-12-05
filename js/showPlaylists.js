@@ -13,10 +13,11 @@ function processListPlaylistsResponse(result){
 	if (status == 200) {
 	    // Update computation result
 	    for (var i = 0; i < playlists.length; i++) {
+	    	console.log(playlists.length);
 	        var playlistJson = playlists[i];	        
 	        var name = playlistJson["name"];
 	        
-	        output = output + "<div id=\"segment" + name + "\">" + name + ":<br></div>";
+	        output = output + "<div id=\"segment" + name + "\"><b>" + name + ":</b><br></div>";
 	        
 	      }
 	    playlistList.innerHTML = output;
