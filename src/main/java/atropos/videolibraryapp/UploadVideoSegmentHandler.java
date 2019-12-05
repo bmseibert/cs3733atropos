@@ -55,6 +55,8 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		ByteArrayInputStream bais = new ByteArrayInputStream(data);
 		ObjectMetadata omd = new ObjectMetadata();
 		omd.setContentLength(data.length);
+		//omd.setContentEncoding("Base64");
+		omd.setContentType("application/ogg");
 		
 		PutObjectResult res = s3.putObject(new PutObjectRequest("cs3733atropos", BUCKET + quote + ".ogg", bais, omd)
 				.withCannedAcl(CannedAccessControlList.PublicRead));
