@@ -4,6 +4,10 @@
 <script type='text/javascript' src='../js/showSegments.js'></script>
 <script type='text/javascript' src='../js/showRemoteSites.js'></script>
 <script type='text/javascript' src='../js/unregisterSite.js'></script>
+<<<<<<< HEAD
+=======
+<script type='text/javascript' src='../js/registerSite.js'></script>
+>>>>>>> a95b9233f2dcc9364e27c41532b0201a323e809b
 <script type='text/javascript' src='../js/upload.js'></script>
 <script type='text/javascript' src='../js/createPlaylist.js'></script>
 <script type='text/javascript' src='../js/search.js'></script>
@@ -136,7 +140,7 @@ Video Segment Name: <input type="text" name="segment"><br>
 <h3>Register a Remote Website</h3>
 <form name="registerSite" method="post">
 Site URL: <input type="text" name="url"><br>
-  <input type="button" value="Register">
+  <input type="button" value="Register" onClick ="JavaScript:handleRegisterSite(this)">
   <input type="button" value="Unregister" onClick ="JavaScript:handleUnregisterSiteClick(this)" >
 </form>
 
