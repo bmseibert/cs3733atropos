@@ -3,6 +3,7 @@
 <script type='text/javascript' src='../js/showPlaylists.js'></script>
 <script type='text/javascript' src='../js/showSegments.js'></script>
 <script type='text/javascript' src='../js/showRemoteSites.js'></script>
+<script type='text/javascript' src='../js/unregisterSite.js'></script>
 <script type="text/javascript">
 function initialize() {
   
@@ -38,10 +39,10 @@ Video Segment Name: <input type="text" name="segment"><br>
 </form>
 
 <h3>Register a Remote Website</h3>
-<form action="registerSite" method="post">
+<form name="registerSite" method="post">
 Site URL: <input type="text" name="url"><br>
-<button type="button" value="Submit">Register</button>
-<button type="button" value="Submit">Unregister</button>
+  <input type="button" value="Register">
+  <input type="button" value="Unregister" onClick ="JavaScript:handleUnregisterSiteClick(this)" >
 </form>
 
 <h3>List Remote Websites</h3>
