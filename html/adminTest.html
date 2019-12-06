@@ -3,9 +3,8 @@
 <script type='text/javascript' src='../js/showPlaylists.js'></script>
 <script type='text/javascript' src='../js/showSegments.js'></script>
 <script type='text/javascript' src='../js/showRemoteSites.js'></script>
-<<<<<<< HEAD
 <script type='text/javascript' src='../js/unregisterSite.js'></script>
-=======
+<script type='text/javascript' src='../js/registerSite.js'></script>
 <script type='text/javascript' src='../js/upload.js'></script>
 <script type='text/javascript' src='../js/createPlaylist.js'></script>
 <script type='text/javascript' src='../js/search.js'></script>
@@ -13,7 +12,6 @@
 <script type='text/javascript' src='../js/appendToPlaylist.js'></script>
 <script type='text/javascript' src='../js/removeFromPlaylist.js'></script>
 <script type='text/javascript' src='../js/deleteSegment.js'></script>
->>>>>>> c22df00cb54c296afdb1b25f7248573c5307fc5c
 <script type="text/javascript">
 
 
@@ -139,7 +137,7 @@ Video Segment Name: <input type="text" name="segment"><br>
 <h3>Register a Remote Website</h3>
 <form name="registerSite" method="post">
 Site URL: <input type="text" name="url"><br>
-  <input type="button" value="Register">
+  <input type="button" value="Register" onClick ="JavaScript:handleRegisterSite(this)">
   <input type="button" value="Unregister" onClick ="JavaScript:handleUnregisterSiteClick(this)" >
 </form>
 
