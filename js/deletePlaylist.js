@@ -16,7 +16,6 @@ function handleDeletePlaylistClick(e){
 	var data = {};
 	var val = form.playlist.value;
 	data["playlistName"] = form.playlist.value;
-	data["isRemote"] = form.remote.value;
 	
 	
 	if(val != ""){

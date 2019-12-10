@@ -17,6 +17,11 @@ function requestDelete(val) {
 function processDelete(val) {
   var data = {};
   data["segment"] = deleteSegmentForm.characterQuote.value;
+	if (deleteSegmentForm.remote.checked) {  // be sure to flag system constant requests...
+	     data["isRemote"] = true;
+	  }else{
+		data["isRemote"] = false;
+	}
 
   var js = JSON.stringify(data);
   console.log("JS:" + js);
