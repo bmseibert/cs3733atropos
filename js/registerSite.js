@@ -1,8 +1,7 @@
 function processCreateResponse(result) {
   console.log("result:" + result);
   var js = JSON.parse(result);
-  var error = js["error"];
-  var status = js["statusCode"];
+  var error = js["name"];
   console.log(error + "fully uploaded");
 }
 
@@ -69,9 +68,8 @@ function uploadRemoteSegments(result){
 		var data = {};
 		data["character"] = segment["character"];
 		data["name"] = segment["text"];
-		var reader = new FileReader();
-		reader.readAsDataURL(segment["url"]);
-		data["base64EncodedValue"] = reader.result;
+		data["base64EncodedValue"] = segment["url"];
+		data["isRemote"] = true;
 		var js = JSON.stringify(data);
 		console.log("JS:" + js);
 		var xhrUpload = new XMLHttpRequest();
