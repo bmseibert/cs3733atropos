@@ -53,25 +53,25 @@ public class SiteDAO {
 	         }
 	    }
 	    
-	    public Site getSite(String url) throws Exception {
-	        
-	        try {
-	            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Site WHERE website=?;");
-	            ps.setString(1,  url);
-	            ResultSet resultSet = ps.executeQuery();
-	            Site site = new Site("");
-	            while (resultSet.next()) {
-	            		site = generateSite(resultSet);			//If a new playlist name create a new playlist object"
-	            	}  	
-	            resultSet.close();
-	            ps.close();
-	            return site;
-
-	        } catch (Exception e) {
-	        	e.printStackTrace();
-	            throw new Exception("Failed in getting Site from DB: " + e.getMessage());
-	        }
-	    }
+//	    public Site getSite(String url) throws Exception {
+//	        
+//	        try {
+//	            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Site WHERE website=?;");
+//	            ps.setString(1,  url);
+//	            ResultSet resultSet = ps.executeQuery();
+//	            Site site = new Site("");
+//	            while (resultSet.next()) {
+//	            		site = generateSite(resultSet);			//If a new playlist name create a new playlist object"
+//	            	}  	
+//	            resultSet.close();
+//	            ps.close();
+//	            return site;
+//
+//	        } catch (Exception e) {
+//	        	e.printStackTrace();
+//	            throw new Exception("Failed in getting Site from DB: " + e.getMessage());
+//	        }
+//	    }
 	    
 	    public ArrayList<Site> getAllSites() throws Exception {
 	        

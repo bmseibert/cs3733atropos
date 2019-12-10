@@ -25,13 +25,13 @@ public class SearchVideoSegmentTest extends LambdaTest {
         Assert.assertEquals(200, resp.statusCode);
     }
 	
-    void testFailInput(String incoming, String outgoing) throws IOException {
-    	SearchSegmentsHandler handler = new SearchSegmentsHandler();
-    	SearchVideoSegmentRequest req = new Gson().fromJson(incoming, SearchVideoSegmentRequest.class);
-    	SearchVideoSegmentsResponse resp = handler.handleRequest(req, createContext("create"));
-    	
-        Assert.assertEquals(400, resp.statusCode);
-    }
+//    void testFailInput(String incoming, String outgoing) throws IOException {
+//    	SearchSegmentsHandler handler = new SearchSegmentsHandler();
+//    	SearchVideoSegmentRequest req = new Gson().fromJson(incoming, SearchVideoSegmentRequest.class);
+//    	SearchVideoSegmentsResponse resp = handler.handleRequest(req, createContext("create"));
+//    	
+//        Assert.assertEquals(400, resp.statusCode);
+//    }
     
     @Test
     public void testSearchByPhrase() {

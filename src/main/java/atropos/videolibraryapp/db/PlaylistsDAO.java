@@ -130,26 +130,26 @@ public class PlaylistsDAO {
     }
 
     
-	public ArrayList<String> getAllPlaylistsNames() throws Exception {
-	        
-	        ArrayList<String> allPlaylists = new ArrayList<>();
-	        try {
-	        
-	            Statement statement = conn.createStatement();
-	            String query = "SELECT * FROM Playlist;";
-	            ResultSet resultSet = statement.executeQuery(query);
-	            while (resultSet.next()) {
-	            	allPlaylists.add(resultSet.getString("name"));
-	            }
-				
-	            resultSet.close();
-	            statement.close();
-	            return allPlaylists;
-
-	        } catch (Exception e) {
-	            throw new Exception("Failed in getting list of Playlist names from DB: " + e.getMessage());
-	        }
-	    }
+//	public ArrayList<String> getAllPlaylistsNames() throws Exception {
+//	        
+//	        ArrayList<String> allPlaylists = new ArrayList<>();
+//	        try {
+//	        
+//	            Statement statement = conn.createStatement();
+//	            String query = "SELECT * FROM Playlist;";
+//	            ResultSet resultSet = statement.executeQuery(query);
+//	            while (resultSet.next()) {
+//	            	allPlaylists.add(resultSet.getString("name"));
+//	            }
+//				
+//	            resultSet.close();
+//	            statement.close();
+//	            return allPlaylists;
+//
+//	        } catch (Exception e) {
+//	            throw new Exception("Failed in getting list of Playlist names from DB: " + e.getMessage());
+//	        }
+//	    }
 
     
     

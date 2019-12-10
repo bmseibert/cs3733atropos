@@ -26,14 +26,14 @@ public class ListPublicVideoSegmentsTest extends LambdaTest{
         Assert.assertEquals(200, resp.statusCode);
     }
 	
-    void testFailInput(String incoming, String outgoing) throws IOException {
-    	ListPublicVideoSegments handler = new ListPublicVideoSegments();
-    	EmptyRequest req = new Gson().fromJson(incoming, EmptyRequest.class);
-
-    	PublicVideoSegmentResponse resp = handler.handleRequest(req, createContext("create"));
-    	
-        Assert.assertEquals(400, resp.statusCode);
-    }
+//    void testFailInput(String incoming, String outgoing) throws IOException {
+//    	ListPublicVideoSegments handler = new ListPublicVideoSegments();
+//    	EmptyRequest req = new Gson().fromJson(incoming, EmptyRequest.class);
+//
+//    	PublicVideoSegmentResponse resp = handler.handleRequest(req, createContext("create"));
+//    	
+//        Assert.assertEquals(400, resp.statusCode);
+//    }
     
     @Test
     public void testSuccessInput() {

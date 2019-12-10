@@ -27,14 +27,14 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
         Assert.assertEquals(200, resp.statusCode);
     }
 	
-    void testFailDeleteInput(String incoming, String outgoing) throws IOException {
-    	DeleteSegmentHandler handler = new DeleteSegmentHandler();
-    	DeleteVideoSegmentRequest req = new Gson().fromJson(incoming, DeleteVideoSegmentRequest.class);
-
-    	DeleteVideoSegmentResponse resp = handler.handleRequest(req, createContext("create"));
-    	
-        Assert.assertEquals(400, resp.statusCode);
-    }
+//    void testFailDeleteInput(String incoming, String outgoing) throws IOException {
+//    	DeleteSegmentHandler handler = new DeleteSegmentHandler();
+//    	DeleteVideoSegmentRequest req = new Gson().fromJson(incoming, DeleteVideoSegmentRequest.class);
+//
+//    	DeleteVideoSegmentResponse resp = handler.handleRequest(req, createContext("create"));
+//    	
+//        Assert.assertEquals(400, resp.statusCode);
+//    }
     
 	void testSuccessUploadInput(String incoming, String outgoing) throws IOException {
     	UploadVideoSegmentHandler handler = new UploadVideoSegmentHandler();
@@ -46,15 +46,15 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
         Assert.assertEquals(200, resp.statusCode);
     }
 	
-    void testFailUploadInput(String incoming, String outgoing) throws IOException {
-    	UploadVideoSegmentHandler handler = new UploadVideoSegmentHandler();
-    	UploadVideoSegmentRequest req = new Gson().fromJson(incoming, UploadVideoSegmentRequest.class);
-
-    	UploadVideoSegmentResponse resp = handler.handleRequest(req, createContext("create"));
-    	
-        Assert.assertEquals(400, resp.statusCode);
-    }
-    
+//    void testFailUploadInput(String incoming, String outgoing) throws IOException {
+//    	UploadVideoSegmentHandler handler = new UploadVideoSegmentHandler();
+//    	UploadVideoSegmentRequest req = new Gson().fromJson(incoming, UploadVideoSegmentRequest.class);
+//
+//    	UploadVideoSegmentResponse resp = handler.handleRequest(req, createContext("create"));
+//    	
+//        Assert.assertEquals(400, resp.statusCode);
+//    }
+//    
     
     @Test
     public void testUploadSegment() {
