@@ -14,11 +14,12 @@ public class UnmarkSegmentHandler implements RequestHandler<ChangeMarkVideoReque
 	LambdaLogger logger;
 	
 	// helpers
-	boolean unmarkVideoSegment(Segment segment) throws Exception {
+	boolean unmarkVideoSegment(Segment segment, ChangeMarkVideoRequest req) throws Exception {
 		if (logger != null) { 
 			logger.log("in unmarkVideoSegment"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
+		segment.setIsMarked(req.getMarked());
 		dao.updateSegmentMark(segment);
 		return true;
 	}
@@ -36,7 +37,7 @@ public class UnmarkSegmentHandler implements RequestHandler<ChangeMarkVideoReque
 
 		//logic
 		try {
-			unmarkVideoSegment(newSeg);
+			unmarkVideoSegment(newSeg, cmvr);
 			successMessage = "Success";
 		}catch (Exception e){
 			fail = true;
@@ -45,9 +46,9 @@ public class UnmarkSegmentHandler implements RequestHandler<ChangeMarkVideoReque
 		
 		UnmarkSegmentResponse usr;
 		if(fail) {
-			usr = new UnmarkSegmentResponse(400, failMessage);
+			usr = new UnmarkSegmentResponse(failMessage, 400);
 		}else {
-			usr = new UnmarkSegmentResponse(successMessage, 200);
+			usr = new UnmarkSegmentResponse(200, successMessage);
 		}
 		return usr;
 	}

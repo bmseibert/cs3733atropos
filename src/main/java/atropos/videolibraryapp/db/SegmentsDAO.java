@@ -57,6 +57,8 @@ public class SegmentsDAO {
         }
     }
     
+   
+    
     public boolean deleteSegment(Segment segment) throws Exception {
         try {
             PreparedStatement ps = conn.prepareStatement("DELETE FROM VideoSegment WHERE name = ?;");

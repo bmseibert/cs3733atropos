@@ -8,8 +8,10 @@ import org.junit.Test;
 import com.google.gson.Gson;
 
 import atropos.videolibraryapp.MarkSegmentHandler;
+import atropos.videolibraryapp.UnmarkSegmentHandler;
 import atropos.videolibraryapp.http.ChangeMarkVideoRequest;
 import atropos.videolibraryapp.http.MarkSegmentResponse;
+import atropos.videolibraryapp.http.UnmarkSegmentResponse;
 
 public class MarkingHandlersTest extends LambdaTest{
 	
@@ -33,20 +35,20 @@ public class MarkingHandlersTest extends LambdaTest{
     }
     
     void testSuccessUnmarkInput(String incoming, String outgoing) throws IOException {
-    	MarkSegmentHandler handler = new MarkSegmentHandler();
+    	UnmarkSegmentHandler handler = new UnmarkSegmentHandler();
     	ChangeMarkVideoRequest req = new Gson().fromJson(incoming, ChangeMarkVideoRequest.class);
        
-    	MarkSegmentResponse resp = handler.handleRequest(req, createContext("create"));
+    	UnmarkSegmentResponse resp = handler.handleRequest(req, createContext("create"));
     	
     	Assert.assertEquals(outgoing, resp.name);
         Assert.assertEquals(200, resp.statusCode);
     }
 	
     void testFailUnmarkInput(String incoming, String outgoing) throws IOException {
-    	MarkSegmentHandler handler = new MarkSegmentHandler();
+    	UnmarkSegmentHandler handler = new UnmarkSegmentHandler();
     	ChangeMarkVideoRequest req = new Gson().fromJson(incoming, ChangeMarkVideoRequest.class);
 
-    	MarkSegmentResponse resp = handler.handleRequest(req, createContext("create"));
+    	UnmarkSegmentResponse resp = handler.handleRequest(req, createContext("create"));
     	
         Assert.assertEquals(400, resp.statusCode);
     }
@@ -54,7 +56,7 @@ public class MarkingHandlersTest extends LambdaTest{
     @Test
     public void testMarkSegment() {
     	
-    	String input = "{\"segment\": \"We move together\"}";
+    	String input = "{\"segment\": \"We move together\", \"isMarked\": \"true\"}";
     	String RESULT = "Success";
     	
     	try {
@@ -68,11 +70,11 @@ public class MarkingHandlersTest extends LambdaTest{
     @Test
     public void testUnmarkSegment() {
     	
-    	String input = "{\"segment\": \"We move together\"}";
+    	String input = "{\"segment\": \"We move together\", \"isMarked\": \"false\"}";
     	String RESULT = "Success";
     	
     	try {
-        	testSuccessMarkInput(input, RESULT);
+        	testSuccessUnmarkInput(input, RESULT);
         } catch (IOException ioe) {
         	Assert.fail("Invalid:" + ioe.getMessage());
         }
