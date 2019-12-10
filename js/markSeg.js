@@ -35,7 +35,8 @@ function handleMarkClick(e){
 		    	handleFailure();
 		    }
 	    }
-	
+	}
+}
 
 function handleUnmarkClick(e){
 	var form = document.markSegment;
@@ -63,6 +64,7 @@ function handleUnmarkClick(e){
 		    }else{
 		    	handleFailure();
 		    }
-	    }	    
-	    
+	    }
+	}
 }
+	    

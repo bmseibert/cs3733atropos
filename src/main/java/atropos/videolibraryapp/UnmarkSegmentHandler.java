@@ -19,7 +19,7 @@ public class UnmarkSegmentHandler implements RequestHandler<ChangeMarkVideoReque
 			logger.log("in unmarkVideoSegment"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
-		segment.setIsMarked(req.getMarked());
+		segment.setIsMarked(false);
 		dao.updateSegmentMark(segment);
 		return true;
 	}
@@ -41,7 +41,7 @@ public class UnmarkSegmentHandler implements RequestHandler<ChangeMarkVideoReque
 			successMessage = "Success";
 		}catch (Exception e){
 			fail = true;
-			failMessage = "Failed to update marked status";
+			failMessage = "Failed to update marked status: " + cmvr.getSegment() + " : " + cmvr.getMarked();
 		}
 		
 		UnmarkSegmentResponse usr;

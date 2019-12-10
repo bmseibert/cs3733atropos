@@ -19,7 +19,7 @@ public class MarkSegmentHandler implements RequestHandler<ChangeMarkVideoRequest
 			logger.log("in unmarkVideoSegment"); 
 		}
 		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
-		segment.setIsMarked(req.getMarked());
+		segment.setIsMarked(true);
 		dao.updateSegmentMark(segment);
 		return true;
 	}
