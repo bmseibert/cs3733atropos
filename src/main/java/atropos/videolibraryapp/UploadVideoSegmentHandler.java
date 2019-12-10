@@ -64,13 +64,13 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		return s3.getUrl("cs3733atropos", BUCKET + quote + ".ogg").toExternalForm();
 	}
 	
-	void uploadSegment(String name, String character, String url) throws Exception{
+	void uploadSegment(String name, String character, String url, boolean isRemote) throws Exception{
 		if (logger != null) { 
 			logger.log("in createPlaylist"); 
 		}
 		
 		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
-		Segment seg = new Segment(name, character, url);
+		Segment seg = new Segment(name, character, url, false, isRemote);
 		dao.addSegment(seg);
 				
 	}
@@ -106,7 +106,7 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 							url = uploadToBucket(segmentName, charName, encoded);
 						}
 					if(url != null) {
-						uploadSegment(segmentName, charName, url);
+						uploadSegment(segmentName, charName, url, isRemote);
 						successResponse = "Segment Created";
 					}
 					}catch(Exception e) {
