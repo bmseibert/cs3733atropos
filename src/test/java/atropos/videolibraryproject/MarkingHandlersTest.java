@@ -40,7 +40,7 @@ public class MarkingHandlersTest extends LambdaTest{
        
     	UnmarkSegmentResponse resp = handler.handleRequest(req, createContext("create"));
     	
-    	Assert.assertEquals(outgoing, resp.error);
+    	Assert.assertEquals(outgoing, resp.name);
         Assert.assertEquals(200, resp.statusCode);
     }
 	
