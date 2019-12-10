@@ -47,4 +47,17 @@ public class ListSegmentsHandlerTest extends LambdaTest{
         	Assert.fail("Invalid:" + ioe.getMessage());
         }
     }
+    
+    @Test
+    public void testRemoteListSegments() {
+    	String input = "{\"isRemote\": \"true\"}";
+    	String RESULT = "Success";
+    	
+    	try {
+        	testSuccessInput(input, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    }
+    
 }

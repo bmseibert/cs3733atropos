@@ -23,14 +23,14 @@ public class ListSiteHandlerTest extends LambdaTest {
         Assert.assertEquals(200, resp.statusCode);
     }
 	
-    void testFailListInput(String incoming, String outgoing) throws IOException {
-    	ListSiteHandler handler = new ListSiteHandler();
-    	EmptyRequest req = new Gson().fromJson(incoming, EmptyRequest.class);
-
-    	ListSitesResponse resp = handler.handleRequest(req, createContext("create"));
-    	
-        Assert.assertEquals(400, resp.statusCode);
-    }
+//    void testFailListInput(String incoming, String outgoing) throws IOException {
+//    	ListSiteHandler handler = new ListSiteHandler();
+//    	EmptyRequest req = new Gson().fromJson(incoming, EmptyRequest.class);
+//
+//    	ListSitesResponse resp = handler.handleRequest(req, createContext("create"));
+//    	
+//        Assert.assertEquals(400, resp.statusCode);
+//    }
     
     @Test
     public void testListSegments() {

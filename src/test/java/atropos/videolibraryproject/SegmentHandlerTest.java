@@ -72,6 +72,20 @@ public class SegmentHandlerTest extends LambdaTest{
     }
     
     @Test
+    public void testFailAppendSegment() {
+    	
+    	String input = "{\"playlist\": \"new22\", \"segment\": \"We move together4\"}";
+    	String RESULT = "Success";
+    	
+    	try {
+        	testFailAppendInput(input, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    	
+    }
+    
+    @Test
     public void testRemoveSegment() {
     	
     	String input = "{\"playlist\": \"new\"}";
@@ -85,5 +99,18 @@ public class SegmentHandlerTest extends LambdaTest{
     	
     }
     
+    @Test
+    public void testFailRemoveSegment() {
+    	
+    	String input = "{\"playlist\": \"new22\"}";
+    	String RESULT = "Success";
+    	
+    	try {
+        	testFailRemoveInput(input, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    	
+    }
 
 }
