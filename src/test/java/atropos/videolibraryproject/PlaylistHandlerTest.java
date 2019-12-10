@@ -58,14 +58,14 @@ public class PlaylistHandlerTest extends LambdaTest {
         Assert.assertEquals(200, resp.statusCode);
     }
 	
-    void testFailDeleteInput(String incoming, String outgoing) throws IOException {
-    	DeletePlaylistHandler handler = new DeletePlaylistHandler();
-    	DeletePlaylistRequest req = new Gson().fromJson(incoming, DeletePlaylistRequest.class);
-
-    	DeletePlaylistResponse resp = handler.handleRequest(req, createContext("create"));
-    	
-        Assert.assertEquals(400, resp.statusCode);
-    }
+//    void testFailDeleteInput(String incoming, String outgoing) throws IOException {
+//    	DeletePlaylistHandler handler = new DeletePlaylistHandler();
+//    	DeletePlaylistRequest req = new Gson().fromJson(incoming, DeletePlaylistRequest.class);
+//
+//    	DeletePlaylistResponse resp = handler.handleRequest(req, createContext("create"));
+//    	
+//        Assert.assertEquals(400, resp.statusCode);
+//    }
     
     void testSuccessListPlaylistInput(String incoming, String outgoing) {
     	ListPlaylistHandler handler = new ListPlaylistHandler();
@@ -105,11 +105,28 @@ public class PlaylistHandlerTest extends LambdaTest {
     }
     
     @Test
+    public void testFailPlaylist() {
+    	String SAMPLE_INPUT_STRING =  "{\"playlistNamez\": \"testPlaylist54\"}";
+    	String SAMPLE_INPUT_STRING2 =  "{\"playlistNamez\": \"testPlaylist54\"}";
+
+    	String RESULT = "Success";
+    	
+    	try {
+        	testFailCreateInput(SAMPLE_INPUT_STRING2, RESULT);
+        	//testFailDeleteInput(SAMPLE_INPUT_STRING, RESULT);
+        } catch (IOException ioe) {
+        	Assert.fail("Invalid:" + ioe.getMessage());
+        }
+    }
+    
+    @Test
     public void testListPlaylists() {
     	String SAMPLE_INPUT_STRING =  "{\"playlistName\": \"testPlaylist1\"}";
     	String RESULT = "Success";
     	
     	testSuccessListPlaylistInput(SAMPLE_INPUT_STRING, RESULT);
     }
+    
+
 
 }
