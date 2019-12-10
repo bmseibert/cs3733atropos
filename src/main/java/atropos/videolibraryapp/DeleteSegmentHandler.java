@@ -82,6 +82,7 @@ public class DeleteSegmentHandler implements RequestHandler< DeleteVideoSegmentR
 		
 		boolean fail = false;
 		boolean exists = false;
+		boolean isRemote = req.getIsRemtoe();
 		
 		String failMessage = "";
 		String successMessage = "";
@@ -91,7 +92,9 @@ public class DeleteSegmentHandler implements RequestHandler< DeleteVideoSegmentR
 		try {	
 			exists = isInDB(segmentName);
 			if(exists) {
-				deleteFromBucket(segmentName);
+				if(!isRemote) {
+					deleteFromBucket(segmentName);
+				}
 				try {
 					deleteFromDB(segmentName);
 					successMessage = "Success";

@@ -136,7 +136,7 @@ public class testHttpRequests extends LambdaTest{
 		int code = 200;
 		Boolean pos = true;
 		
-		DeleteVideoSegmentRequest dvsr = new DeleteVideoSegmentRequest(segment);
+		DeleteVideoSegmentRequest dvsr = new DeleteVideoSegmentRequest(segment, false);
 		dvsr.setSegment(segment);
 	}
 	
@@ -317,7 +317,7 @@ public class testHttpRequests extends LambdaTest{
 		int code = 200;
 		Boolean pos = true;	
 		
-		UploadVideoSegmentRequest uvsr = new UploadVideoSegmentRequest(playlist, playlist, playlist);
+		UploadVideoSegmentRequest uvsr = new UploadVideoSegmentRequest(playlist, playlist, playlist, false);
 		uvsr.getCharacter();
 		uvsr.setCharacter(segment);
 		uvsr.getName();

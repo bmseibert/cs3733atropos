@@ -90,14 +90,18 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		//logic
 		String segmentName = uvsr.name;
 		String charName = uvsr.character;
+		String url = uvsr.base64EncodedValue;
+		boolean isRemote = uvsr.isRemote;
 		byte[] encoded = java.util.Base64.getDecoder().decode(uvsr.base64EncodedValue);
-		String url = "";
+	
 		try {
 			isDup = IsDuplicate(segmentName);
 			try {
 				if(!isDup) {
-					try {
-					url = uploadToBucket(segmentName, charName, encoded);
+					try {	
+						if(!isRemote) {
+							url = uploadToBucket(segmentName, charName, encoded);
+						}
 					if(url != null) {
 						uploadSegment(segmentName, charName, url);
 						successResponse = "Segment Created";

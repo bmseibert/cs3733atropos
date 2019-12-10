@@ -59,9 +59,9 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
     @Test
     public void testUploadSegment() {
     	
-    	String input = "{\"name\": \"Where is Sebs\", \"character\": \"Ben\", \"base64EncodedValue\": \"NDIwNjk=\"}";
+    	String input = "{\"name\": \"Where is Sebs\", \"character\": \"Ben\", \"base64EncodedValue\": \"NDIwNjk=\", \"isRemote\": \"false\"}";
     	String RESULT = "Success";
-    	String input1 = "{\"segment\": \"Where is Sebs\"}";
+    	String input1 = "{\"segment\": \"Where is Sebs\",\"isRemote\": \"false\"}";
     	
     	try {
         	testSuccessUploadInput(input, RESULT);
