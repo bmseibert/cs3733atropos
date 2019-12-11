@@ -95,7 +95,6 @@ public class SegmentsDAO {
             ps.setBoolean(4,  segment.getIsMarked());
             ps.setBoolean(5, segment.getIsRemote());
             ps.executeUpdate();    
-            //TODO FIX THIS EXECUTE UPDATE, UPLOAD SEGMENT BREAKS HERE
             ps.close();
             return true;
 

@@ -52,7 +52,7 @@ public class ListSegmentsHandler implements RequestHandler<ListVideoSegmentsRequ
 		logger.log("Loading Java Lambda handler of RequestHandler");
 		logger.log(lvsr.toString());
 		
-		Boolean fail = false;
+		boolean fail = false;
 		String failMessage = "";
 		String passMessage = "";
 		ArrayList<Segment> segs = null;

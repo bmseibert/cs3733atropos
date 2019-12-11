@@ -92,6 +92,7 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 		String charName = uvsr.character;
 		String url = uvsr.base64EncodedValue;
 		boolean isRemote = uvsr.isRemote;
+		logger.log("" + isRemote);
 		byte[] encoded = null;
 		if(!isRemote){
 			encoded = java.util.Base64.getDecoder().decode(uvsr.base64EncodedValue);

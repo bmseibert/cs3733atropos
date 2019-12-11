@@ -13,6 +13,6 @@ public class ListVideoSegmentsRequest {
 	}
 	
 	public void setIsRemote(Boolean newStatus) {this.isRemote = newStatus;}
-	public Boolean getIsRemote() {return isRemote;}
+	public boolean getIsRemote() {return isRemote;}
 	
 }
