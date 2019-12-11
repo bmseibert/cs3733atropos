@@ -66,11 +66,13 @@ public class UploadVideoSegmentHandler implements RequestHandler<UploadVideoSegm
 	
 	void uploadSegment(String name, String character, String url, boolean isRemote) throws Exception{
 		if (logger != null) { 
-			logger.log("in createPlaylist"); 
+			logger.log("in uploadSegment"); 
 		}
 		
 		SegmentsDAO dao = new SegmentsDAO(System.getenv("DB_url"),System.getenv("DB_name"),System.getenv("DB_password"));
 		Segment seg = new Segment(name, character, url, false, isRemote);
+		logger.log("" + isRemote);
+		logger.log("" + seg.getIsRemote());
 		dao.addSegment(seg);
 				
 	}
