@@ -21,32 +21,35 @@ function initialize() {
    // refreshConstantsList();
 }
 
-</script></head><body onload="initialize()" style="background-color:powderblue;">
-<h1 style="text-align:center;">Participant Page</h1>
-<h3>Create Playlist</h3>
+</script></head><body onload="initialize()" background="star.jpg">
+<h1 style="text-align:center; text-decoration: underline; color: white;">Participant Page</h1>
+<h3 style="color:white;">Create Playlist</h3>
 <form name="createPlaylist" method="post">
-Enter Playlist Name: <input type="text" value="" name="playlist"><br>
+<font color="white">Enter Playlist Name: </font>
+<input type="text" value="" name="playlist"><br>
 <button type="button" value="Submit" onClick="JavaScript:handleCreatePlaylistClick(this)" style="color:purple;">Create Playlist</button>
 </form>
 
-<h3>Delete Playlist</h3>
+<h3 style="color:white;">Delete Playlist</h3>
 <form name="deletePlaylist" method="post">
-Enter Playlist Name: <input type="text" value="" name="playlist"><br>
+<font color="white">Enter Playlist Name: </font>
+<input type="text" value="" name="playlist"><br>
 <button type="button" value="submit" onClick="JavaScript:handleDeletePlaylistClick(this)" style="color:#991f00;">Delete Playlist</button>
 </form>
 
-<h3>List Playlists<!--Text--></h3>
+<h3 style="color:white;">List Playlists<!--Text--></h3>
 <form name="showPlaylistsForm" method="get" style="width: 10px; height: 10px"> 
 	<input type="button" value="Show Playlists" onClick="JavaScript:handleShowPlaylistsClick(this)" style="color:#000099;">
 </form>
 
 <div id="playlistList"></div>
-<h3>Upload Video Segment</h3>
+<h3 style="color:white;">Upload Video Segment</h3>
 <form name="uploadForm" method="post">
    <input name="characterName" value="Character Name" style="color:red;"/>
    <input name="characterQuote" value="Character Quote"  style="color:green;"/>
    <input name="base64EncodedValue" hidden value=""/>
-   Select a segment in file: <input type="file" id="segmentFile" name="segmentFile">
+   <font color="white">Select a segment in file: </font>
+   <input type="file" style="color:white" id="segmentFile" name="segmentFile">
    <input type="button" id="uploadButton" value="Upload Segment" disabled onClick="JavaScript:handleCreateClick(this)" style="color:#cc0000;">
 </form>
 <script>
@@ -74,36 +77,36 @@ function handleFileSelect(evt) {
 // register
 document.getElementById('segmentFile').addEventListener('change', handleFileSelect, false);
 </script>
-<h3>Remove Video Segment from Library</h3>
+<h3 style="color:white;">Remove Video Segment from Library</h3>
 <form name="deleteSegmentForm" method="post">
    <input name="characterQuote" value="Segment name (Quote)" />
    <input type="button" id="deleteButton" value="Delete Segment" onClick="JavaScript:requestDelete(this)" style="color:#004d4d;">
 </form>
 
-<h3>Add/Remove Segments from Playlist</h3>
+<h3 style="color:white;">Add/Remove Segments from Playlist</h3>
 <form name="addSegmentForm" method="post">
-  Playlist Name:
+  <font color="white">Playlist Name:</font>
   <input type="text" name="playlistName" value="playlistName" style="color:red;"/>
-  Segment Name:
+  <font color="white">Segment Name:</font>
   <input type="text" name="segmentName" value="segmentName" style="color:green;"/>
   <input type="button" id="addSegmentButton" value="Add Segment" onClick="JavaScript:handleAppendToPlaylistClick(this)"/>
   <input type="button" id="removeSegmentButton" value="Remove Segment" onClick="JavaScript:handleRemoveFromPlaylistClick(this)"/>
 </form>
-<h3>Search for Video Segments</h3>
+<h3 style="color:white;">Search for Video Segments</h3>
 
 <form name="searchSegmentsForm" method="post">
   <input type="text" name="phrase" placeholder="Search Phrase" value="">
   <input type="text" name="character" placeholder="Search Character" value="">
   <input type="button" id="submit" value="Search" onClick="JavaScript:handleSearchSegments(this)"/>
   
-  Remote
+  <font color="white">Remote</font>
   <input type="checkbox" name="remote">
   
 </form>
 
 <div id="searchResults"></div>
 
-<h3>List Video Segments <!--Text--></h3> 
+<h3 style="color:white;">List Video Segments <!--Text--></h3> 
    
 
 <form name="showSegmentsForm" method="post">
@@ -114,7 +117,7 @@ document.getElementById('segmentFile').addEventListener('change', handleFileSele
 </video> -->
 
   <input type="button" value="Show Segments" onClick="JavaScript:handleShowSegmentsClick(this)"/>
-  Remote
+  <font color="white">Remote</font>
   <input type="checkbox" name="remote"/>
   <!-- input type="text" name="result" style="width: 486px; height: 232px; "-->
   
