@@ -229,6 +229,31 @@ paths:
           description: invalid input
         409:
           description: video segment could not be appended
+          
+  /playlist/showSegments:
+    post:
+      tags:
+        - participant
+        - administrator
+      summary: shows the segments within the playlist
+      description: shows the segments within the playlist
+      operationId: requestShowPlaylistSegments
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters: 
+      - in: body
+        name: ShowPlaylistSegmentsRequest
+        description: shows the segments within the playlist
+        required: true
+        schema:
+          $ref: '#/definitions/ShowPlaylistSegmentsRequest'
+      responses:
+        200:
+          description: segments for playlist returned
+        400:
+          description: segments for playlist could not be returned
   /playlists:
     get:
       tags:
@@ -449,4 +474,11 @@ definitions:
     - website
     properties:
       website:
+        type: string
+  ShowPlaylistSegmentsRequest:
+    type: object
+    required:
+    - playlistName
+    properties:
+      playlistName:
         type: string
