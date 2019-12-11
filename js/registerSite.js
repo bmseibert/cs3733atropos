@@ -69,7 +69,8 @@ function uploadRemoteSegments(result){
 		data["character"] = segment["character"];
 		data["name"] = segment["text"];
 		data["base64EncodedValue"] = segment["url"];
-		data["isRemote"] = true;
+	    data["isRemote"] = true;
+	    
 		var js = JSON.stringify(data);
 		console.log("JS:" + js);
 		var xhrUpload = new XMLHttpRequest();
