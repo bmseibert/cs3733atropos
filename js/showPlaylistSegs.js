@@ -3,18 +3,13 @@
 
 function handleShowPlaylistSegs(e, playlist){ 
 	
-	alert(playlist);
-	
-	
-	
 	var data = {};
-	data["playlistName"] = form.playlist.value;
+	data["playlistName"] = playlist;
 	
-	if(playName != ""){
 		var js = JSON.stringify(data);
 		console.log("JS:" + js);
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST", create_playlist_url, true);
+		xhr.open("POST", show_segments_url, true);
 		
 		// send the collected data as JSON
 		xhr.send(js);
@@ -25,38 +20,52 @@ function handleShowPlaylistSegs(e, playlist){
 		    if(xhr.readyState == XMLHttpRequest.DONE){
 		    	var js = JSON.parse(xhr.responseText);
 		    	var statusCode = js["statusCode"];
-		    	
+		    	processResponse(xhr.responseText);
 			    if(statusCode == 200){
-			    	handleSuccessPlaylistCreate();
+			    	//handleSuccessPlaylistCreate();
+			    	//alert(playlist);
 			    }else{
-			    	handleFailedPlaylistCreate();
+			    	//handleFailedPlaylistCreate();
 			    }
 		    }
-		    
-			}
-	}else{
-		alert("Playlist name cannot be empty");
+		
+		    else{
+		    	alert("Playlist name cannot be empty");
+		    }	
 	}
+}
 
-	
-	
-	
-	
-	
-	/*for (var i = 0; i < segments.length; i++) {	        
-        var name = 
-        var charname = 
-        var url = 
-        
-        output = output + "<div id=\"segment" + name + "\"><b>" + name + "-</b>  " + charname + "<br></div>";
-        
-        var iframe = document.createElement('iframe');
-        iframe.src = url;
-        iframe.width = '320';
-        iframe.height = '240';
+function removeOldSegments(){
+	const myNode = document.getElementById("playsegs");
+	while (myNode.firstChild) {
+		myNode.removeChild(myNode.firstChild);
+	}
+}
 
-        var bottom = document.getElementById('bottom');
-        bottom.appendChild(iframe);
-        console.log("Creating iFrames");
-*/
+function processResponse(result){
+	console.log("result:" + result);
+	var js = JSON.parse(result);
+	var segments = js["segs"];
+	var status = js["statusCode"];
+	var output = "";
+
+	removeOldSegments();
+	for (var i = segments.length - 1; i >= 0; i--) {	        
+		var segment = segments[i];
+		var name = segment["name"];
+		var charname = segment["character"];
+		var url = segment["url"];
+    
+		output = output + "<div id=\"segment" + name + "\"><b>" + name + "-</b>  " + charname + "<br></div>";
+    
+		var iframe = document.createElement('iframe');
+		iframe.src = url;
+		iframe.width = '320';
+		iframe.height = '240';
+
+		var bottom = document.getElementById('playsegs');
+		bottom.appendChild(iframe);
+		console.log("Creating iFrames");
+
+	}
 }
