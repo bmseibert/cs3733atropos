@@ -103,9 +103,19 @@ public class PlaylistsDAO {
 	                return false;
 	            }
 	
-	            ps = conn.prepareStatement("INSERT INTO PlaylistSegment values(?,?);");
+	            ps = conn.prepareStatement("SELECT * FROM PlaylistSegment WHERE playlistName = ? ;");
+	            ps.setString(1, playlist.getName());
+	            resultSet = ps.executeQuery();
+	            int order = 0;
+	            while (resultSet.next()) {
+	            	order++;
+	            }
+	            order++;
+	            ps.setString(1, playlist.getName());	
+	            ps = conn.prepareStatement("INSERT INTO PlaylistSegment values(?,?,?);");
 	            ps.setString(1,  playlist.getName());
 	            ps.setString(2,  playlist.getLastSegmentName());
+	            ps.setInt(3,order);
 	            ps.executeUpdate();
             return true;
 
