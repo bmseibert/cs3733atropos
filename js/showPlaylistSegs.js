@@ -50,7 +50,7 @@ function processResponse(result){
 	var output = "";
 
 	removeOldSegments();
-	for (var i = segments.length - 1; i >= 0; i--) {	        
+	for (var i = 0; i < segments.length; i++) {	        
 		var segment = segments[i];
 		var name = segment["name"];
 		var charname = segment["character"];
