@@ -11,6 +11,7 @@
 <script type='text/javascript' src='../js/appendToPlaylist.js'></script>
 <script type='text/javascript' src='../js/removeFromPlaylist.js'></script>
 <script type='text/javascript' src='../js/deleteSegment.js'></script>
+<script type='text/javascript' src='../js/showPlaylistSegs.js'></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -41,8 +42,9 @@ function initialize() {
 <form name="showPlaylistsForm" method="get" style="width: 10px; height: 10px"> 
 	<input type="button" value="Show Playlists" onClick="JavaScript:handleShowPlaylistsClick(this)" style="color:#000099;">
 </form>
+<div style="color: white" id="playlistList"></div>
+<div style="color: white" id="playsegs"></div>
 
-<div id="playlistList"></div>
 <h3 style="color:white;">Upload Video Segment</h3>
 <form name="uploadForm" method="post">
    <input name="characterName" value="Character Name" style="color:red;"/>
