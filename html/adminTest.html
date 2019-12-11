@@ -13,6 +13,7 @@
 <script type='text/javascript' src='../js/removeFromPlaylist.js'></script>
 <script type='text/javascript' src='../js/deleteSegment.js'></script>
 <script type='text/javascript' src='../js/markSeg.js'></script>
+<script type='text/javascript' src='../js/showPlaylistSegs.js'></script>
 <script type="text/javascript">
 
 
@@ -45,6 +46,7 @@ function initialize() {
 <h3 style="color: white">List Playlists<!--Text--></h3>
 <form name="showPlaylistsForm" method="get"> 
 	<input type="button" value="Show Playlists" onClick="JavaScript:handleShowPlaylistsClick(this)">
+	<div style="color: white" id="playsegs"></div>
 </form>
 
 <h2 style="text-decoration: underline; color: white;"><br>Video Segment Modifications</h2>
