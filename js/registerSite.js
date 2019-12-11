@@ -84,7 +84,7 @@ function uploadRemoteSegments(result){
 		    if (xhrUpload.readyState == XMLHttpRequest.DONE) {
 		    	 if (xhrUpload.status == 200) {
 			      console.log ("xhrUpload:" + xhrUpload.responseText);
-			      processCreateResponse(xhrUpload.responseText);
+			      //processCreateResponse(xhrUpload.responseText);
 		    	 } else {
 		    		 console.log("actual:" + xhrUpload.responseText)
 					  var js = JSON.parse(xhrUpload.responseText);

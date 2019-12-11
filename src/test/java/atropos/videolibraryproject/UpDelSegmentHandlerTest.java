@@ -65,7 +65,7 @@ public class UpDelSegmentHandlerTest extends LambdaTest {
     	
     	try {
         	testSuccessUploadInput(input, RESULT);
-        	//testSuccessDeleteInput(input1, RESULT);
+        	testSuccessDeleteInput(input1, RESULT);
         } catch (IOException ioe) {
         	Assert.fail("Invalid:" + ioe.getMessage());
         }

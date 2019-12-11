@@ -68,6 +68,21 @@ paths:
         409:
           description: video deletion failed
   /segments:
+    get:
+      tags:
+        - participant
+        - administrator
+      summary: returns a list of all publicly accessible video segments
+      description: returns a list of all publicly accessible video segments
+      operationId: requestListPublicSegments
+      produces:
+        - application/json
+      parameters: []     
+      responses:
+        200: 
+          description: list of public segments successfully returned
+        400: 
+          description: failed to return list of public segments
     post:
       tags:
         - participant
@@ -89,6 +104,7 @@ paths:
       responses:
         200:
           description: list of video segments returned
+    
   /segments/search:
     post:
       tags:
@@ -355,11 +371,20 @@ definitions:
     required:
     - name
     - character
+    - url
+    - isMarked
+    - isRemote
     properties:
       name:
         type: string
       character:
         type: string
+      url:
+        type: string
+      isMarked:
+        type: boolean
+      isRemote:
+        type: boolean
   DeleteVideoRequest:
     type: object
     required:
