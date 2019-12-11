@@ -124,7 +124,7 @@ public class SegmentsDAO {
         }
     }
     
-    public ArrayList<Segment> getAllSegmentsByMarkRemote(Boolean isMarked, Boolean isRemote) throws Exception {
+    public ArrayList<Segment> getAllSegmentsByMarkRemote(boolean isMarked, boolean isRemote) throws Exception {
         
         ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
@@ -148,7 +148,7 @@ public class SegmentsDAO {
     
 
 
-    public ArrayList<Segment> searchSegmentsCharacterQoute(String qoute, String character, Boolean isRemote) throws Exception{
+    public ArrayList<Segment> searchSegmentsCharacterQoute(String qoute, String character, boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ? AND `character` LIKE ? AND isRemote=?;");
@@ -173,7 +173,7 @@ public class SegmentsDAO {
     
     
     
-    public ArrayList<Segment> searchSegmentsCharacter(String search, Boolean isRemote) throws Exception{
+    public ArrayList<Segment> searchSegmentsCharacter(String search, boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where VideoSegment.character LIKE ? and isRemote=?;");
@@ -195,7 +195,7 @@ public class SegmentsDAO {
     }
     	
     
-    public ArrayList<Segment> searchSegmentsQuote(String search, Boolean isRemote) throws Exception{
+    public ArrayList<Segment> searchSegmentsQuote(String search, boolean isRemote) throws Exception{
     	ArrayList<Segment> allSegments = new ArrayList<Segment>();
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM VideoSegment where name LIKE ? and isRemote=?;");
@@ -222,8 +222,8 @@ public class SegmentsDAO {
         String name  = resultSet.getString("name");
         String character = resultSet.getString("character");
         String url  = resultSet.getString("url");
-        Boolean isMarked = resultSet.getBoolean("isMarked");
-        Boolean remote = resultSet.getBoolean("isRemote");
+        boolean isMarked = resultSet.getBoolean("isMarked");
+        boolean remote = resultSet.getBoolean("isRemote");
         return new Segment (name, character, url, isMarked, remote);
     }
 

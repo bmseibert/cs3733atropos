@@ -14,8 +14,9 @@ function removeRemoteSegments(result){
 	var segments = js["segments"];
 	
 	for (var i = 0; i < segments.length; i++) {
+		var data = {};
 		var segment = segments[i];
-		data["name"] = segment["text"];
+		data["segment"] = segment["text"];
 		data["isRemote"] = true;
 		var js = JSON.stringify(data);
 		console.log("JS:" + js);
@@ -28,8 +29,8 @@ function removeRemoteSegments(result){
 
 		  // This will process results and update HTML as appropriate. 
 		xhrDelete.onloadend = function () {
-			  console.log(xhr);
-			  console.log(xhr.request);
+			  console.log(xhrDelete);
+			  console.log(xhrDelete.request);
 			  if (xhrDelete.readyState == XMLHttpRequest.DONE) {
 				  if (xhrDelete.status == 200) {
 					  console.log ("xhrDelete:" + xhrDelete.responseText);
@@ -48,7 +49,7 @@ function removeRemoteSegments(result){
 }
 
 
-function getSegmentsFromRemoteSite(url, apikey){
+function getSegmentsFromRemoteSite2(url, apikey){
 	
 	var xhrGetSegs = new XMLHttpRequest();
 	xhrGetSegs.open("GET", url, true);
@@ -70,7 +71,7 @@ function getSegmentsFromRemoteSite(url, apikey){
 		}
 }
 
-function validate() {
+function validate2() {
 	  var form = document.registerSite;
 	  var urlapi = form.url.value;
 
@@ -83,14 +84,14 @@ function validate() {
 	    console.log(url);
 	    console.log(api);
 
-	    getSegmentsFromRemoteSite(url, api);
+	    getSegmentsFromRemoteSite2(url, api);
 	  }
 	}
 
 function handleUnregisterSiteClick(e){
 	var form = document.registerSite;
 	var data = {};
-	validate()
+	validate2()
 	data["site"] = form.url.value;
 
 	var js = JSON.stringify(data);

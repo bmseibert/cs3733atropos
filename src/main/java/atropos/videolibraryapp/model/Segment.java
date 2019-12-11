@@ -4,10 +4,10 @@ public class Segment {
 	final String name;
 	final String character;
     final String url;
-	Boolean isMarked;
-	final Boolean isRemote;
+	boolean isMarked;
+	final boolean isRemote;
 	
-	public Segment(String name, String character, String url, Boolean isMarked, Boolean site) {
+	public Segment(String name, String character, String url, boolean isMarked, boolean site) {
 		this.name = name;
 		this.character = character;
 		this.url = url;
@@ -43,15 +43,15 @@ public class Segment {
 		return this.url;
 	}
 	
-	public Boolean getIsMarked() {
+	public boolean getIsMarked() {
 		return this.isMarked;
 	}
 	
-	public Boolean getIsRemote() {
+	public boolean getIsRemote() {
 		return this.isRemote;
 	}
 	
-	public void setIsMarked(Boolean b) {
+	public void setIsMarked(boolean b) {
 		this.isMarked = b;
 	}
 	
