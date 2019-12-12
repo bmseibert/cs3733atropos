@@ -1,0 +1,1473 @@
+commit 57d36f822b228344809b83f138e96994aba2a7d4
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Dec 11 19:29:34 2019 -0500
+
+    playlist DAO stuff
+
+commit 2d92edbc2724eeb87d77c47a5a02f648ba8338a2
+Merge: 5ad25a6 5b33b0d
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 11 18:47:40 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 5b33b0dc8cb947ec09d9270a2a72c923f6e92ad6
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Dec 11 18:47:31 2019 -0500
+
+    added order
+
+commit 5ad25a6ace3f478c443b18b843504f7036447b5e
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 11 18:47:27 2019 -0500
+
+    Minor Things
+
+commit 95e41897fd429d7d5a308961412470a6f320055d
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 11 18:12:14 2019 -0500
+
+    added stuff from admin to participant
+
+commit 31be5973b67e6d5b12143ee5cf0c6324f22493ff
+Merge: 5659730 bc19590
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 11 18:09:18 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit bc195902d55f7e0e0291e5f0dccc6acea1ea3d97
+Author: scasimir <scasimir@wpi.edu>
+Date:   Wed Dec 11 18:08:46 2019 -0500
+
+    Added cool background
+
+commit 5659730adc61b32d9b9bf79850973104733499b4
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 11 18:08:44 2019 -0500
+
+    javascript for showing playlist segments
+
+commit c8d79f3dd4af98452a77467e73a055c542380747
+Merge: c051389 9f936b3
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 11 17:21:52 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 9f936b36124552bffff4e6f5580d2ae61e92fafd
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Dec 11 17:20:48 2019 -0500
+
+    for you part 2
+
+commit 2c6b779b3119924f73b053a0812b8c9cb1619e60
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Dec 11 17:20:37 2019 -0500
+
+    for you
+
+commit c05138944621cef83b8ca4f6e546331b41cd8718
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 11 17:20:31 2019 -0500
+
+    API update
+
+commit 7cbc2033c2661352a33bce70b519a5c7bbaaa8a6
+Merge: d2f838e a99c06c
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 22:03:28 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit d2f838eca0fd05a5f85ed46a50a17581f6b7e69a
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 22:03:26 2019 -0500
+
+    fixing swagger
+
+commit 233a43dff6c56ccb51a133020be5ca5680c204c0
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 11 01:33:53 2019 -0500
+
+    Fixes
+
+commit a99c06c516d2f1f224ed96e3158db93b7bde9449
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 10 22:03:02 2019 -0500
+
+    Fixed bug
+
+commit bbcc522a12e3ef42e3882ed791e276ccb666f035
+Merge: 3cf2f52 6450fe0
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 19:44:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 3cf2f52a8b321f9761094b7a102f4ee9ab4fd1fe
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 19:44:53 2019 -0500
+
+    unregister sites functional, minor changes
+
+commit 6450fe0575547b4c8a05cf80a8cf8c85a0294c9a
+Author: scasimir <scasimir@wpi.edu>
+Date:   Tue Dec 10 19:44:03 2019 -0500
+
+    Made participant look even better
+
+commit 73d0bfc621ad71b7f42dd143cb5b17cb61f1b97c
+Merge: 15e5501 c452e8f
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 17:50:07 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit c452e8f51608ceb24acefe719e433fbbf5790568
+Merge: aefafe1 d6795c1
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 10 22:48:39 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit aefafe1ca40296bee3aff404626630bc9a472714
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 10 22:48:08 2019 -0500
+
+    Made General good looking changes to the admin html
+
+commit 15e5501b76608787bf09f560a09b1a67e6445e75
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 17:50:02 2019 -0500
+
+    Fixed a merge and added to upload and delete playlist
+
+commit e999682a13d2722568cd02de2c591cd9a38fd00c
+Merge: 8b7603b d6795c1
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 17:18:52 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 8b7603b1846185ba8b5593410b3c2dd7a91413f7
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 17:18:47 2019 -0500
+
+    upload segment handler
+
+commit d6795c1d286d745ee91beda11ca366fcaa48a3e0
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 10 17:17:30 2019 -0500
+
+    remote grab stuff
+
+commit 88f61f69b22479c1cbcf1a0f65c6a41e76ec453f
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 10 16:53:13 2019 -0500
+
+    added check box and fixing registering site for accepting remote videos
+
+commit 8adf65a49422c926e0807cfcc7ac4b1559eed272
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 10 16:50:58 2019 -0500
+
+    get remote segs updated uploadSegs
+
+commit 38697a9b464e6bd56e2943faabe90c21c801a8e6
+Author: scasimir <scasimir@wpi.edu>
+Date:   Tue Dec 10 16:48:43 2019 -0500
+
+    Made participant look cool
+
+commit 1eac05bc906ad5b2113ac62a6dbf0e6b2307762c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 10 21:47:48 2019 -0500
+
+    Minor edits to admin page
+
+commit 26b9773ea5a69d9202b66c40694b32537dd6f4a8
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 10 15:55:38 2019 -0500
+
+    mark segs complete
+
+commit 57f6f07480fd2c58be8b628f15a375dd180eaf98
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 10 14:52:27 2019 -0500
+
+    few fixes after merge
+
+commit 831fa9d9db1dcc5081e1e351723477f580ed5fda
+Merge: 8df6e3f fbfb515
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 10 14:44:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 8df6e3f8bd4636eaa37ec20c3da9a78d1148b987
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 10 14:44:53 2019 -0500
+
+    mark status updated
+
+commit fbfb51535c3a27941c6f0424db1ab00a98354b98
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 10 00:33:49 2019 -0500
+
+    81
+
+commit 2ede63747ccf0e7fcd6a6f6e449f9c00bf28bb2a
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 10 00:33:25 2019 -0500
+
+    Over 80% Code Coverage for testing!
+
+commit dc1f375b35405977d4617020cb0191bad229ad00
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Dec 9 23:27:52 2019 -0500
+
+    Up to 60% code Coverage, will continue to test
+
+commit c1eb121035e6f3f1a54c748917ec0f5ae30f9b9c
+Author: Your Name <riverstone98@gmail.com>
+Date:   Fri Dec 6 17:00:25 2019 -0500
+
+    fix merge
+
+commit c3993a8794724c5427040871a66d5f0989fbf2b0
+Merge: 31afbbf a95b923
+Author: Your Name <riverstone98@gmail.com>
+Date:   Fri Dec 6 16:56:55 2019 -0500
+
+    merge
+
+commit 31afbbfca437c31705abf7014234678cfd8241a7
+Author: Your Name <riverstone98@gmail.com>
+Date:   Fri Dec 6 16:55:38 2019 -0500
+
+    admiTest stuff
+
+commit a95b9233f2dcc9364e27c41532b0201a323e809b
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Dec 6 16:11:14 2019 -0500
+
+    Register site working
+
+commit 75167afa18ff093da3f207ba008046ff0db3a347
+Merge: 5521f5e c22df00
+Author: Your Name <riverstone98@gmail.com>
+Date:   Fri Dec 6 15:58:21 2019 -0500
+
+    merge for unregister
+
+commit 5521f5effdaaca00a64009f9acda7a03c932c6b6
+Author: Your Name <riverstone98@gmail.com>
+Date:   Fri Dec 6 15:56:22 2019 -0500
+
+    unregister site js
+
+commit c22df00cb54c296afdb1b25f7248573c5307fc5c
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Dec 6 15:34:09 2019 -0500
+
+    just in case
+
+commit 3505138cc896c3ea8a49aee4d2db998898282976
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Dec 6 15:22:04 2019 -0500
+
+    Added functionality from participant page to administrator page
+
+commit 4575dec56a42800bfac79a267b2f714d433238ee
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Thu Dec 5 16:23:31 2019 -0500
+
+    making HTML a home
+
+commit 72159e2965bbd484662a582862f6a50f350d8efd
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Thu Dec 5 16:15:00 2019 -0500
+
+    Delete segment from library works
+
+commit 6982e6d92f22152d2368bd896e052d75dc5d4400
+Author: Your Name <riverstone98@gmail.com>
+Date:   Thu Dec 5 16:11:26 2019 -0500
+
+    remove seg works
+
+commit b21be1e1e9ee2ca7b81f6ee4d4a799fcf2fa5746
+Author: Your Name <riverstone98@gmail.com>
+Date:   Thu Dec 5 16:00:39 2019 -0500
+
+    remove seg request fix
+
+commit e41c1441d5dbbd70e7cfa4d77f310abb8cd0c1d1
+Merge: e13abac c576bfb
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 15:56:35 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit e13abac3cadb8f7f1bfeb408971f1e0e89841c61
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 15:56:27 2019 -0500
+
+    ListPublicVideoSegmentHandler Written
+
+commit c576bfbcd417a201f74030208517965e4408c0a1
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Thu Dec 5 15:24:56 2019 -0500
+
+    Actually fixed the upload segment handler, whoops
+
+commit a8c7c365dd62952aea5c683dad42efa3160244a4
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 15:22:41 2019 -0500
+
+    Files Fixed
+
+commit 7dae3b944c668a33a4e91c5b6b164987d76faff1
+Author: Your Name <riverstone98@gmail.com>
+Date:   Thu Dec 5 15:12:40 2019 -0500
+
+    get segs by mark and site
+
+commit a45f276edd7c4375617299568b07da164e2e2627
+Author: scasimir <scasimir@wpi.edu>
+Date:   Thu Dec 5 15:02:10 2019 -0500
+
+    Created ListRemoteSegmentHandler
+
+commit 9cfbcfe94ee3c5570ff4ef555c4c9604ae300ceb
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 14:58:49 2019 -0500
+
+    Might delete this function later
+
+commit aacbb6760aa3fad4aab7da358a0da67f4817e93d
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 14:45:27 2019 -0500
+
+    Minor fix
+
+commit 8d70e10755c734fbe6ae3a5bbb3aff711c04be63
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 14:43:10 2019 -0500
+
+    Quick Fixes to Show Playlist
+
+commit 2c777f8c6e6914c5831719d6a5cfdecf454ed484
+Author: scasimir <scasimir@wpi.edu>
+Date:   Thu Dec 5 14:38:27 2019 -0500
+
+    Created remote segment response
+
+commit 3fb9addfb37ea2cd017fa02cc5833f78e3a62f8b
+Merge: 4bc5177 167b132
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 14:29:12 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 4bc517709a36dd005a3df835541ad52306eaa0fd
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 14:29:00 2019 -0500
+
+    Show Remote Sites on Admin Page works now
+
+commit 167b1321d5346875ef7a820df9cfef8a28887919
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Thu Dec 5 14:24:47 2019 -0500
+
+    upload segment functional
+
+commit 8202e8379d2a8a89a6bf3aa0a2a83f9b5db0f99a
+Author: Your Name <riverstone98@gmail.com>
+Date:   Thu Dec 5 14:20:38 2019 -0500
+
+    append seg to playlist works part 2
+
+commit cbbc33c191eea4560a88944be6f543c36037febc
+Author: Your Name <riverstone98@gmail.com>
+Date:   Thu Dec 5 14:20:13 2019 -0500
+
+    append seg to playlist works
+
+commit 403a57ea8a4a3b05b480c8dba03aa4b6145b7415
+Author: scasimir <scasimir@wpi.edu>
+Date:   Thu Dec 5 13:49:59 2019 -0500
+
+    Small changes to showRemoteSites
+
+commit 3abaaf5820ddad16b0ffcfde6bc92468c87bf91d
+Merge: 690fb77 9602058
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 13:48:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 690fb77591f74f4b081166ac5a4b51b931c57da7
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Dec 5 13:48:46 2019 -0500
+
+    Delete Playlist Functionality complete
+
+commit 9602058676787cfeae237513b4159842ae800226
+Author: scasimir <scasimir@wpi.edu>
+Date:   Wed Dec 4 22:08:39 2019 -0500
+
+    Started making show Remote
+
+commit 712ca8185f74d8aaf3ddc29e46866686e831fe85
+Merge: 5ff951d 90c22e8
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 4 22:06:10 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 5ff951d1321675f590302e790c2f2355841bff5e
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 4 22:06:08 2019 -0500
+
+    Can encode to base64, fails in lambda
+
+commit 90c22e83bd5c05e4d0188e04448def8ebd3755e8
+Merge: 34cf2cb a61435c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 21:57:15 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 34cf2cbec184c8e479f20062c9e4846f14105e68
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 21:57:08 2019 -0500
+
+    Search now works fully on our website
+
+commit a61435ccc3611cd86f9f877fe05a2d37610a8eba
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Dec 4 20:47:40 2019 -0500
+
+    last seg playlist
+
+commit 22f83321aa4d7daeee2689e78c6668823fcef7f7
+Author: scasimir <scasimir@wpi.edu>
+Date:   Wed Dec 4 20:31:53 2019 -0500
+
+    Added filter function to search and added delete playlist button
+
+commit 7f8a63255903495fc3be754f892f89ac7f74239c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 20:29:47 2019 -0500
+
+    Added alert for playlist name needing to be not empty
+
+commit 1e801a0e1a67d89b2af2a5b8f96eb23b095e1c41
+Merge: 4b1dc95 205478b
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 20:23:41 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 4b1dc954a8eab436c190ae37b2d61f2147a78d9e
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 20:23:34 2019 -0500
+
+    Button Fixes
+
+commit 205478b4a93f4b6f07fb9cd5bb2e058ad8e7d8c8
+Merge: ac65533 2c5450a
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Dec 4 20:11:32 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit ac6553360a4f17c4a1645dcb4c7636e52bf64d1f
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Dec 4 20:10:59 2019 -0500
+
+    fixed list playlists via DAO
+
+commit 2c5450a8db641aaf0386d5e58ea9c5ef99dd524e
+Author: scasimir <scasimir@wpi.edu>
+Date:   Wed Dec 4 20:09:17 2019 -0500
+
+    Removed local button on list segments
+
+commit ca624cb7ae547305ce967e6add0ee8453c825a69
+Merge: 22cb4c7 b57033b
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 4 20:08:01 2019 -0500
+
+    Fixing merge conflicts in participant html
+
+commit 22cb4c7f938ba1ed55e2b07d7e1d0a80ff241391
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 4 20:05:59 2019 -0500
+
+    working on upload.js
+
+commit b57033b6651d90ab2266a614fcdfc38e275e880a
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 20:05:04 2019 -0500
+
+    minor fixes
+
+commit 03724d926e20699aaf05c6b9230d3106d63c047e
+Merge: 839bab6 4903a66
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 19:52:38 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 839bab607bf548b3ab116d756e7dc50b3d12d3fa
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 19:52:30 2019 -0500
+
+    Create Playlist Button works fully
+
+commit 4903a6613f08d1564fcc1b7f78f7c5d4b997b80b
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 4 19:03:47 2019 -0500
+
+    Upload and delete segment functional and tested
+
+commit 3ee464c9001a1f4dab5dab0f8cbaf3ec6de48c57
+Author: scasimir <scasimir@wpi.edu>
+Date:   Wed Dec 4 18:51:52 2019 -0500
+
+    Fixed format for showPlaylists
+
+commit 753cfd0559e591540835939419d1e98d220dfd1b
+Merge: 6bbbbdd dc7f920
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 18:44:37 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 6bbbbdd248330fd0e64ce07661e8f94c743e1c5e
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Dec 4 18:42:50 2019 -0500
+
+    API.js file is fully written
+
+commit dc7f920cbbe23f3044eb63243b53abbea7206e7c
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Dec 4 18:19:48 2019 -0500
+
+    Upload segment handler updates
+
+commit 5ed1648582267789aa9761538ec0104911b400a0
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 3 22:38:23 2019 -0500
+
+    search seg test
+
+commit 3b893736f8e3062144c212da20402de7c6d5aa20
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 3 22:36:58 2019 -0500
+
+    search seg test
+
+commit 925d46e333763fed2130f50b0d02742b8d72adf6
+Author: scasimir <scasimir@wpi.edu>
+Date:   Tue Dec 3 22:35:28 2019 -0500
+
+    Added button to list all remote sites, updated participant gui
+
+commit 956d4230c3a665e0430789fec2979a695e5d7a81
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 3 22:33:22 2019 -0500
+
+    changed uploaded to add to s3 bucket
+
+commit 9819705e31a351278e6a1f815298e2d5aac541d4
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 21:55:18 2019 -0500
+
+    Register and UnRegister Handlers fully tested and written. On Lambda
+
+commit 91432aa3007efd9f702e3847813ced72a66c7a38
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 21:37:48 2019 -0500
+
+    Test Files made
+
+commit abb5a553292e6fbf42eb3db2897043a4200b6b27
+Merge: 46b4b5f 822a226
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 3 21:29:31 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 46b4b5f73c3492db98bbe431271b8849e5b5db17
+Author: Your Name <riverstone98@gmail.com>
+Date:   Tue Dec 3 21:28:58 2019 -0500
+
+    search video segments handler
+
+commit 822a226fefe7fd3237690e8124bd77469c8f7d50
+Author: scasimir <scasimir@wpi.edu>
+Date:   Tue Dec 3 21:21:19 2019 -0500
+
+    CHanged input Names for upload segment button
+
+commit 891ecf8432d191267a6b79ff1457fa74173baca7
+Merge: 7839af7 66b4a4e
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 21:12:43 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 7839af739d1878d5e6cefa11b1e56b218a022832
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 21:12:33 2019 -0500
+
+    Fix for ben implemented and list sites works, uploading lambda side
+
+commit 66b4a4ea8b229749b3f7ddee6ed742251be79beb
+Author: scasimir <scasimir@wpi.edu>
+Date:   Tue Dec 3 20:51:52 2019 -0500
+
+    Small changes
+
+commit a79cf55699e2583d929d3bb0ae948dd2b6c3401d
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 20:44:08 2019 -0500
+
+    Fixes
+
+commit 20a972fba0281a8cf724dad58ec23d966bee2c0b
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 20:42:34 2019 -0500
+
+    Fixes
+
+commit 90ecc434201bfd353eb1837d62dee9857b0a5aab
+Author: scasimir <scasimir@wpi.edu>
+Date:   Tue Dec 3 20:41:48 2019 -0500
+
+    Made the upload segment button
+
+commit b1e06cdbf81237c60f36e8825676379e7eaa65e4
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 20:13:27 2019 -0500
+
+    Minor fixes
+
+commit 98291d49ba108b4ad9d94dce65b8fc5ccac48161
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 20:11:45 2019 -0500
+
+    Marking is all tested, functions being uploaded to lambda
+
+commit f30a476f0e7b6841923c3ba07e641c0a103d71a8
+Merge: ac7c9cc 552d447
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 20:03:42 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit ac7c9cc4fc93a0e715605f0db4b92e38306bee4b
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 20:03:32 2019 -0500
+
+    Wrote the Marking handlers test, not tested yet
+
+commit 552d447c07a08c84574685d20a35e9f6e86b7a03
+Merge: 5d24f94 2de0f99
+Author: Ben <seibertb7@gmail.com>
+Date:   Tue Dec 3 13:46:51 2019 -0500
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 5d24f94128792b078f6a077db8180715df4362d8
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Tue Dec 3 13:42:15 2019 -0500
+
+    Not sure what changed, but need to merge
+
+commit 2de0f9900b9f7441b658f9f7f8c53750bb50f909
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Dec 2 22:17:38 2019 -0500
+
+    list sites resp fix
+
+commit feb9dcb24a2c6d275aeaa65f2d8c47d48cce2cb4
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Dec 2 22:15:40 2019 -0500
+
+    made seg searches via qoute/character
+
+commit 2549cabd9028f823cc2dddf4918f092cda259eb6
+Merge: 562ead9 93ef644
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Dec 2 21:59:52 2019 -0500
+
+    made SiteDAO
+
+commit 562ead955835745f9d8edf9f65e042b41879727f
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Dec 2 21:58:27 2019 -0500
+
+    made SiteDAO
+
+commit 93ef644c904d64b9907873da4626ffaa6597e8b4
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Dec 2 21:55:14 2019 -0500
+
+    Made both Mark Segment and Unmark
+
+commit 90172ebf62cfab715542b6ee1e9fc2d55bb993d0
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Dec 2 21:17:51 2019 -0500
+
+    fixes
+
+commit 3ba43d60e3beff6c79e8b8eb593bdb42006692f5
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Dec 2 21:12:58 2019 -0500
+
+    upload seg fixes
+
+commit 2477afc5005d8bf774296854f4d32fc24c772a4d
+Merge: e3f16bf f770258
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Dec 2 21:01:30 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit f770258382fc3e036f9e59a442fd68132aaf299c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Tue Dec 3 01:53:53 2019 -0500
+
+    DeleteSegement works fine, upload segment fails, working on fix
+
+commit da677572a39a3617f7d2c3d67909f5f5b5347ccd
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Nov 25 19:20:32 2019 -0500
+
+    fixes to test
+
+commit 5200e7eec9b2dbbf75185bd21e61ec1ba9bf8387
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Nov 25 19:20:22 2019 -0500
+
+    fix to test
+
+commit 8fa4dd08ad1c13a90cb54b7cef9b73e3cef0142d
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Nov 25 19:15:16 2019 -0500
+
+    Fully tested SegmentHandler
+
+commit c57492c2a2b69bbe5c577d97b88532810ffa0e29
+Merge: fe4a447 703ab0c
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 19:10:28 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit fe4a447a531088f6549b3e3af9af35dd420c3d18
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 19:10:25 2019 -0500
+
+    Final html files for iteration 1
+
+commit 703ab0c2a52076ea65b87e2e82588c352b9ad214
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Nov 25 18:47:33 2019 -0500
+
+    Remove Segment is Made
+
+commit 6fee6bacc8677438d2dfd202cddd669028ea08d8
+Merge: 3a5b48b 835531e
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 18:18:50 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 3a5b48b86a30a38e48220a24116e1ede505308a1
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 18:18:46 2019 -0500
+
+    Updated API
+
+commit e3f16bf39f551da410c23a007f2ae975bdb1358c
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Nov 25 18:14:47 2019 -0500
+
+    removed Ppage
+
+commit 835531e4ac3c926da5e321d1575fc1ce1ff0815b
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Nov 25 18:13:17 2019 -0500
+
+    Fully tested and working Append Segment
+
+commit a5699513e4b8b1d4f80b8db1cdb55872307aedf4
+Author: scasimir <scasimir@wpi.edu>
+Date:   Mon Nov 25 18:10:56 2019 -0500
+
+    Added mark/unmark (NOT OPERATIONAL)
+
+commit 9eb2cb8fdd512a89967456d731d4ccf5d0be18e0
+Merge: 7178cde a46712c
+Author: scasimir <scasimir@wpi.edu>
+Date:   Mon Nov 25 18:03:46 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 7178cde56c43d7f837b2327a1808e7639a8436bc
+Author: scasimir <scasimir@wpi.edu>
+Date:   Mon Nov 25 18:03:27 2019 -0500
+
+    Added search button, create and delete playlist button (NOT OPERATIONAL)
+
+commit a46712c5e368c5b03d95f482b310753204018761
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Nov 25 17:56:40 2019 -0500
+
+    Append Segment Handler done and tested
+
+commit 4bbd50553739d63aa80d58838dcf0904c5b68225
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 17:52:25 2019 -0500
+
+    Videos no longer duplicate
+
+commit 89a85c0f27b39ec8cf41f98959216dafd8b2bc8d
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 17:48:29 2019 -0500
+
+    Fixed showing playlists
+
+commit d7eb04620923bdea408f9e096e652409290871ac
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Nov 25 17:40:58 2019 -0500
+
+    show playlists help
+
+commit 1a1388c395e9e600dd16d160eee47a6172e39caf
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Mon Nov 25 16:47:33 2019 -0500
+
+    Append Segment Handler is complete
+
+commit 087f74ff248340f0a34022e78cd5f0a8e6e47643
+Author: scasimir <scasimir@wpi.edu>
+Date:   Mon Nov 25 15:21:06 2019 -0500
+
+    Made admin landing page, added register site buttons (NOT OPERATIONAL)
+
+commit a00bf029e13c845c765762af775cfdb66433931c
+Merge: 1088c32 6651579
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Nov 25 15:19:42 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 1088c329e42af4031a98ae6dbb8c0f4df8324a07
+Author: Your Name <riverstone98@gmail.com>
+Date:   Mon Nov 25 15:19:39 2019 -0500
+
+    showPlaylist stuff
+
+commit 665157926c56b2e861dde244bc2292ebdac8795c
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 15:18:04 2019 -0500
+
+    Videos play in ParticpantTest
+
+commit 538fd940b6c5355725d81cd148aa350788497d21
+Author: SRTIDD <riverstone98@gmail.com>
+Date:   Mon Nov 25 14:46:32 2019 -0500
+
+    removed get_seg + added showPlaylists.js
+
+commit e9239a35192abccc348f50bed33f29426d1b3af2
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Mon Nov 25 14:03:55 2019 -0500
+
+    Working on javascript iterator
+
+commit 4dd18d017795b0d5eff8572b395f96dd0857545d
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 22:47:37 2019 -0500
+
+    list playlist handler fixed
+
+commit 3e4ca19e6f89203ec2cb478a7df95dda6fbd5a7e
+Merge: f576bdd 2063740
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 24 22:35:36 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit f576bddbade87472dee19ac403d14d247506830c
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 24 22:35:34 2019 -0500
+
+    Webpage shows segments and urls
+
+commit 206374063a05e4caeac9cf4344ec6465f7691363
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 22:02:09 2019 -0500
+
+    Fixed Bug, Sean wrote password with one s...
+
+commit db14a6cab2f50d8f9c162fa59854e8dcc64eace7
+Merge: 16270e3 466de5c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 21:26:14 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 16270e327cea73512b879be292ba16b894a12c83
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 21:26:06 2019 -0500
+
+    Working get for all segments in JS
+
+commit 466de5ce5150a529ceae181284362c2496463964
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 24 20:49:57 2019 -0500
+
+    Fixing errors for sensistive eyes
+
+commit 60a715fccf5545dce5ff574c159db83e9aea2322
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 20:48:43 2019 -0500
+
+    Working html/javascript
+
+commit f36d63121d264d15c90b36a838f87391ed269e7c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 19:45:48 2019 -0500
+
+    Minor attempts at getting js to work
+
+commit 20a82a47bb92549e5c3a5349eeb0dea071e411db
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 19:32:14 2019 -0500
+
+    Api changes
+
+commit e9cecf5f044f3991c7503e8f689869db26236f8d
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 18:52:36 2019 -0500
+
+    Updated Api
+
+commit 6ec9be4c18792a001c8c03e417abbcebd51d6f8f
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 18:34:00 2019 -0500
+
+    Changes to javascript
+
+commit 960e5502686b3398b7af2a5833efdaa4e65b6ca2
+Merge: 9dffbff 18774ee
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 24 18:07:23 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 9dffbff2488b7d6e5106fccad01e6695cfbb3197
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 24 18:07:20 2019 -0500
+
+    Playlist test working
+
+commit 18774ee7c360ec71526a1b8e9c1a3c8e81d49552
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sun Nov 24 18:06:10 2019 -0500
+
+    Made a show segment button
+
+commit 226687e39751a8f8b4d4c9cb02d78f06b0b38c7a
+Merge: 2b7ec80 cf941e3
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sun Nov 24 18:05:31 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 2b7ec802ebd6008237dedf52ce800488f77f1a2b
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sun Nov 24 18:05:09 2019 -0500
+
+    Made a show segment button
+
+commit cf941e3361b401819b324e32f4fa1a96b9e1a175
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 24 17:52:32 2019 -0500
+
+    Consolidating tests
+
+commit f1a08b8add8e05bec68d654f3ca7b6d11206e940
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 17:21:32 2019 -0500
+
+    Html work
+
+commit 82ff0ad37441345f6c113f98d45ad3bab59fd3e3
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sun Nov 24 17:03:26 2019 -0500
+
+    Changed participant page
+
+commit f2183bd862166c40b3ddef7cfe95ca34b0090ce1
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sun Nov 24 16:07:48 2019 -0500
+
+    made upload and delete js files
+
+commit 162f3d776b74409874f64c55a0a22587b16ac410
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 15:27:17 2019 -0500
+
+    Small Commits
+
+commit 1b387ab4f7fabef1710fe8569fa1cb8e342453cf
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 15:05:53 2019 -0500
+
+    Segments Update
+
+commit d95ea2f2331bf9c2a98603a625826d29cfced263
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 14:47:50 2019 -0500
+
+    List Segments Tests made
+
+commit 9ce3c142e7086fd856b8e6d3eb07a3cdb3b62a67
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sun Nov 24 14:27:58 2019 -0500
+
+    Minor edits to handlers
+
+commit 4b248f80b2fb9028bc21e2122d1e60170ab51b45
+Author: SRTIDD <riverstone98@gmail.com>
+Date:   Sun Nov 24 13:31:09 2019 -0500
+
+    delete segments handler done
+
+commit 058786508d6597b418fe36e14d96710440652794
+Author: SRTIDD <riverstone98@gmail.com>
+Date:   Sun Nov 24 13:01:20 2019 -0500
+
+    List Playlist Handler done
+
+commit 08331cca4590a4792598ed81ad906cb207007d1e
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sat Nov 23 22:17:39 2019 -0500
+
+    Worked on api.js and get_segmentList.js
+
+commit 12251399986a97fb1f3a26bb02b83c8300ab277a
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 22:14:58 2019 -0500
+
+    Fixed Enviornment
+
+commit 9c8197bdbfd79f5824707cddea7f8b6cb3a68f9c
+Merge: 5efd68e 48c419b
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 21:48:48 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 5efd68e87cafb7abf2a7eb8509570f253292e30b
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 21:48:31 2019 -0500
+
+    Delete handler test
+
+commit 48c419b6f35d303aadf79a85451d59f9d8edf503
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 21:17:41 2019 -0500
+
+    fixed segments dao
+
+commit c177fc90142daf04f2f80ee09c47d8962068acb4
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 21:13:57 2019 -0500
+
+    Finished ListSegments
+
+commit 7c2dac3489599b9ebd1f697f437cabe2f1d3fcf0
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 21:02:11 2019 -0500
+
+    Developing List Segment
+
+commit 0f7903f7795f799b33fd4f93064df87bd7b99b0b
+Author: Your Name <riverstone98@gmail.com>
+Date:   Sat Nov 23 21:01:03 2019 -0500
+
+    array
+
+commit 88d5a9cc90bda7988c4c50ae244c523a27f80e75
+Merge: 2feb99c 813fce8
+Author: Your Name <riverstone98@gmail.com>
+Date:   Sat Nov 23 20:31:19 2019 -0500
+
+    typo
+
+commit 2feb99c9292db759fda6732f1cd02387e61c07b3
+Author: Your Name <riverstone98@gmail.com>
+Date:   Sat Nov 23 20:30:17 2019 -0500
+
+    typo
+
+commit 813fce845ce731ca4bdf6963c94f1e81a3ce7cfc
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 20:26:52 2019 -0500
+
+    minor fixes
+
+commit a397e39d9f67987d7b563949150c0163a719b0f8
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 19:35:06 2019 -0500
+
+    minor fix
+
+commit 281b1cbf523a3a8c529c120e10c683187ef460e0
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sat Nov 23 17:45:31 2019 -0500
+
+    Worked on html page, made a js folder as well
+
+commit f426e79f8cb11e511c568317570415c35407f66c
+Author: Your Name <riverstone98@gmail.com>
+Date:   Sat Nov 23 17:20:00 2019 -0500
+
+    Lazy Ev
+
+commit eeef554cefdff9904db13d5c6e1f59692c1a7136
+Author: SRTIDD <riverstone98@gmail.com>
+Date:   Sat Nov 23 17:08:36 2019 -0500
+
+    More fixes
+
+commit 580595eae00ab6474c9640fbf4b884f9559f6189
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 16:58:32 2019 -0500
+
+    Changes to Segment files
+
+commit a61ed0e4fb788e668177727a93396fa824f53b53
+Author: SRTIDD <riverstone98@gmail.com>
+Date:   Sat Nov 23 16:57:48 2019 -0500
+
+    Environment Variables set
+
+commit 69589b27b81ab6339a9bfc816edd25407b0c6565
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 16:39:52 2019 -0500
+
+    Fixes to a couple files concerning segment
+
+commit 0060f375671b26869e277758a246496068abadd5
+Merge: a01c4aa 001eb4e
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 16:15:57 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit a01c4aa91e22668790ee250aa62fc3bd40b20cd3
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 16:15:47 2019 -0500
+
+    Started Upload Segment Handler, and minor changes to other files
+
+commit 001eb4ead15599e47d81b25a06b6f476d68b6ac2
+Merge: dc49468 fc33a49
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 15:58:02 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit fc33a49818d62453b6f0dd685d90a7519a41a68c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 15:57:49 2019 -0500
+
+    Finished developing the DeletePlaylistHandler
+
+commit dc49468d34d0f86fe5c532032f72e29d7b97716e
+Merge: 5457590 74945a4
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 15:56:50 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 54575902fb6eb0dacdfe90d8aaf78c3e90c7b65e
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 15:56:46 2019 -0500
+
+    Began adding add segment testing class
+
+commit 74945a4a3c942bfa7d86ed6694f68ca0245cd9c6
+Author: scasimir <scasimir@wpi.edu>
+Date:   Sat Nov 23 15:56:22 2019 -0500
+
+    Finished all Responses
+
+commit 92076fae7fbcd22d317817ea69b9afd84326164b
+Author: SRTIDD <riverstone98@gmail.com>
+Date:   Sat Nov 23 15:10:21 2019 -0500
+
+    fixed query
+
+commit 7e58a72b9cd41b77685ad0834f1504627b576b54
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 15:02:11 2019 -0500
+
+    Create playlist test works
+
+commit 1786b4fc3f5f07a54db5e89302cbda908cf4a473
+Merge: 05ceaee b0b46e6
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 14:41:23 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 05ceaeeb6c5f808f6f6c8aff5885ea87e1295490
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sat Nov 23 14:41:19 2019 -0500
+
+    Began testing and added referenced libraries
+
+commit b0b46e6e9bf475a03aa77755d39c9c1c3f6b50c9
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Sat Nov 23 14:26:10 2019 -0500
+
+    Modified the CreatePlaylistHandler
+
+commit d19493ba67c8c1fc094b94bacbc28c197e6c6d1c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Fri Nov 22 17:15:44 2019 -0500
+
+    removed one broken function
+
+commit 53ebccc8cc950ac1e370eb979599ca9cb0ea23f8
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Fri Nov 22 17:14:34 2019 -0500
+
+    fixed test directories
+
+commit 9507576e017a27080dc63bdad69af2c462c9f62e
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 17:10:31 2019 -0500
+
+    Im a god, bow before my might
+
+commit 6b9a1a996c913d8d804f2347138ccb5153526f78
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Fri Nov 22 16:59:05 2019 -0500
+
+    added libraries
+
+commit e941bb68ec73e7adf447e4287c2d4615737f7350
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Fri Nov 22 16:50:00 2019 -0500
+
+    minor fix
+
+commit a3ddfcf16258cc4d2ac30d64ea494dc0d348061d
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Fri Nov 22 16:47:48 2019 -0500
+
+    refactoring
+
+commit 13aecb2f14fe854cac213e4d64ff4a1e4872a985
+Author: scasimir <scasimir@wpi.edu>
+Date:   Fri Nov 22 16:42:38 2019 -0500
+
+    Added response files
+
+commit f48da495028abe4cd3756c08934c35f755c4d61d
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 16:20:09 2019 -0500
+
+    "ughhhh"
+
+commit 46acd07dbb320c79761a33e16f72e174cd78e6b4
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 16:20:08 2019 -0500
+
+    "ughhhh"
+
+commit 3ff9840d905f266ebed3f553a53cf09fd05029ba
+Author: SRTIDD <riverstone98@gmail.com>
+Date:   Fri Nov 22 15:46:18 2019 -0500
+
+    Version 1 of DAOs
+
+commit 8149ddd844367c599877489a5f7f5b8c74aabb1f
+Merge: 020d9a1 bd3ecf0
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 20:26:24 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit 020d9a1a1e0c56907e746cabb25cdf8e751641e1
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 20:26:19 2019 -0500
+
+    Added Requests classes and consolidated them
+
+commit 76d495466838eb963a57ad8a76e9c316ea39ab0c
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 19:47:34 2019 -0500
+
+    Fixed addrequest name
+
+commit f1f62d4eff7f0bbc32948026aaff21d6115c92ee
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 19:32:35 2019 -0500
+
+    Started adding request bodies
+
+commit bd3ecf0ca55d38a11a8d16f8de9d0ab2ad35bb20
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Fri Nov 22 15:23:46 2019 -0500
+
+    Minor fixes to code
+
+commit ab16624456b9eea6d8ff39f3d8daf2bf0fb92dab
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Fri Nov 22 15:21:06 2019 -0500
+
+    Added CreatePlaylistHandler
+
+commit c4a44095cf7bd035e2f0cc6b0b356d2b32bd2923
+Merge: 7fc7a6a 76d4954
+Author: sebastien <sebastien@sebastien-Lenovo-ideapad-300-17ISK>
+Date:   Fri Nov 22 15:00:54 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 7fc7a6adaa07509a5e287ef50128da57160e6cff
+Author: sebastien <sebastien@sebastien-Lenovo-ideapad-300-17ISK>
+Date:   Fri Nov 22 14:59:38 2019 -0500
+
+    Worked on http Responses
+
+commit 6e79770a04f1b63c9c6bd274dafd701002eac093
+Author: sebastien <sebastien@sebastien-Lenovo-ideapad-300-17ISK>
+Date:   Thu Nov 21 20:13:50 2019 -0500
+
+    Added Request Files
+
+commit e6ccba8ffda73eaba23b0cf3db77179e5e8c376c
+Author: Your Name <riverstone98@gmail.com>
+Date:   Thu Nov 21 20:11:39 2019 -0500
+
+    Added Response
+
+commit d7f9a4c07e4b5e1b3743609d80abcb4c25ee553e
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Nov 21 20:04:33 2019 -0500
+
+    Added all of the final_project files
+
+commit 9e03b04fecbf093434ec9885c2decdd8b02dca6c
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Nov 21 19:52:34 2019 -0500
+
+    Added to files for other members to view packages
+
+commit e366dd2fa7ea1c28c58012ffc7b0af661727d42b
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Thu Nov 21 19:50:03 2019 -0500
+
+    Added Packages
+
+commit 2277084b6149ef84bd9cc5823886fab19f64a079
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Fri Nov 22 00:45:20 2019 -0500
+
+    removed demo lambda
+
+commit 76a7b21e817632c0e63176ef910256becf04d74e
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Thu Nov 21 23:56:17 2019 -0500
+
+    Added updated Swagger API
+
+commit 7f38027d1d588b4abaedfa5beeee73a4d92ec13e
+Merge: 6f04f58 00494fe
+Author: sebastien <sebastien@sebastien-Lenovo-ideapad-300-17ISK>
+Date:   Wed Nov 20 20:05:03 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 6f04f5842a52ea9ba55a9fd6b1efe224ec84eddf
+Author: sebastien <sebastien@sebastien-Lenovo-ideapad-300-17ISK>
+Date:   Wed Nov 20 20:03:15 2019 -0500
+
+    Worked on Playlist model
+
+commit 00494fe37c858849180eb1758be26e814e16ac5d
+Merge: ea4b106 ceb8514
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Nov 20 20:03:04 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos
+
+commit ea4b106b1865f07b7db60c33d9767d46712f79c0
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Nov 20 20:02:34 2019 -0500
+
+    created playlsitDAO
+
+commit ceb8514b7db922a0cb11dc2579a977580eccac9e
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Nov 20 19:45:12 2019 -0500
+
+    fixed .gitignore
+
+commit 66bedbf69f9817a75bb9bde7d82df2d3f153139a
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Wed Nov 20 19:33:52 2019 -0500
+
+    added Atropos-Api 1.0.0
+
+commit b2035af83cdec3aaff0879499569751db3b0aea9
+Author: Your Name <riverstone98@gmail.com>
+Date:   Wed Nov 20 19:18:40 2019 -0500
+
+    SegmentsDAO created
+
+commit b7af88b83a0d4a194a4a4d67d4d026e20097afba
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Nov 20 19:02:39 2019 -0500
+
+    Added Segment
+
+commit 02f38ede1264bbf987abb578bfa0557526383d3b
+Merge: 870bbd1 22fe7c0
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Nov 20 18:47:51 2019 -0500
+
+    Merge branch 'master' of https://github.com/bmseibert/cs3733atropos.git
+
+commit 870bbd1583a9fb62adb61f53765a303d78ba4225
+Author: erjoh <erjoh@192.168.1.231>
+Date:   Wed Nov 20 18:47:13 2019 -0500
+
+    Added New Files
+
+commit 22fe7c027217abb65e6fa766ede371d2720c2ce7
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 17 15:50:40 2019 -0500
+
+    api folder and example added
+
+commit 3d036f3c3cd8df6349e08217b5f8055784716044
+Author: bmseibert <bmseibert@wpi.edu>
+Date:   Sun Nov 17 15:31:23 2019 -0500
+
+    Init repo
