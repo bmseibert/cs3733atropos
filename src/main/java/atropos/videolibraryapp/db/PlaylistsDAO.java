@@ -72,7 +72,7 @@ public class PlaylistsDAO {
             resultSet.close();
             ps.close();
             
-            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM PlaylistSegment WHERE playlistName=?;");
+            PreparedStatement ps2 = conn.prepareStatement("SELECT * FROM PlaylistSegment WHERE playlistName=? ORDER BY PlaylistSegment.`order`;");
             ps2.setString(1,  name);
             ResultSet resultSet2 = ps2.executeQuery();
             while (resultSet2.next()) {
@@ -110,8 +110,9 @@ public class PlaylistsDAO {
 	            while (resultSet.next()) {
 	            	order++;
 	            }
+	            resultSet.close();
 	            order++;
-	            ps.setString(1, playlist.getName());	
+	            String stuff = playlist.getLastSegmentName();
 	            ps = conn.prepareStatement("INSERT INTO PlaylistSegment values(?,?,?);");
 	            ps.setString(1,  playlist.getName());
 	            ps.setString(2,  playlist.getLastSegmentName());

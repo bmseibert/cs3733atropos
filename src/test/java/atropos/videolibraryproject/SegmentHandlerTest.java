@@ -60,7 +60,7 @@ public class SegmentHandlerTest extends LambdaTest{
     @Test
     public void testAppendSegment() {
     	
-    	String input = "{\"playlist\": \"new\", \"segment\": \"We move together\"}";
+    	String input = "{\"playlist\": \"DIO\", \"segment\": \"We move together\"}";
     	String RESULT = "Success";
     	
     	try {
@@ -88,7 +88,7 @@ public class SegmentHandlerTest extends LambdaTest{
     @Test
     public void testRemoveSegment() {
     	
-    	String input = "{\"playlist\": \"new\"}";
+    	String input = "{\"playlist\": \"DIO\"}";
     	String RESULT = "Success";
     	
     	try {
